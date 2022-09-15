@@ -12,7 +12,7 @@
             </div>
             <div class="make-title">
                 {{ Form::label('time','時間') }}
-                {{ Form::text('time',null,['class'=>'form-control']) }}
+                {{ Form::text('time',null,['class'=>'form-control','placeholder'=>'ex) 14:00 ']) }}
             </div>
             <div class="make-title">
                 {{ Form::label('content','内容') }}

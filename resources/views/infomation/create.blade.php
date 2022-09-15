@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main">
+<div class="welcome">
     <h1 class="center">add Infomation</h1>
     <p class="center">連絡事項を登録してください。<br>
     これはユーザー全員に表示されます。</p>
-    <div class="schedule-form form">
+    <div class="schedule-form">
         {{ Form::open(['route'=>'info.post']) }}
             <div class="make-title">
                 {{ Form::label('title','タイトル') }}
