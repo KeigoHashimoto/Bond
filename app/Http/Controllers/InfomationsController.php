@@ -15,7 +15,7 @@ class InfomationsController extends Controller
     public function store(Request $request){
         $request->validate([
             'title'=>'required|string|max:255',
-            'info'=>'required|string|max:255',
+            'info'=>'required|string|max:1000',
         ]);
 
         $info=new Infomation;
