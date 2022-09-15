@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="main">
-    <h1 class="center">連絡事項の登録</h1>
+    <h1 class="center">add Infomation</h1>
     <p class="center">連絡事項を登録してください。<br>
     これはユーザー全員に表示されます。</p>
     <div class="schedule-form form">

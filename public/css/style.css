@@ -5,6 +5,7 @@ body{
     box-sizing: border-box;
     background: #F0F3F3;
     letter-spacing:.7px;
+    font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 :root{
@@ -193,7 +194,7 @@ header{
 
 @media screen and (max-width:540px){
     .logo{
-        font-size:1em;
+        font-size:2em;
     }
 }
 
@@ -211,7 +212,7 @@ header{
 
 .nav-item a{
     color:#fff;
-    padding: 0 .3rem;
+    padding: 0 .5rem;
 }
 
 #nav-icon{
@@ -222,10 +223,18 @@ header{
 @media screen and (max-width:540px){
     #nav-list{
         flex-direction:column;
-        background: #fff;
+        background: #ccc;
+        border:3px solid #fff;
         padding:1rem;
         display:none;
         border-radius:5px;
+        position:absolute;
+        right: 0;
+        box-shadow:2px 2px 5px 1px #777;
+    }
+
+    nav{
+        position:relative;
     }
 
     #nav-icon{
@@ -236,10 +245,9 @@ header{
 
     .nav-item{
         display: block;
-        color:#333;
-        font-size:.7rem;
-        border-bottom:1px solid #ccc;
-        margin:.3rem;
+        font-size:1.2rem;
+        border-bottom:1px solid #777;
+        margin-bottom:.5rem;
     }
 
     .nav-item:last-child{
@@ -247,7 +255,7 @@ header{
     }
 
     .nav-item a{
-        color:#333;
+        color:#777;
     }
 
 }
