@@ -7,12 +7,18 @@ use App\Models\Schedule;
 
 class SchedulesController extends Controller
 {
-    public function index(){
+    public function currentMonth(){
         $now=date('Y-m');
         
         $schedules = Schedule::where('date','like',$now.'%')->orderBy('date')->get();
 
         return view('schedules.index',compact('schedules'));
+    }
+
+    public function index(){
+        $schedules = Schedule::orderBy('date')->paginate(20);
+
+        return view('schedules.all',compact('schedules'));
     }
 
     public function create(){

@@ -10,6 +10,10 @@
     @include('commons.info')
 
     <p class="small center">{!! link_to_route('info.index','show all infomations') !!}</p>
+
+    @if(Auth::id() === 1)
+        {!! link_to_route('users','users list',[],['class'=>'delete']) !!}
+    @endif
 </div>
 
 @else

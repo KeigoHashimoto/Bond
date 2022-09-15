@@ -1,5 +1,3 @@
-<div class=" main schedule">
-    <h1 class="center">this month Schedules</h1>
 
     @if($schedules->isEmpty())
         <p class="center empty">予定を登録してください。</p>
@@ -20,5 +18,5 @@
                 </div>
             </div>
         @endforeach
+
     @endif
-</div>

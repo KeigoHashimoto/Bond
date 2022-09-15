@@ -21,8 +21,10 @@
     @endif
 
     {!! link_to_route('home','topへ',[],['class'=>'block center']) !!}
+
+    <a  class="add" href={{ route('board.create') }} ><i  class="fas fa-plus-square"></i></a>
+
 </div>
 
 
-<div class="add">{!! link_to_route('board.create','+',[],['class'=>'add-icon']) !!}</div>
 @endsection

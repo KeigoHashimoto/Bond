@@ -131,15 +131,10 @@ a:hover{
 
 .add{
     position:fixed;
-    bottom: 3rem;
-    right:3rem;
-    width: 50px;
-    height: 50px;
-    background: #82d9d9b4;
-    border-radius:100%;
-    font-size:2rem;
+    bottom: 5rem;
+    right:5rem;
+    font-size:3rem;
     cursor:pointer;
-    text-align: center;
 }
 
 .add-icon{

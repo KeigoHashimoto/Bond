@@ -36,6 +36,9 @@ Route::post('/login',[App\Http\Controllers\LoginController::class,'auth'])
 
     //board
 Route::group(['middleware'=>['auth']],function(){
+    Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
+        ->name('users');
+
     Route::get('/boards',[App\Http\Controllers\BulletinBoardsController::class,'index'])
         ->name('board.index');
     Route::get('/boards/create',[App\Http\Controllers\BulletinBoardsController::class,'create'])
@@ -53,8 +56,10 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('schedule.create');
     Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
         ->name('schedule.post');
-    Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'index'])
-        ->name('schedule.index');
+    Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
+        ->name('schedule.current');
+    Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])
+        ->name('schedules.all');
     Route::get('/schedules/{id}/edit',[App\Http\Controllers\SchedulesController::class,'edit'])
         ->name('schedule.edit');
     Route::put('/schedules/{id}/update',[App\Http\Controllers\SchedulesController::class,'update'])
