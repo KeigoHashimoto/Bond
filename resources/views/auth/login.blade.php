@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main">
-    <div class="come-in-form form">
+    <div class="home">
         <h1 class="center">ログイン</h1>
 
         {{ Form::open(['route'=>'auth']) }}
@@ -19,5 +18,5 @@
 
         {{ link_to_route('register','新規登録',[],['class'=>'center black-link']) }}
     </div>
-</div>
+
 @endsection

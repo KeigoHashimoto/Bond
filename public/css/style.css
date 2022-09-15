@@ -272,6 +272,7 @@ header{
 
 .home{
     max-width:400px;
+    width: 90%;
     margin:3rem auto;
     background: #fff;
     padding: 10rem 0;
@@ -376,14 +377,6 @@ header{
     font-weight:bold;
 }
 
-.come-in-form{
-    width: 70%;
-    padding: 3rem 2rem;
-    margin: 0 auto;
-    background: #fff;
-    border-radius:10px;
-    box-shadow:2px 2px 10px #999;
-}
 
 /* board-index */
 .small{
