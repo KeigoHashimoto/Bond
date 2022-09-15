@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="main">
-    <h1 class="center">掲示板一覧</h1>
+    <h1 class="center">Discussion Board</h1>
     
     @if($boards->isEmpty())
-        <p class="center empty">まだ掲示板がありません。</p>
+        <p class="center empty">まだボードがありません。</p>
     @else
         @foreach ($boards as $board)
             <div class="board-title-card">

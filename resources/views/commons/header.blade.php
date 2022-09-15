@@ -12,7 +12,7 @@
             <li class="nav-item">{!! link_to_route('board.index','Discussion',[]) !!}</li>
             <li class="nav-item">{!! link_to_route('schedule.index','Schedule',[]) !!}</li>
             <li class="nav-item">{!! link_to_route('info.create','addInfo',[]) !!}</li>
-            <li class="nav-item">{!! link_to_route('logout','ログアウト',[]) !!}</li>
+            <li class="nav-item">{!! link_to_route('logout','Logout ',[]) !!}</li>
         </ul>
 
     </nav>

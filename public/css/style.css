@@ -507,6 +507,7 @@ header{
     background: #bbb;
     width:fit-content;
     padding: 0 1rem;
+    cursor:pointer;
 }
 
 #readed-users{
