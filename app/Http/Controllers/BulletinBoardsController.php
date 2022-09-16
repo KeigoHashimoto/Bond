@@ -65,4 +65,17 @@ class BulletinBoardsController extends Controller
 
         return redirect('/boards');
     }
+
+    public function destroy($id){
+        if(\Auth::check()){
+            if(\Auth::id() === 1){
+                $board = BulletinBoard::findOrFail($id);
+    
+                $board->delete();
+
+                return back();
+            }    
+        }
+
+    }
 }

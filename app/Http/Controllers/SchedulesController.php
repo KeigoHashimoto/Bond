@@ -9,10 +9,10 @@ class SchedulesController extends Controller
 {
     public function currentMonth(){
         $now=date('Y-m');
-        
+
         $schedules = Schedule::where('date','like',$now.'%')->orderBy('date')->get();
 
-        return view('schedules.index',compact('schedules'));
+        return view('schedules.index',compact('schedules',));
     }
 
     public function index(){

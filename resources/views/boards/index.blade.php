@@ -16,7 +16,11 @@
                 <div>
                     {!! link_to_route('board.show',$board->title,[$board->id],['class'=>'board-title']) !!}
                 </div>
+                {{ Form::open(['route'=>['board.delete',$board->id],'method'=>'delete']) }}
+                    {{ Form::submit('削除',['class'=>'delete']) }}
+                {{ Form::close() }}
             </div>
+            
         @endforeach
     @endif
 

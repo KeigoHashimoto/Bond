@@ -47,6 +47,8 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('board.post');
     Route::get('/board/{id}/show',[App\Http\Controllers\BulletinBoardsController::class,'show'])
         ->name('board.show');
+    Route::delete('/board/{id}/delete',[App\Http\Controllers\BulletinBoardsController::class,'destroy'])
+        ->name('board.delete');
 
     Route::post('/{id}/opinions',[App\Http\Controllers\OpinionsController::class,'store'])
         ->name('opinion.post');

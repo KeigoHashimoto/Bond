@@ -115,9 +115,7 @@ a:hover{
     border-radius:5px;
     border:none;
     cursor:pointer;
-    font-size:0.8rem;
-    display:block;
-    width: fit-content;
+    font-size:.8rem;
 }
 
 .add-text{
@@ -164,6 +162,10 @@ a:hover{
     color:var(--main);
     margin-left: 0.5rem;
 }
+
+.fa-clock{
+    margin-right: .5rem;
+}
 /* css */
 
 .center{
@@ -190,7 +192,7 @@ header{
 
 @media screen and (max-width:540px){
     .logo{
-        font-size:2em;
+        font-size:1.3em;
     }
 }
 
@@ -220,7 +222,6 @@ header{
     #nav-list{
         flex-direction:column;
         background: #fff;
-        border:3px solid #777;
         padding:1rem;
         display:none;
         border-radius:5px;
@@ -333,7 +334,7 @@ header{
     border-radius:5px;
     color:#fff;
     display:block;
-    padding:5px 0;
+    padding:7px 0;
 }
 
 .board-form{
@@ -440,12 +441,12 @@ header{
     height: 100%;
     width:30%;
     position:fixed;
+    overflow-y:scroll;
     font-size:.8rem;
     left: 0;
     top: 0;
     background:rgba(255, 255, 255);
     display:none;
-    padding-top: 10%;
     z-index: 3;
 }
 
@@ -462,12 +463,18 @@ header{
 /* schedules */
 
 .schedules-text{
-    text-align: center;
+    width:fit-content ;
     color:#333;
     margin: 0;
 }
 
-
+.days{
+    width: fit-content;
+    padding:.2rem .5rem;
+    background: #333;
+    color:#fff;
+    margin-bottom: .5rem;
+}
 
 .schedule-wrap{
     display: flex;
