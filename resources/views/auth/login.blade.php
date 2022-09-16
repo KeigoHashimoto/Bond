@@ -13,7 +13,10 @@
                 {{ Form::label('password','password',['class'=>'label']) }}
                 {{ Form::password('password',['class'=>'form-control']) }}
             </div>
-            {{ Form::submit('ログイン',['class'=>'submit-btn']) }}
+            <div class="submit-btn">
+                {{ Form::submit('ログイン') }}
+            </div>
+            
         {{ Form::close() }}
 
         {{ link_to_route('register','新規登録',[],['class'=>'center black-link']) }}
