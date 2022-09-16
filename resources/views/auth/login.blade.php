@@ -14,7 +14,7 @@
                 {{ Form::password('password',['class'=>'form-control']) }}
             </div>
             <div class="submit-btn">
-                {{ Form::submit('ログイン') }}
+                {{ Form::submit('ログイン',['class'=>'white']) }}
             </div>
             
         {{ Form::close() }}

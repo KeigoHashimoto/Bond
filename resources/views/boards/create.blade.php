@@ -17,7 +17,7 @@
             </div>
 
             <div class="submit-btn">
-                {{ Form::submit('lets la done') }}
+                {{ Form::submit('lets la done',['class'=>'white']) }}
             </div>
 
         {{ Form::close() }}
