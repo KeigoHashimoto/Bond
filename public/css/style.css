@@ -335,7 +335,6 @@ header{
 }
 
 .submit-btn{
-    display: block;
     background: var(--submit);
     color:#fff;
     width: fit-content;
@@ -380,6 +379,7 @@ header{
 .form-group{
     display: flex;
     flex-direction: column;
+    display: block;
     margin: 1rem auto;
     width: 70%;
 }
