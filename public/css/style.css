@@ -326,16 +326,15 @@ header{
     margin:0 auto;
 }
 
-.submit{
-    width: 70%;
-    margin:1rem auto;
+.submit-btn{
+    display: block;
     background: var(--submit);
-    border:none;
-    border-radius:2px;
     color:#fff;
-    display:block;
-    padding:7px 0;
-    font-size:1.5rem;
+    width: fit-content;
+    padding:5px 5rem;
+    border:none;
+    margin: 1.5rem auto;
+    border-radius:2px;
 }
 
 .board-form{

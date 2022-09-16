@@ -16,7 +16,7 @@
                 {{ Form::textarea('info',null,['class'=>'textarea']) }}
             </div>
 
-            {{ Form::submit('regist',['class'=>'submit']) }}
+            {{ Form::submit('regist',['class'=>'submit-btn']) }}
         {{ Form::close() }}
     </div>
     
