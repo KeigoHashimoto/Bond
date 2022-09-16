@@ -19,7 +19,9 @@
                 {{ Form::text('content',null,['class'=>'form-control']) }}
             </div>
 
-            {{ Form::submit('regist',['class'=>'submit-btn']) }}
+            <div class="submit-btn">
+                {{ Form::submit('regist') }}
+            </div>
         {{ Form::close() }}
     </div>
     

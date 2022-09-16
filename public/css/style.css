@@ -8,6 +8,14 @@ body{
     font-family: 'Sawarabi Gothic', sans-serif;
 }
 
+input{
+    border:none;
+    border-radius:none;
+    background: none;
+    color:#fff;
+    font-size:1rem;
+}
+
 :root{
     --main:#6FBFBF;
     --submit:#0367A6;

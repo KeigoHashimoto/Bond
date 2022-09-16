@@ -16,7 +16,10 @@
                 {{ Form::textarea('content',null,['class'=>'textarea']) }}
             </div>
 
-            {{ Form::submit('lets la done',['class'=>'submit-btn']) }}
+            <div class="submit-btn">
+                {{ Form::submit('lets la done') }}
+            </div>
+
         {{ Form::close() }}
     </div>
     

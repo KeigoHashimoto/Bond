@@ -22,7 +22,9 @@
                 {{ Form::password('password_confirmation',['class'=>'form-control']) }}
             </div>
 
-            {{ Form::submit('submit',['class'=>'submit-btn']) }}
+            <div class="submit-btn">
+                {{ Form::submit('submit') }}
+            </div>
         {{ Form::close() }}
 
         {{ link_to_route('login','ログイン',[],['class'=>'center']) }}
