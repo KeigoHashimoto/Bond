@@ -16,12 +16,12 @@ class CreateOpinionsTable extends Migration
         Schema::create('opinions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('bulletinBoard_id');
+            $table->unsignedBigInteger('board_id');
             $table->text('opinion');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('bulletinBoard_id')->references('id')->on('bulletinBoards')->onDelete('cascade');
+            $table->foreign('board_id')->references('id')->on('bulletinBoards')->onDelete('cascade');
 
         });
     }

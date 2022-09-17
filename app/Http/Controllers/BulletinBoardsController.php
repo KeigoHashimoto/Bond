@@ -13,12 +13,12 @@ class BulletinBoardsController extends Controller
     public function index(){
         $subQuery=function($query){
             $query->from('opinions')
-                ->select(['bulletinBoard_id','read'])
+                ->select(['board_id','read'])
                 ->selectRaw('max(created_at) as latest_opinion')
-                ->groupBy(['bulletinBoard_id','read']);
+                ->groupBy(['board_id','read']);
         };
 
-        $boards = BulletinBoard::joinSub($subQuery,'opinions','bulletinBoards.id','opinions.bulletinBoard_id')
+        $boards = BulletinBoard::joinSub($subQuery,'opinions','bulletinBoards.id','opinions.board_id')
             ->orderBy('latest_opinion','desc')
             ->get();
 
@@ -29,7 +29,7 @@ class BulletinBoardsController extends Controller
     public function show($id){
         $board=BulletinBoard::findOrFail($id);
 
-        $opinions=Opinion::where('bulletinBoard_id','=',$board->id)
+        $opinions=Opinion::where('board_id','=',$board->id)
             ->orderBy('created_at','desc')
             ->paginate(100);
 
@@ -59,7 +59,7 @@ class BulletinBoardsController extends Controller
         $board->save();
 
         $opinion = new Opinion;
-        $opinion->bulletinBoard_id = $board->id;
+        $opinion->board_id = $board->id;
         $opinion->opinion = "";
         $opinion->save();
 
