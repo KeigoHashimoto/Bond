@@ -19,7 +19,7 @@ class Opinion extends Model
         return $this->belongsTo(User::class);
     } 
 
-    public function board(){
-        return $this->hasMany(BulletinBoard::class);
+    public function bulletinBoard(){
+        return $this->belongsTo(BulletinBoard::class);
     }
 }

@@ -8,7 +8,7 @@
 
 <div class="main">
     <h1 class="center">{{ $board->title }}</h1>
-    <p class="center board-content">{!! nl2br(e($board->content)) !!}</p>
+    <p class="center board-content">{!! nl2br(e($board->content)) !!}<br><span class="small">by {{ $board->user->name }}</span></p>
 
     <p class="small center">議題に沿った話し合いをしてください。<br>
     個人名を出したり、誹謗中傷はしないでください。</p>

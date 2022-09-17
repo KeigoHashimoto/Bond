@@ -31,8 +31,8 @@ class CreateBulletinboardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bulletinboards',function(Blueprint $table){
-            $table->dropForeign('bulletinboards_user_id_foreign');
+        Schema::dropIfExists('bulletinBoards',function(Blueprint $table){
+            $table->dropForeign('bulletinBoards_user_id_foreign');
         });
     }
 }

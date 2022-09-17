@@ -11,9 +11,18 @@
 
     <p class="small center">{!! link_to_route('info.index','show all infomations') !!}</p>
 
+    <h1 class="center">投稿した議題</h1>
+    @include('commons.myBoard')
+
     @if(Auth::id() === 1)
-        {!! link_to_route('users','users list',[],['class'=>'delete']) !!}
+        <div class="admin">
+            <p class="white">管理者メニュー</p>
+            {!! link_to_route('users','users list',[],['class'=>'delete']) !!}
+        </div>
     @endif
+
+
+
 </div>
 
 @else

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Infomation;
 use App\Models\User;
+use App\Models\BulletinBoard;
+use App\Models\Opinion;
 
 class UsersController extends Controller
 {
@@ -16,7 +18,11 @@ class UsersController extends Controller
 
         $infos=Infomation::where('created_at','like',$date.'%')->orderBy('created_at','desc')->paginate(6);
 
-        return view('welcome',compact('user','infos'));
+        $myBoards = BulletinBoard::where('user_id',\Auth::id())
+            ->orderBy('created_at','desc')
+            ->paginate(5);
+
+        return view('welcome',compact('user','infos','myBoards'));
     }
 
     public function users(){
