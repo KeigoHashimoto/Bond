@@ -15,7 +15,9 @@
 
     {{ Form::open(['route'=>['opinion.post',$board->id]]) }}
         {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
-        {{ Form::submit('送信',['class'=>'submit-btn']) }}
+        <div class="submit-btn">
+            {{ Form::submit('送信') }}
+        </div>
     {{ Form::close() }}
 
     @foreach($opinions as $opinion)
