@@ -16,7 +16,7 @@
     {{ Form::open(['route'=>['opinion.post',$board->id]]) }}
         {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
         <div class="submit-btn">
-            {{ Form::submit('送信') }}
+            {{ Form::submit('送信',['class'=>'white']) }}
         </div>
     {{ Form::close() }}
 
