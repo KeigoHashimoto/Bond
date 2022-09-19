@@ -11,6 +11,10 @@ const filter = document.getElementById('filter');
 const readedBtn = document.getElementById('readed-icon');
 const readedUsers = document.getElementById('readed-users');
 
+//admin
+const adminBtns = document.getElementById('admin-btns');
+const admin = document.getElementById('admin');
+
 
 const modal = (btn,content,filter) => {
     $(btn).on('click',(e) => {
@@ -25,8 +29,8 @@ const dropDown = (btn,content) => {
     });
 };
 
-
-dropDown(headerIcon,navList)
+dropDown(admin,adminBtns);
+dropDown(headerIcon,navList);
 modal(schedulesBtn,schedules,filter);
 modal(schedules,schedules,filter)
 modal(filter,schedules,filter);

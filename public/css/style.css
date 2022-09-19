@@ -309,6 +309,19 @@ header{
     margin: 2rem auto;
 }
 
+#admin-btns{
+    display:none;
+}
+
+#admin{
+    border-radius: 5px;
+    background: #333;
+    color:#fff;
+    font-size:.5rem;
+    cursor:pointer;
+    width: fit-content;
+    padding: .2rem 1rem;
+}
 /*board-index*/
 
 .board-title-card{
