@@ -18,7 +18,7 @@ class OpinionsController extends Controller
 
         $opinions = new Opinion;
         $opinions->user_id = $user->id;
-        $opinions->bulletinBoard_id = $board->id;
+        $opinions->board_id = $board->id;
         $opinions->opinion =$request->opinion;
         $opinions->save();
 
