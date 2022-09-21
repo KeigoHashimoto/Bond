@@ -31,7 +31,7 @@
 
     <div class="welcome">
         {{-- {!! link_to_route('register','会員登録',[],['class'=>'welcome-btn']) !!} --}}
-        <p class="center">or</p>
+        {{-- <p class="center">or</p> --}}
         {!! link_to_route('login','ログイン',[],['class'=>'welcome-btn']) !!}
     </div>
 </div>
