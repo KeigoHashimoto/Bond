@@ -7,6 +7,7 @@ use App\Models\BulletinBoard;
 use App\Models\Opinion;
 use App\Models\User;
 use App\Mail\NewOpinion;
+use App\Events\MessageCreated;
 use Illuminate\Support\Facades\Mail;
 
 class OpinionsController extends Controller
@@ -39,7 +40,8 @@ class OpinionsController extends Controller
             $greet = 'こんばんは！';
             $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
         }
-        
+
+        event(new MessageCreated($opinions));
 
         Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
 
