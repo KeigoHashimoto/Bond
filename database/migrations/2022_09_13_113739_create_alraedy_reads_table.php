@@ -32,6 +32,9 @@ class CreateAlraedyReadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reads');
+        Schema::dropIfExists('reads',function(Blueprint $table){
+            $table->dropForeign('reads_user_id_foreign');
+            $table->dropForeign('reads_info_id_foreign');
+        });
     }
 }

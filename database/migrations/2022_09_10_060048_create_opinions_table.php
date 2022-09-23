@@ -33,6 +33,9 @@ class CreateOpinionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opinions');
+        Schema::dropIfExists('opinions',function(Blueprint $table){
+            $table->dropForeign('opinions_user_id_foreign');
+            $table->dropForeign('opinions_board_id_foreign');
+        });
     }
 }

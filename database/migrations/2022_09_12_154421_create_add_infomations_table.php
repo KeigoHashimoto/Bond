@@ -31,6 +31,8 @@ class CreateAddInfomationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('infomations');
+        Schema::dropIfExists('infomations',function(Blueprint $table){
+            $table->dropForeign('infomations_user_id_foreign');
+        });
     }
 }

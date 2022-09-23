@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Office;
 
 class BulletinBoard extends Model
 {
@@ -22,6 +23,10 @@ class BulletinBoard extends Model
 
     public function opinions(){
         return $this->hasMany(Opinion::class);
+    }
+
+    public function office(){
+        return $this->belongsTo(Office::class);
     }
 
 }

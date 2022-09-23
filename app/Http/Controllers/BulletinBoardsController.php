@@ -56,6 +56,7 @@ class BulletinBoardsController extends Controller
         $board->title = $request->title;
         $board->content = $request->content;
         $board->user_id = \Auth::user()->id;
+        $board->office_id = $request->office_id;
         $board->save();
 
         $opinion = new Opinion;

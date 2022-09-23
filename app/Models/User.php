@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\BulletinBoard;
 use App\Models\Opinion;
 use App\Models\Infomation;
+use App\Models\Office;
 
 class User extends Authenticatable
 {
@@ -80,5 +81,24 @@ class User extends Authenticatable
 
     public function is_already($infoId){
         return $this->reads()->where('info_id',$infoId)->exists();
+    }
+
+    public function affiliations(){
+        return $this->belongsToMany(Office::class,'affiliations','user_id','office_id');
+    }
+
+    public function join($officeId){
+        $exists=$this->is_joined($officeId);
+
+        if($exists){
+            return false;
+        }else{
+            $this->affiliations()->attach($officeId);
+            return true;
+        }
+    }
+
+    public function is_joined($officeId){
+        return $this->affiliations()->where('office_id',$officeId)->exists();
     }
 }

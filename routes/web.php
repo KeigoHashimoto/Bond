@@ -78,4 +78,14 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('info.show');
     Route::get('/info',[App\Http\Controllers\InfomationsController::class,'index'])
         ->name('info.index');
+
+    //office
+    Route::get('/office/create',[App\Http\Controllers\OfficesController::class,'create'])
+        ->name('office.create');
+    Route::post('/office/store',[App\Http\Controllers\OfficesController::class,'store'])
+        ->name('office.post');
+    Route::get('/office',[App\Http\Controllers\OfficesController::class,'index'])
+        ->name('office.index');
+    Route::get('/office/{id}/show',[App\Http\Controllers\OfficesController::class,'show'])
+        ->name('office.show');
 });
