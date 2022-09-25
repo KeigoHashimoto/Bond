@@ -9,11 +9,15 @@
         {{ Form::open(['route'=>'info.post']) }}
             <div class="make-title">
                 {{ Form::label('title','タイトル') }}
-                {{ Form::text('title',null,['class'=>'form-control']) }}
+                {{ Form::text('title','【管理者】',['class'=>'form-control']) }}
             </div>
             <div class="make-title">
                 {{ Form::label('info','内容') }}
                 {{ Form::textarea('info',null,['class'=>'textarea']) }}
+            </div>
+            <div class="make-title">
+                {{ Form::label('info','グループID') }}
+                {{ Form::text('office_id',null,['class'=>'form-control','readonly']) }}
             </div>
 
             <div class="submit-btn">
@@ -24,4 +28,5 @@
     
     {!! link_to_route('home','topに戻る',[],['class'=>'center']) !!}
 </div>
+
 @endsection
