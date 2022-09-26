@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use App\Models\Office;
 
 class SchedulesController extends Controller
 {
     public function currentMonth(){
         $now=date('Y-m');
 
-        $schedules = Schedule::where('date','like',$now.'%')->orderBy('date')->get();
+        $schedules = Schedule::where('date','like',$now.'%')
+            ->orderBy('date')
+            ->get();
 
         return view('schedules.index',compact('schedules',));
     }
@@ -22,7 +25,9 @@ class SchedulesController extends Controller
     }
 
     public function create(){
-        return view('schedules.create');
+        $office = new Office;
+
+        return view('schedules.create',compact('office'));
     }
 
     public function store(Request $request){
@@ -36,9 +41,10 @@ class SchedulesController extends Controller
         $schedule->content=$request->content;
         $schedule->time=$request->time;
         $schedule->user_id = $user->id;
+        $schedule->office_id = $request->office_id;
         $schedule->save();
 
-        return view('schedules.complete',compact('schedule'));
+        return back();
     }
 
     public function edit($id){

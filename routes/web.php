@@ -38,7 +38,7 @@ Route::post('/login',[App\Http\Controllers\LoginController::class,'auth'])
 Route::group(['middleware'=>['auth']],function(){
     Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
         ->name('users');
-
+        
     Route::get('/boards',[App\Http\Controllers\BulletinBoardsController::class,'index'])
         ->name('board.index');
     Route::get('/boards/create',[App\Http\Controllers\BulletinBoardsController::class,'create'])
@@ -54,10 +54,10 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('opinion.post');
 
     //schedule
-    Route::get('/schedules/create',[App\Http\Controllers\SchedulesController::class,'create'])
-        ->name('schedule.create');
     Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
         ->name('schedule.post');
+    Route::get('/schedules/create',[App\Http\Controllers\SchedulesController::class,'create'])
+        ->name('schedule.create');
     Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
         ->name('schedule.current');
     Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])

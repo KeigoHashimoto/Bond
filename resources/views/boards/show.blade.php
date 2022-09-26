@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="schedules-icon">
-    <i class="far fa-calendar-alt"></i>
+    <i class="fas fa-calendar-alt"></i>
 </div>
 
 <div class="main">

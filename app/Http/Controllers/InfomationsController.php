@@ -21,10 +21,16 @@ class InfomationsController extends Controller
         $info=new Infomation;
         $info->title=$request->title;
         $info->info=$request->info;
+        $info->office_id = $request->office_id;
         $info->user_id=\Auth::id();
         $info->save();
 
-        return redirect('/');
+        if(!$info->exists('office_id')){
+            return redirect('/');
+        }else{
+            return back();
+        }
+
     }
 
     public function show($id){

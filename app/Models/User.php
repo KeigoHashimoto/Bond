@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\User;
+use App\Models\Schedule;
 use App\Models\BulletinBoard;
 use App\Models\Opinion;
 use App\Models\Infomation;
@@ -56,7 +57,7 @@ class User extends Authenticatable
     }
 
     public function schedules(){
-        return $this->hasMany(Shedule::class);
+        return $this->hasMany(Schedule::class);
     }
 
     public function infomations(){

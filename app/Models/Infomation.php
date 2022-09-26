@@ -25,4 +25,8 @@ class Infomation extends Model
         return  $this->belongsToMany(User::class,'reads','info_id','user_id');
     }
 
+    public function office(){
+        return $this->belongsTo(Office::class);
+    }
+
 }

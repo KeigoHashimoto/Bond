@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\BulletinBoard;
 use App\Models\Opinion;
 use App\Models\User;
+use App\Models\Office;
 use App\Models\Schedule;
 
 class BulletinBoardsController extends Controller
@@ -37,8 +38,7 @@ class BulletinBoardsController extends Controller
 
         $date=date('Y-m');
 
-        $schedules = Schedule::where('date','like',$date.'%')->orderBy('date')->get();
-        
+        $schedules = Schedule::where('date','like',$date.'%')->orderBy('date')->get();        
 
         return view('boards.show',compact('board','opinions','new','schedules'));
     }
@@ -64,7 +64,12 @@ class BulletinBoardsController extends Controller
         $opinion->opinion = "";
         $opinion->save();
 
-        return redirect('/boards');
+        if(!empty($board->office_id)){
+            return back();
+        }else{
+            return redirect('/boards');
+        }
+
     }
 
     public function destroy($id){

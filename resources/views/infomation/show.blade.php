@@ -12,12 +12,24 @@
         <div id="readed-icon">Readed ></div>
         <div id="readed-users">
             @foreach($all_users as $all_user)
-                @if($all_user->is_already($info->id))
-                    <p>{{ $all_user->name }}<i class="fas fa-check"></i></p>
-                @else
-                    <p>{{ $all_user->name }}</p>
+                @if($all_user->is_joined($info->office_id))
+                    @if($all_user->is_already($info->id))
+                        <p>{{ $all_user->name }}<i class="fas fa-check"></i></p>
+                    @else
+                        <p>{{ $all_user->name }}</p>
+                    @endif
                 @endif
             @endforeach
+
+            @if(empty($info->office_id))
+                @foreach($all_users as $all_user)
+                        @if($all_user->is_already($info->id))
+                            <p>{{ $all_user->name }}<i class="fas fa-check"></i></p>
+                        @else
+                            <p>{{ $all_user->name }}</p>
+                        @endif          
+                @endforeach
+            @endif
         </div>
     </div>
 </div>

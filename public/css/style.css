@@ -8,6 +8,16 @@ body{
     font-family: 'Sawarabi Gothic', sans-serif;
 }
 
+.errors{
+    max-width:800px;
+    width: 80%;
+    margin: 0 auto;
+    background: var(--danger);
+    color:#fff;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
 input{
     border:none;
     border-radius:none;
@@ -370,7 +380,7 @@ header{
     background: var(--submit);
     color:#fff;
     width: fit-content;
-    padding:5px 5rem;
+    padding:2px 5rem;
     border:none;
     margin: 1.5rem auto;
     border-radius:5px;
@@ -562,3 +572,95 @@ header{
     padding: 2rem;
     display: none;
 }
+
+/* group index*/
+.group{
+    max-width:1000px;
+    width: 80%;
+    margin:2rem auto;
+}
+
+.group-gate{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin:0 auto;
+    border-bottom:2px solid #999;
+    padding: 0.5rem;
+}
+
+.group-label{
+    width: 30%;
+    font-weight:bold;
+}
+
+.group-input{
+    border-radius:5px;
+    border:.4px solid #666;
+    width: 30%;
+    height:1.3rem;
+    margin:0 auto;
+}
+
+.group-btn{
+    width: 20%;
+    background: var(--point);
+    border-radius:5px;
+    padding:5px 0;
+    cursor:pointer;
+    color:#fff;
+}
+
+.joined-group{
+    font-weight:bold;
+}
+
+@media screen and (max-width:540px){
+    .group-gate{
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    .group-label{
+        width: 100%;
+    }
+
+    .group-input{
+        width: 100%;
+    }
+
+    .group-btn{
+        width: 100%;
+    }
+}
+
+/* group show */
+#group{
+    display: flex;
+    justify-content: space-around;
+}
+
+#side-menu{
+    width: 20%;
+    background: #999;
+    padding: 1rem;
+}
+
+#group-contents{
+    width: 75%;
+}
+
+#group h1{
+    font-size:1.2rem;
+    padding:.5rem;
+    background: var(--point);
+    color:#fff;
+    border-radius:5px;
+    margin-top: .5rem  ;;
+}
+
+#side-menu div{
+    background: #fff;
+    border-radius: 0 0 5px 5px;;
+}
+

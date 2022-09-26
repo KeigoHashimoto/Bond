@@ -22,4 +22,12 @@ class Office extends Model
     public function affiliationBoards(){
         return $this->hasMany(BulletinBoard::class);
     }
+
+    public function infomations(){
+        return $this->hasMany(Infomation::class);
+    }
+    
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
+    }
 }

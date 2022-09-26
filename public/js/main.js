@@ -35,3 +35,11 @@ modal(schedulesBtn,schedules,filter);
 modal(schedules,schedules,filter)
 modal(filter,schedules,filter);
 dropDown(readedBtn,readedUsers);
+
+new Vue({
+    el: '#group',
+    data:{
+        activeTab: '',
+        titleTab: '',
+    }
+})

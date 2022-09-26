@@ -1,43 +1,77 @@
 @extends('layouts.app')
 
 @section('content')
+
 @if(\Auth::user()->is_joined($office->id))
-    <h1>group menbers</h1>
-        @foreach($users as $user)
-            <p>{{ $user->name }}</p>
-        @endforeach
+    <h1 class="center">{{ $office->name }}</h1>
 
-    <h1>group discussion</h1>
-        @foreach($users as $user)
-            @foreach($user->boards()->get() as $board)
-                @if($board->office_id == $office->id)
-                    {!! link_to_route('board.show',$board->title,[$board->id]) !!}
-                @endif
-            @endforeach
-        @endforeach
-
-        <h1 class="center">議題の登録</h1>
-        <p class="center">グループ内で話し合いたいことを簡潔に記入して下さい。<br>
-        この掲示板はグループ内でしか公開されません。</p>
-        <div class="board-form">
-            {{ Form::open(['route'=>'board.post']) }}
-                <div class="make-title">
-                    {{ Form::label('title','タイトル') }}
-                    {{ Form::text('title',null,['class'=>'form-control']) }}
-                </div>
-                <div class="make-title">
-                    {{ Form::label('content','内容') }}
-                    {{ Form::textarea('content',null,['class'=>'textarea']) }}
-                </div>
-                <div class="make-title">
-                    {{ Form::label('office_id','グループID') }}
-                    {{ Form::text('office_id',$office->id,['class'=>'form-control']) }}
-                </div>
-                <div class="submit-btn">
-                    {{ Form::submit('lets la done',['class'=>'white']) }}
-                </div>
-            {{ Form::close() }}
+<div id="group">
+    <div id="group-contents">
+        <div v-show="activeTab == 'board'">
+            @include('commons.bulletinboardCreate')
         </div>
+
+        <div v-show="activeTab == 'info'">
+            @include('commons.infoCreate')
+        </div>
+            
+        <div v-show="activeTab == 'schedule'">
+            @include('commons.schedulesCreate')
+        </div>
+
+    </div>
+
+    <div id="side-menu">
+        <h1 v-on:click="titleTab = 'menber'">group menbers</h1>
+        <div v-show="titleTab === 'menber'">
+            @foreach($users as $user)
+                <p>{{ $user->name }}</p>
+            @endforeach
+        </div>
+
+        <h1 v-on:click="titleTab = 'board'">group discussion</h1>
+        <div v-show="titleTab === 'board'">
+            @foreach($users as $user)
+                @foreach($user->boards()->where('office_id',$office->id)->get() as $board)
+                    @if($board->office_id == $office->id)
+                        {!! link_to_route('board.show',$board->title,[$board->id]) !!}
+                    @endif
+                @endforeach
+            @endforeach
+        </div>
+
+        <h1 v-on:click="titleTab = 'info'">group infomation</h1>
+        <div v-show="titleTab === 'info'">
+            @foreach($users as $user)
+                @foreach($user->infomations()->where('office_id',$office->id)->get() as $info)
+                    {!! link_to_route('info.show',$info->title,[$info->id]) !!}
+                @endforeach
+            @endforeach
+        </div>
+
+        <h1 v-on:click="titleTab = 'schedule'">group schedules</h1>
+        <div v-show="titleTab === 'schedule'">
+            @foreach($users as $user)
+                @foreach($user->schedules()->where('office_id',$office->id)->get() as $schedule)
+                    <p>{{ $schedule->date }} | {{ $schedule->time }} | {{ $schedule->content }}</p>
+                @endforeach
+            @endforeach
+        </div>
+        
+
+        <div>
+            <ul>
+                <li v-on:click="activeTab = 'board'">議題の作成</li>
+                <li v-on:click="activeTab = 'info'">連絡事項の作成</li>
+                <li v-on:click='activeTab = "schedule"'>予定の作成</li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+</div>
+
 @else
     <p>正しいパスワードを入力してください。</p>
 @endif
