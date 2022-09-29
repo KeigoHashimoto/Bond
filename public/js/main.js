@@ -39,7 +39,11 @@ dropDown(readedBtn,readedUsers);
 new Vue({
     el: '#group',
     data:{
-        activeTab: '',
-        titleTab: '',
-    }
+        isActive: false,
+        activeTab:'',
+        onOff1:false,
+        onOff2:false,
+        onOff3:false,
+        onOff4:false,
+    },
 })

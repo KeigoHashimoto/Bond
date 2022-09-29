@@ -16,6 +16,17 @@
                 <li class="nav-item">{!! link_to_route('logout','ログアウト ',[]) !!}</li>
             </ul>
 
+            <div class="sarch-container">
+                <div></div>
+
+                <div class='sarch-wrap'>
+                    {{ Form::open(['route'=>'board.index','method'=>'get','class'=>'sarch']) }}
+                        {{ Form::button('<i class="fas fa-search"></i>',['type'=>'submit','class'=>'sarch-btn']) }}
+                        {{ Form::text('keyword',null,['class'=>'sarch-input','placeholder'=>'オープン会議室を検索']) }}
+                    {{ Form::close() }}
+                </div>    
+            </div>
+
         </nav>
     @endif
 

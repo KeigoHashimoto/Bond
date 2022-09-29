@@ -13,8 +13,9 @@
     <p class="small center">議題に沿った話し合いをしてください。<br>
     個人名を出したり、誹謗中傷はしないでください。</p>
 
-    {{ Form::open(['route'=>['opinion.post',$board->id]]) }}
+    {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
         {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
+        {{ Form::file('img_path') }}
         <div class="submit-btn">
             {{ Form::submit('送信',['class'=>'white']) }}
         </div>
@@ -25,6 +26,7 @@
         @if(!empty($opinion->user->name))
             <p class="opinion-user">{{ $opinion->user->name }}</p>
             <p class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}</p>
+            <img src="/uploads/{{ $opinion->img_path }}" alt="" class="opinion-img">
             <p class="opinion-at small">{{ $opinion->created_at }}</p>
         @else
             <p>議論を開始して下さい</p>

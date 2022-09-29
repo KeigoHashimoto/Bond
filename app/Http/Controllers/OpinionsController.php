@@ -15,15 +15,25 @@ class OpinionsController extends Controller
     public function store(Request $request, $id){
         $request->validate([
             'opinion'=>'required|string|max:500',
+            'img_path'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
         ]);
 
         $user=\Auth::user();
         $board = BulletinBoard::findOrFail($id);
 
+        if($file = $request->img_path){
+            $file_name = time() . $file->getClientOriginalName();
+            $file_path = public_path('/uploads/');
+            $file -> move($file_path,$file_name);
+        }else{
+            $file_name="";
+        }
+
         $opinions = new Opinion;
         $opinions->user_id = $user->id;
         $opinions->board_id = $board->id;
-        $opinions->opinion =$request->opinion;
+        $opinions->opinion = $request->opinion;
+        $opinions->img_path = $file_name;
         $opinions->save();
 
         $users=User::get();

@@ -154,7 +154,7 @@ a:hover{
 }
 
 .add-icon{
-    color:#fff;
+    background:#fff;
 }
 
 .fa-calendar-alt{
@@ -237,6 +237,36 @@ header{
 
 #nav-icon{
     display:none;
+}
+
+.sarch-wrap{
+    width: fit-content;
+    padding:.5rem 1rem;
+    background: #fff;
+    border-radius:20px;
+    display: flex;
+}
+
+.sarch-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sarch{
+    display: flex;
+    column-gap:5px;
+}
+
+.sarch-input{
+    border:none;
+}
+
+.sarch-btn{
+    border:none;
+    background: none;
+    color:#888;
+    font-size:1rem;
+    cursor:pointer;
 }
 
 
@@ -419,9 +449,8 @@ header{
 }
 
 .form-group{
-    display: flex;
     flex-direction: column;
-    display: block;
+    display: flex;
     margin: 1rem auto;
     width: 70%;
 }
@@ -498,6 +527,14 @@ header{
     background:rgba(255, 255, 255);
     display:none;
     z-index: 3;
+}
+
+.opinion-img{
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 @media screen and (max-width:540px) {
@@ -644,23 +681,56 @@ header{
     width: 20%;
     background: #999;
     padding: 1rem;
+    height: auto;
+    margin-bottom: 2rem;
 }
 
 #group-contents{
     width: 75%;
 }
 
-#group h1{
+#group h2{
     font-size:1.2rem;
     padding:.5rem;
     background: var(--point);
     color:#fff;
     border-radius:5px;
-    margin-top: .5rem  ;;
+    margin-top: .5rem  ;
+    text-align: center;
+    cursor:pointer;
 }
 
-#side-menu div{
-    background: #fff;
-    border-radius: 0 0 5px 5px;;
+#group h1>p{
+    text-align: center;
 }
+
+.relative{
+    position:relative;
+}
+
+.group-menu-list{
+    background: #fff;
+    border-radius:0 0 5px 5px;
+    color:#333;
+    padding: 1rem;
+    display: none;
+}
+
+.create-menu>ul{
+    list-style:none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.create-menu>ul>li{
+    color:#fff;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.switchActive{
+    display: block;
+}
+
 

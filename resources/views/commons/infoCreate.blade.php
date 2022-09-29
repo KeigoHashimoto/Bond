@@ -1,7 +1,7 @@
 <div class="welcome">
     <h1 class="center">add Infomation</h1>
     <p class="center">連絡事項を登録してください。<br>
-    これはユーザー全員に表示されます。</p>
+    これはグループメンバーに表示されます。</p>
     <div class="schedule-form">
         {{ Form::open(['route'=>'info.post']) }}
             <div class="make-title">

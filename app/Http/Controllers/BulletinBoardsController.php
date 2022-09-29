@@ -11,18 +11,24 @@ use App\Models\Schedule;
 
 class BulletinBoardsController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $subQuery=function($query){
             $query->from('opinions')
-                ->select(['board_id','read'])
+                ->select(['board_id'])
                 ->selectRaw('max(created_at) as latest_opinion')
-                ->groupBy(['board_id','read']);
+                ->groupBy(['board_id']);
         };
 
-        $boards = BulletinBoard::joinSub($subQuery,'opinions','bulletinBoards.id','opinions.board_id')
-            ->orderBy('latest_opinion','desc')
-            ->get();
+        $query = BulletinBoard::joinSub($subQuery,'opinions','bulletinBoards.id','opinions.board_id')
+            ->orderBy('latest_opinion','desc');
 
+        $keyword = $request->input('keyword');
+
+        if(!empty($keyword)){
+            $query->where('title','like',"%{$keyword}%");
+        }
+
+        $boards = $query->get();
 
         return view('boards.index',compact('boards'));
     }
