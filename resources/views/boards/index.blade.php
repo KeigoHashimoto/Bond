@@ -36,7 +36,7 @@
 
     {!! link_to_route('home','topへ',[],['class'=>'block center']) !!}
 
-    <a  class="add" href={{ route('board.create') }} ><i  class="fas fa-plus-square"></i></a>
+    <a  class="add" href={{ route('board.form') }} ><i  class="fas fa-plus-square"></i></a>
 
 </div>
 

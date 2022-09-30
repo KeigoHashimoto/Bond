@@ -8,8 +8,8 @@ use App\Models\User;
 
 class InfomationsController extends Controller
 {
-    public function create(){
-        return view('infomation.create');
+    public function form(){
+        return view('infomation.form');
     }
 
     public function store(Request $request){

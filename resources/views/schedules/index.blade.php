@@ -8,7 +8,7 @@
     
     <p class="small center">{!! link_to_route('schedules.all','show all Schedules') !!}</p>    
 
-    <a  class="add" href={{ route('schedule.create') }} ><i  class="fas fa-plus-square"></i></a>
+    <a  class="add" href={{ route('schedule.form') }} ><i  class="fas fa-plus-square"></i></a>
 </div>
 
 @endsection

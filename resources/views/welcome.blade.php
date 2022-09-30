@@ -5,6 +5,8 @@
 <div class="main">
     <p class="greet">Hello!{{ $user->name }}さん</p>
 
+    {!! link_to_route('user.show','profile',[$user->id]) !!}
+
     <h1 class="center">Infomation</h1>
 
     @include('commons.info')
@@ -25,7 +27,7 @@
         <div class="admin">
             <p class="white">管理者メニュー</p>
             {!! link_to_route('users','users list',[],['class'=>'delete']) !!}
-            {!! link_to_route('info.create','info create',[],['class'=>'delete']) !!}
+            {!! link_to_route('info.form','info create',[],['class'=>'delete']) !!}
         </div>
     @endif
 

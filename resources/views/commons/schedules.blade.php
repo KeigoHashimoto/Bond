@@ -43,6 +43,6 @@
                 </div>
             @endif
         @endforeach
-
+        <div class="add">{{ link_to_route('schedule.form','+add',[]) }}</div>
     @endif
 </div>

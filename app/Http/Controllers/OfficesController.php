@@ -8,10 +8,6 @@ use App\Models\User;
 
 class OfficesController extends Controller
 {
-    public function create(){
-        return view('offices.create');
-    }
-
     public function store(Request $request){
         $request->validate([
             'name'=>'required|string|max:255',
@@ -46,6 +42,10 @@ class OfficesController extends Controller
 
         return view('offices.show',compact('office','user','users'));
 
+    }
+
+    public function form(){
+         return view('offices.form');
     }
 
 }

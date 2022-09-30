@@ -49,8 +49,8 @@ class BulletinBoardsController extends Controller
         return view('boards.show',compact('board','opinions','new','schedules'));
     }
 
-    public function create(){
-        return view('boards.create');
+    public function form(){
+        return view('boards.form');
     }
 
     public function store(Request $request){

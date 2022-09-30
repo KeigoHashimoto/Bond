@@ -35,4 +35,40 @@ class UsersController extends Controller
             return redirect("/");
         }
     }
+
+    public function show($id){
+        $user=User::findOrFail($id);
+
+        return view('users.show',compact('user'));
+    }
+
+    public function create($id){
+        $user=User::findOrFail($id);
+
+        return view('users.create',compact('user'));
+    }
+
+    public function edit(Request $request,$id){
+        $request->validate([
+            'profile'=>'string|max:500',
+            'profile_img'=>'file|image',
+        ]);
+
+        $profile = User::findOrFail($id);
+
+        if($file = $request->profile_img){
+            $fileName = time(). $file->getClientOriginalName();
+            $path = public_path('/uploads/');
+            $file->move($path,$fileName);
+        }else{
+            $fileName = "";
+        }
+
+
+        $profile->profile = $request->profile;
+        $profile->profile_img = $fileName;
+        $profile->save();
+
+        return redirect('/');
+    }
 }

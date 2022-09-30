@@ -5,13 +5,13 @@
                 <div class="board-title-card">
                     <div class="small-content">
                         <p class="small">{{ $board->user->name}}</p>
-                        <p class="small">{{ $board->created_at }}</p>
-                        <p class="small">グループ：{{ $board->office->name }}</p>
-                        <p class="small">所属済みのグループ</p>
+                        <p class="small">{{ $board->office->name }}</p>
                     </div>
                     <div>
                         {!! link_to_route('board.show',$board->title,[$board->id],['class'=>'board-title']) !!}
                     </div>
+                    <p class="small">{{ $board->created_at }}</p>
+
 
                     @if(\Auth::id() === 1)
                         <div id="admin">admin btns</div>
@@ -27,11 +27,12 @@
                 <div class="board-title-card">
                     <div class="small-content">
                         <p class="small">{{ $board->user->name}}</p>
-                        <p class="small">{{ $board->created_at }}</p>
                     </div>
                     <div>
                         {!! link_to_route('board.show',$board->title,[$board->id],['class'=>'board-title']) !!}
                     </div>
+                    <p class="small">{{ $board->created_at }}</p>
+
 
                     @if(\Auth::id() === 1)
                         <div id="admin">admin btns</div>

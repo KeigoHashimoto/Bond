@@ -153,9 +153,6 @@ a:hover{
     cursor:pointer;
 }
 
-.add-icon{
-    background:#fff;
-}
 
 .fa-calendar-alt{
     position:fixed;
@@ -240,7 +237,6 @@ header{
 }
 
 .sarch-wrap{
-    width: fit-content;
     padding:.5rem 1rem;
     background: #fff;
     border-radius:20px;
@@ -250,6 +246,7 @@ header{
 .sarch-container{
     display: flex;
     justify-content: space-between;
+    width: auto;
 }
 
 .sarch{
@@ -308,6 +305,14 @@ header{
         color:#333;
     }
 
+    .sarch-input{
+        font-size:.8rem;
+    }
+
+    .sarch-wrap{
+        background: var(--point);
+    }
+
 }
 /* welcome */
 
@@ -342,7 +347,6 @@ header{
     overflow-y: scroll;
 }
 
-
 .admin{
     padding: 2rem;
     background: #333;
@@ -362,6 +366,7 @@ header{
     width: fit-content;
     padding: .2rem 1rem;
 }
+
 /*board-index*/
 
 .board-title-card{
@@ -733,4 +738,10 @@ header{
     display: block;
 }
 
-
+/* profile */
+.profile-show-image{
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius:50%;
+}

@@ -24,10 +24,10 @@ class SchedulesController extends Controller
         return view('schedules.all',compact('schedules'));
     }
 
-    public function create(){
+    public function form(){
         $office = new Office;
 
-        return view('schedules.create',compact('office'));
+        return view('schedules.form',compact('office'));
     }
 
     public function store(Request $request){

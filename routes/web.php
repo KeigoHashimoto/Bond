@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\UsersController::class,'index'])
     ->name('home');
+Route::get('/{id}/show',[App\Http\Controllers\UsersController::class,'show'])
+    ->name('user.show');
+Route::get('/{id}/create',[App\Http\Controllers\UsersController::class,'create'])
+    ->name('user.create');
+Route::put('/{id}/edit',[App\Http\Controllers\UsersController::class,'edit'])
+    ->name('user.edit');
 
 //register login Route
 Route::get('/register',[App\Http\Controllers\RegisterController::class,'create'])
@@ -41,8 +47,8 @@ Route::group(['middleware'=>['auth']],function(){
         
     Route::get('/boards',[App\Http\Controllers\BulletinBoardsController::class,'index'])
         ->name('board.index');
-    Route::get('/boards/create',[App\Http\Controllers\BulletinBoardsController::class,'create'])
-        ->name('board.create');
+    Route::get('/boards/form',[App\Http\Controllers\BulletinBoardsController::class,'form'])
+        ->name('board.form');
     Route::post('/boards',[App\Http\Controllers\BulletinBoardsController::class,'store'])
         ->name('board.post');
     Route::get('/board/{id}/show',[App\Http\Controllers\BulletinBoardsController::class,'show'])
@@ -56,8 +62,8 @@ Route::group(['middleware'=>['auth']],function(){
     //schedule
     Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
         ->name('schedule.post');
-    Route::get('/schedules/create',[App\Http\Controllers\SchedulesController::class,'create'])
-        ->name('schedule.create');
+    Route::get('/schedules/form',[App\Http\Controllers\SchedulesController::class,'form'])
+        ->name('schedule.form');
     Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
         ->name('schedule.current');
     Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])
@@ -70,8 +76,8 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('schedule.delete');
 
     //infomation
-    Route::get('/info/create',[App\Http\Controllers\InfomationsController::class,'create'])
-        ->name('info.create');
+    Route::get('/info/form',[App\Http\Controllers\InfomationsController::class,'form'])
+        ->name('info.form');
     Route::post('/info/store',[App\Http\Controllers\InfomationsController::class,'store'])
         ->name('info.post');
     Route::get('/info/{id}/show',[App\Http\Controllers\InfomationsController::class,'show'])
@@ -80,12 +86,12 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('info.index');
 
     //office
-    Route::get('/office/create',[App\Http\Controllers\OfficesController::class,'create'])
-        ->name('office.create');
     Route::post('/office/store',[App\Http\Controllers\OfficesController::class,'store'])
         ->name('office.post');
     Route::get('/office',[App\Http\Controllers\OfficesController::class,'index'])
         ->name('office.index');
     Route::get('/office/{id}/show',[App\Http\Controllers\OfficesController::class,'show'])
         ->name('office.show');
+    Route::get('office/form',[App\Http\Controllers\OfficesController::class,'form'])
+        ->name('office.form');
 });

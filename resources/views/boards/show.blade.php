@@ -41,7 +41,7 @@
 
 <div id="schedules" class="board-schedules">
     @include('commons.schedules')
-    <div class="add-text">{!! link_to_route('schedule.create','+add Schedules',[],['class'=>'add-icon']) !!}</div>
+    <div class="add-text">{!! link_to_route('schedule.form','+add Schedules',[],['class'=>'add-icon']) !!}</div>
 </div>
 
 <div id="filter"></div>
