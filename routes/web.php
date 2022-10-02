@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\UsersController::class,'index'])
     ->name('home');
-Route::get('/{id}/show',[App\Http\Controllers\UsersController::class,'show'])
+Route::get('/show/{id}',[App\Http\Controllers\UsersController::class,'show'])
     ->name('user.show');
-Route::get('/{id}/create',[App\Http\Controllers\UsersController::class,'create'])
+Route::get('/create/{id}',[App\Http\Controllers\UsersController::class,'create'])
     ->name('user.create');
-Route::put('/{id}/edit',[App\Http\Controllers\UsersController::class,'edit'])
+Route::put('/edit/{id}',[App\Http\Controllers\UsersController::class,'edit'])
     ->name('user.edit');
 
 //register login Route
@@ -51,9 +51,9 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('board.form');
     Route::post('/boards',[App\Http\Controllers\BulletinBoardsController::class,'store'])
         ->name('board.post');
-    Route::get('/board/{id}/show',[App\Http\Controllers\BulletinBoardsController::class,'show'])
+    Route::get('/board/show/{id}',[App\Http\Controllers\BulletinBoardsController::class,'show'])
         ->name('board.show');
-    Route::delete('/board/{id}/delete',[App\Http\Controllers\BulletinBoardsController::class,'destroy'])
+    Route::delete('/board/delete/{id}',[App\Http\Controllers\BulletinBoardsController::class,'destroy'])
         ->name('board.delete');
 
     Route::post('/{id}/opinions',[App\Http\Controllers\OpinionsController::class,'store'])
@@ -68,11 +68,11 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('schedule.current');
     Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])
         ->name('schedules.all');
-    Route::get('/schedules/{id}/edit',[App\Http\Controllers\SchedulesController::class,'edit'])
+    Route::get('/schedules/edit/{id}',[App\Http\Controllers\SchedulesController::class,'edit'])
         ->name('schedule.edit');
-    Route::put('/schedules/{id}/update',[App\Http\Controllers\SchedulesController::class,'update'])
+    Route::put('/schedules/update/{id}',[App\Http\Controllers\SchedulesController::class,'update'])
         ->name('schedule.update');
-    Route::delete('/schedules/{id}/delete',[App\Http\Controllers\SchedulesController::class,'destroy'])
+    Route::delete('/schedules/delete/{id}',[App\Http\Controllers\SchedulesController::class,'destroy'])
         ->name('schedule.delete');
 
     //infomation
@@ -80,18 +80,19 @@ Route::group(['middleware'=>['auth']],function(){
         ->name('info.form');
     Route::post('/info/store',[App\Http\Controllers\InfomationsController::class,'store'])
         ->name('info.post');
-    Route::get('/info/{id}/show',[App\Http\Controllers\InfomationsController::class,'show'])
-        ->name('info.show');
     Route::get('/info',[App\Http\Controllers\InfomationsController::class,'index'])
         ->name('info.index');
+    Route::get('/info/show/{id}',[App\Http\Controllers\InfomationsController::class,'show'])
+        ->name('info.show');
+
 
     //office
     Route::post('/office/store',[App\Http\Controllers\OfficesController::class,'store'])
         ->name('office.post');
     Route::get('/office',[App\Http\Controllers\OfficesController::class,'index'])
         ->name('office.index');
-    Route::get('/office/{id}/show',[App\Http\Controllers\OfficesController::class,'show'])
-        ->name('office.show');
     Route::get('office/form',[App\Http\Controllers\OfficesController::class,'form'])
         ->name('office.form');
+    Route::get('/office/show/{id}',[App\Http\Controllers\OfficesController::class,'show'])
+        ->name('office.show');
 });

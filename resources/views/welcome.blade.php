@@ -5,7 +5,7 @@
 <div class="main">
     <p class="greet">Hello!{{ $user->name }}さん</p>
 
-    {!! link_to_route('user.show','profile',[$user->id]) !!}
+    <img src="/uploads/profile/{{ $user->profile_img }}" alt="" class="profile-top-image">
 
     <h1 class="center">Infomation</h1>
 
@@ -13,15 +13,6 @@
 
     <p class="small center">{!! link_to_route('info.index','show all infomations') !!}</p>
 
-    <h1 class="center">投稿した議題</h1>
-    @include('commons.myBoard')
-
-    <h1 class="center">所属グループ</h1>
-    @foreach(Auth::user()->affiliations()->get() as $myOffice)
-        <div>
-            {!! link_to_route('office.show',$myOffice->name,[$myOffice->id]) !!}
-        </div>
-    @endforeach
 
     @if(Auth::id() === 1)
         <div class="admin">

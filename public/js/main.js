@@ -37,7 +37,7 @@ modal(filter,schedules,filter);
 dropDown(readedBtn,readedUsers);
 
 new Vue({
-    el: '#group',
+    el: '#app',
     data:{
         isActive: false,
         activeTab:'',
@@ -45,5 +45,7 @@ new Vue({
         onOff2:false,
         onOff3:false,
         onOff4:false,
+        activeProfileTab: 'default',
+        sideSwitch:false,
     },
 })

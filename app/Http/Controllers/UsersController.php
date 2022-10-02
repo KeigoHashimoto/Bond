@@ -18,11 +18,7 @@ class UsersController extends Controller
 
         $infos=Infomation::where('created_at','like',$date.'%')->orderBy('created_at','desc')->paginate(6);
 
-        $myBoards = BulletinBoard::where('user_id',\Auth::id())
-            ->orderBy('created_at','desc')
-            ->paginate(5);
-
-        return view('welcome',compact('user','infos','myBoards'));
+        return view('welcome',compact('user','infos'));
     }
 
     public function users(){
@@ -39,7 +35,11 @@ class UsersController extends Controller
     public function show($id){
         $user=User::findOrFail($id);
 
-        return view('users.show',compact('user'));
+        $myBoards = BulletinBoard::where('user_id',\Auth::id())
+            ->orderBy('created_at','desc')
+            ->paginate(5);
+
+        return view('users.show',compact('user','myBoards'));
     }
 
     public function create($id){
@@ -58,16 +58,29 @@ class UsersController extends Controller
 
         if($file = $request->profile_img){
             $fileName = time(). $file->getClientOriginalName();
-            $path = public_path('/uploads/');
+            $path = public_path('/uploads/profile/');
             $file->move($path,$fileName);
         }else{
-            $fileName = "";
+            $fileName = "default.jpg";
+            $path = public_path('/uploads/profile/');
+        }
+
+        if($file = $request->profile_header){
+            $headerFileName = time() . $file->getClientOriginalName();
+            $path = public_path('/uploads/header/');
+            $file->move($path,$headerFileName);
+        }else{
+            $headerFileName = "default.jpeg";
+            $path = public_path('/uploads/header/');
         }
 
 
         $profile->profile = $request->profile;
         $profile->profile_img = $fileName;
+        $profile->profile_header = $headerFileName;
         $profile->save();
+
+        // dd($profile->profile_header);
 
         return redirect('/');
     }

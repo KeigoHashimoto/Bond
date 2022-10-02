@@ -22,6 +22,10 @@
                 {{ Form::label('profile_img','プロフィール画像') }}
                 {{ Form::file('profile_img',null,['class'=>'form-control']) }}
             </div>
+            <div class="make-title">
+                {{ Form::label('profile_header','プロフィールヘッダー画像') }}
+                {{ Form::file('profile_header',null,['class'=>'form-control']) }}
+            </div>
 
             <div class="submit-btn">
                 {{ Form::submit('regist',['class'=>'white']) }}

@@ -16,6 +16,7 @@ class AddUserProfileColumn extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('profile')->nullable()->default('Hello');
             $table->string('profile_img')->nullable()->default('default.jpg');
+            $table->string('profile_header')->nullable()->default('default.jpeg');
         });
     }
 
@@ -29,6 +30,7 @@ class AddUserProfileColumn extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('profile');
             $table->dropColumn('profile_img');
+            $table->dropColumn('profile_header');
         });
     }
 }
