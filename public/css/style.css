@@ -654,7 +654,7 @@ header{
     margin-top: 2rem;
 }
 
-#readed-icon{
+.readed-btn{
     border-radius:5px;
     background: #bbb;
     width:fit-content;
@@ -662,10 +662,9 @@ header{
     cursor:pointer;
 }
 
-#readed-users{
+.readed-member{
     background: #fff;
     padding: 2rem;
-    display: none;
 }
 
 /* group index*/
@@ -833,6 +832,16 @@ header{
 
 .downmenu-icon{
     display:none;
+}
+
+.group-member{
+    display:block;
+    width:80%;
+    margin: 0 auto;
+    border-bottom:1px solid #999;
+    padding-bottom:.5rem;
+    margin-bottom: 1rem;
+    word-break:break-word;
 }
 
 @media screen and (max-width:900px){

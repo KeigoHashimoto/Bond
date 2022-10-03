@@ -9,27 +9,30 @@
     </div>
 
     <div class="readed">
-        <div id="readed-icon">Readed ></div>
-        <div id="readed-users">
-            @foreach($all_users as $all_user)
-                @if($all_user->is_joined($info->office_id))
-                    @if($all_user->is_already($info->id))
-                        <p>{{ $all_user->name }}<i class="fas fa-check"></i></p>
+        <div class="readed-btn" v-on:click="readActive = !readActive">Readed ></div>
+        <div class="readed-member" v-show="readActive">
+        {{-- この連絡にoffice_idがない場合 --}}
+        @if(empty($info->office_id))
+            @foreach($all_users as $user)
+                @if($user->is_Already($info->id))
+                    <p>{{ $user->name }}<i class="fas fa-check"></i></p>
+                @else
+                    <p>{{ $user->name }}</p>
+                @endif
+            @endforeach
+        @else
+            @foreach($all_users as $user)
+                {{-- 連絡事項のoffice_idのグループにユーザーが入っているかどうか --}}
+                @if($user->is_joined($info->office_id))
+                    {{-- すでに読んだかどうか --}}
+                    @if($user->is_Already($info->id))
+                        <p>{{ $user->name }}<i class="fas fa-check"></i></p>
                     @else
-                        <p>{{ $all_user->name }}</p>
+                        <p>{{ $user->name }}</p>
                     @endif
                 @endif
             @endforeach
-
-            @if(empty($info->office_id))
-                @foreach($all_users as $all_user)
-                        @if($all_user->is_already($info->id))
-                            <p>{{ $all_user->name }}<i class="fas fa-check"></i></p>
-                        @else
-                            <p>{{ $all_user->name }}</p>
-                        @endif          
-                @endforeach
-            @endif
+        @endif
         </div>
     </div>
 </div>

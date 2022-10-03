@@ -2,10 +2,6 @@
 const headerIcon = document.getElementById('nav-icon');
 const navList = document.getElementById('nav-list');
 
-//readed 
-const readedBtn = document.getElementById('readed-icon');
-const readedUsers = document.getElementById('readed-users');
-
 //admin
 const adminBtns = document.getElementById('admin-btns');
 const admin = document.getElementById('admin');
@@ -19,7 +15,6 @@ const dropDown = (btn,content) => {
 
 dropDown(admin,adminBtns);
 dropDown(headerIcon,navList);
-dropDown(readedBtn,readedUsers);
 
 new Vue({
     el: '#app',
@@ -33,5 +28,6 @@ new Vue({
         activeProfileTab: 'default',
         sideSwitch:false,
         modalSwitch:false,
+        readActive:false,
     },
 })
