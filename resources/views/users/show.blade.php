@@ -5,7 +5,7 @@
     <div class="profile-header">
         <img class="profile-header-img" src="uploads/{{ $user->profile_header }}" alt="">
     
-        <img class="profile-show-image" src="uploads/{{ $user->profile_img }}" alt="">
+        <img src="uploads/{{ $user->profile_img }}" alt="" class="profile-top-image">
     
     </div>
     
