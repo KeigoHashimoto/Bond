@@ -17,7 +17,9 @@
         </div>
     
         <div class="profile-edit">
-            {{ link_to_route('user.create','Edit',[$user->id],['class'=>'white']) }}
+            @if(Auth::id() === $user->id)
+                {{ link_to_route('user.create','Edit',[$user->id],['class'=>'white']) }}
+            @endif
         </div>
 
     </div>
