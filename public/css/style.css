@@ -736,11 +736,17 @@ header{
 /* group show */
 #group{
     display: flex;
-    justify-content: space-around;
-    max-width:90%;
+    width:100%;
     margin:0 auto;
 }
 
+#group-contents{
+    width: 75%;
+}
+
+#side-menu{
+    width: 20%;
+}
 
 .group-name{
     max-width:800px;
@@ -770,7 +776,7 @@ header{
     margin: .5rem auto 0;
     text-align: center;
     cursor:pointer;
-    width: 50%;
+    width: 80%;
 }
 
 #group>p{
@@ -779,7 +785,7 @@ header{
 
 .relative{
     position:relative;
-    width: 100%;
+    width: 80%;
     padding:2rem;
     background: #999;
     height: auto;
@@ -842,7 +848,6 @@ header{
     }
 
     .relative{
-        width: 100%;
         position:fixed;
         right: 0;
         height: 100%;
