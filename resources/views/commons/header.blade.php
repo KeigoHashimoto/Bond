@@ -15,7 +15,7 @@
                     <li class="nav-item">{!! link_to_route('office.index','グループ一覧') !!}</li>
                     <li class="nav-item">{!! link_to_route('office.form','グループ作成') !!}</li>
                     <li class="nav-item">{!! link_to_route('logout','ログアウト ',[]) !!}</li>
-                    <li class="nav-item"><a href="{{ route('user.show',Auth::id()) }}"><img src="/home/blackcat-bear/small_community/public/uploads/profile/{{ Auth::user()->profile_img }}" alt="" class="header-img"></a></li>
+                    <li class="nav-item"><a href="{{ route('user.show',Auth::id()) }}"><img src="uploads/profile/{{ Auth::user()->profile_img }}" alt="" class="header-img"></a></li>
                 </ul>
                 
     
