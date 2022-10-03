@@ -738,6 +738,7 @@ header{
     display: flex;
     width:100%;
     margin:0 auto;
+    height:auto;
 }
 
 #group-contents{
@@ -855,14 +856,15 @@ header{
     }
 
     .relative{
-        position:fixed;
+        position:relative;
         right: 0;
         left: 0;
-        height: 100%;
+        height: auto;
         visibility: hidden;
         opacity:0;
         padding: 0;
         width: 100%;
+        display: block;
     }
 
     .sideSwitch{
