@@ -45,9 +45,19 @@
                 <p class="center">まだグループに所属していません</p>
             @else
                 @foreach($user->affiliations()->get() as $myOffice)
-                    <div class="group-label">
-                        {!! link_to_route('office.show',$myOffice->name,[$myOffice->id]) !!}
-                    </div>
+                    @if(Auth::user()->is_joined($myOffice->id))
+                        <div class="group-label">
+                            {!! link_to_route('office.show',$myOffice->name,[$myOffice->id]) !!}
+                        </div>
+                    @else
+                        {{ Form::open(['route'=>['office.show',$myOffice->id],'method'=>'get']) }}
+                            <div class="group-gate">
+                                <p class="group-label">{{ $myOffice->name }} :</p>
+                                {{ Form::text('password',null,['class'=>'group-input','placeholder'=>'パスワードを入力']) }}
+                                {{ Form::submit('join',['class'=>'group-btn']) }}
+                            </div>
+                        {{ Form::close() }}
+                    @endif
                 @endforeach
             @endif
         </div>
