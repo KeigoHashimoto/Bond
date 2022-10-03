@@ -26,13 +26,13 @@
     <div class="opinion">
         @if(!empty($opinion->user->name))
             <div>
-                <img class="opinion-profile-img" src="uploads/{{ $opinion->user->profile_img }}" alt="">
+                <img class="opinion-profile-img" src="../../uploads/{{ $opinion->user->profile_img }}" alt="">
             </div>
             <div class="opinion-contents">
                 <p class="opinion-user">{{ $opinion->user->name }}</p>
                 <p class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}</p>
                 @if(!empty($pinion->img_path))
-                    <img src="uploads/{{ $opinion->img_path }}" alt="" class="opinion-img">
+                    <img src="../../uploads/{{ $opinion->img_path }}" alt="" class="opinion-img">
                 @endif
                 <p class="opinion-at small">{{ $opinion->created_at }}</p>
             </div>
