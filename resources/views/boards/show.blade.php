@@ -31,7 +31,7 @@
             <div class="opinion-contents">
                 <p class="opinion-user">{{ $opinion->user->name }}</p>
                 <p class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}</p>
-                @if(!empty($pinion->img_path))
+                @if(!empty($opinion->img_path))
                     <img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img">
                 @endif
                 <p class="opinion-at small">{{ $opinion->created_at }}</p>
