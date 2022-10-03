@@ -15,7 +15,7 @@
 
     {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
         {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
-        {{ Form::label('imgpath') }}
+        {{ Form::label('img_path','画像：') }}
         {{ Form::file('img_path') }}
         <div class="submit-btn">
             {{ Form::submit('送信',['class'=>'white']) }}
