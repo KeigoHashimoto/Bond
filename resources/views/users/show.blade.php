@@ -3,7 +3,7 @@
 @section('content')
 <div class="profile-wrap">
     <div class="profile-header">
-        <img class="profile-header-img" src="{{ asset('storage/uploads/header/{{ $user->profile_header }}') }}" alt="">
+        <img class="profile-header-img" src="{{ asset('storage/uploads/header/'$user->profile_header) }}" alt="">
     
         <img class="profile-show-image" src="uploads/profile/{{ $user->profile_img }}" alt="">
     
