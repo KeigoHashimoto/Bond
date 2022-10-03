@@ -58,20 +58,20 @@ class UsersController extends Controller
 
         if($file = $request->profile_img){
             $fileName = time(). $file->getClientOriginalName();
-            $path = public_path('/uploads/profile/');
+            $path = public_path('/uploads/');
             $file->move($path,$fileName);
         }else{
             $fileName = "default.jpg";
-            $path = public_path('/uploads/profile/');
+            $path = public_path('/uploads/');
         }
 
         if($file = $request->profile_header){
             $headerFileName = time() . $file->getClientOriginalName();
-            $path = public_path('/uploads/header/');
+            $path = public_path('/uploads/');
             $file->move($path,$headerFileName);
         }else{
             $headerFileName = "default.jpeg";
-            $path = public_path('/uploads/header/');
+            $path = public_path('/uploads/');
         }
 
 
