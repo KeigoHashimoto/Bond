@@ -26,7 +26,7 @@
     <div class="opinion">
         @if(!empty($opinion->user->name))
             <div>
-                <img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt="">
+                <a href="{{ route('user.show',[$opinion->user->id]) }}"><img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt=""></a>
             </div>
             <div class="opinion-contents">
                 <p class="opinion-user">{{ $opinion->user->name }}</p>

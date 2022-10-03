@@ -5,7 +5,7 @@
 <div class="main">
     <p class="greet">Hello!{{ $user->name }}さん</p>
 
-    <img src="uploads/{{ $user->profile_img }}" alt="" class="profile-top-image">
+    <a href="{{ route('user.show',[$user->id])}}"><img src="uploads/{{ $user->profile_img }}" alt="" class="profile-top-image"></a>
     {{ link_to_route('user.create','プロフィールを編集',[$user->id],['class'=>'center small']) }}
 
     <h1 class="center">Infomation</h1>

@@ -690,7 +690,8 @@ header{
     width: 80%;
     font-weight:bold;
     word-break:break-word;
-    margin:0 auto;
+    margin:1rem auto;
+    border-bottom:1px solid #999;
 }
 
 .group-input{
@@ -917,7 +918,7 @@ header{
     position:absolute; 
     left: 1rem;
     bottom:-30%;
-    border:3px solid #F0F3F3;
+    border:5px solid #F0F3F3;
 }
 
 .profile-header-img{

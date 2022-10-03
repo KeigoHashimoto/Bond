@@ -34,7 +34,7 @@
                 <div class="group-menu-contents">
                     <div class="group-menu-list" v-show="activeTab === 'menbers'">
                         @foreach($users as $user)
-                            <p>{{ $user->name }}</p>
+                            {!!  link_to_route('user.show',$user->name,[$user->id]) !!}
                         @endforeach
                     </div>
 
