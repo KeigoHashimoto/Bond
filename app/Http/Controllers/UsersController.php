@@ -51,7 +51,8 @@ class UsersController extends Controller
     public function edit(Request $request,$id){
         $request->validate([
             'profile'=>'string|max:500',
-            'profile_img'=>'file|image',
+            'profile_img'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
+            'profile_header'=>'file|mimes:jpeg,png,jpg,bmb|max:5000'
         ]);
 
         $profile = User::findOrFail($id);

@@ -20,6 +20,9 @@ class OpinionsController extends Controller
 
         $user=\Auth::user();
         $board = BulletinBoard::findOrFail($id);
+        if(!empty($board->office_id)){
+            $office = $board->office;
+        }
 
         if($file = $request->img_path){
             $file_name = time() . $file->getClientOriginalName();
@@ -36,7 +39,13 @@ class OpinionsController extends Controller
         $opinions->img_path = $file_name;
         $opinions->save();
 
-        $users=User::get();
+        if(!empty($board->office_id)){            
+            $users=$office->affiliationUsers()->get();
+        }else{
+            $users=User::get();
+        }
+
+
         $time = date('H');
         $greet;
         $words;

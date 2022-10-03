@@ -587,8 +587,8 @@ header{
 }
 
 .opinion-img{
-    width: 300px;
-    height: 400px;
+    width: 70%;
+    height: auto;
     object-fit: cover;
     display: block;
     margin: 0 auto;

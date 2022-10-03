@@ -32,7 +32,7 @@
                 <p class="opinion-user">{{ $opinion->user->name }}</p>
                 <p class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}</p>
                 @if(!empty($opinion->img_path))
-                    <img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img">
+                    <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img"></a>
                 @endif
                 <p class="opinion-at small">{{ $opinion->created_at }}</p>
             </div>
@@ -48,7 +48,10 @@
 
 
 
-<div id="schedules" class="board-schedules" v-show="modalSwitch">
+<div id="schedules"
+    class="board-schedules" 
+    v-on:click="modalSwitch = !modalSwitch" 
+    v-show="modalSwitch">
     @include('commons.schedules')
     <div class="add-text">{!! link_to_route('schedule.form','+add Schedules',[],['class'=>'add-icon white']) !!}</div>
 </div>
