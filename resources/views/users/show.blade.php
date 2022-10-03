@@ -3,9 +3,9 @@
 @section('content')
 <div class="profile-wrap">
     <div class="profile-header">
-        <img class="profile-header-img" src="public/uploads/header/{{ $user->profile_header }}" alt="">
+        <img class="profile-header-img" src="storage/uploads/header/{{ $user->profile_header }}" alt="">
     
-        <img class="profile-show-image" src="public/uploads/profile/{{ $user->profile_img }}" alt="">
+        <img class="profile-show-image" src="storage/uploads/profile/{{ $user->profile_img }}" alt="">
     
     </div>
     
