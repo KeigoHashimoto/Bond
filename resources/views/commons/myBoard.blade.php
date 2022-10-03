@@ -47,6 +47,6 @@
             @endif
         @endforeach
     @else
-        <p class="center">{{ \Auth::user()->name }}さんはまだ議論を投稿していません</p>
+        <p class="center">{{ $user->name }}さんはまだ議論を投稿していません</p>
     @endif
 </div>
