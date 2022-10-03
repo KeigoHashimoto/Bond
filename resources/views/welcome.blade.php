@@ -6,6 +6,7 @@
     <p class="greet">Hello!{{ $user->name }}さん</p>
 
     <img src="/uploads/profile/{{ $user->profile_img }}" alt="" class="profile-top-image">
+    {{ link_to_route('user.create','プロフィールを編集',[$user->id],['class'=>'center small']) }}
 
     <h1 class="center">Infomation</h1>
 

@@ -22,8 +22,16 @@ class OfficesController extends Controller
         return redirect('/office');
     }
 
-    public function index(){
-        $offices = Office::orderBy('name')->get();
+    public function index(Request $request){
+        $query= Office::orderBy('name');
+
+        $keyword = $request->input('office_keyword');
+
+        if(!empty($keyword)){
+            $query->where('name','like',"%{$keyword}%");
+        }
+
+        $offices = $query->get();
 
         return view('offices.index',compact('offices'));
     }

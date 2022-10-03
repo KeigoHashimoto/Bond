@@ -269,6 +269,24 @@ header{
     margin-top: 0.5rem;
 }
 
+.group-sarch-wrap{
+    padding:.5rem 1rem;
+    background: #fff;
+    border-radius:20px;
+    display: flex;
+    width: 300px;
+    margin: 2rem auto;
+}
+
+.group-sarch{
+    display: flex;
+    column-gap:5px;
+}
+
+.group-sarch-input{
+    border:none;
+}
+
 .sarch{
     display: flex;
     column-gap:5px;
@@ -287,7 +305,7 @@ header{
 }
 
 
-@media screen and (max-width:540px){
+@media screen and (max-width:900px){
     #nav-list{
         flex-direction:column;
         background: #fff;
@@ -422,7 +440,7 @@ header{
 .textarea{
     width: 100%;
     border-radius:5px;
-    margin: 0 auto;
+    margin: .5rem auto;
     display: block;
 }
 
@@ -516,6 +534,12 @@ header{
 .opinion{
     border-bottom:1px solid #666;
     margin-bottom: 1rem;
+    display: flex;
+    column-gap:1rem;
+}
+
+.opinion-contents{
+    width: 80%;
 }
 
 .opinion-user{
@@ -524,11 +548,18 @@ header{
 }
 
 .opinion-content{
-    width: 90%;
+
     overflow-wrap:break-word;
     background: #fff;
     padding:1rem;
-    margin:1rem 1rem;
+    margin:1rem 0;
+}
+
+.opinion-profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
 #filter{
@@ -540,7 +571,6 @@ header{
     right: 0;
     bottom: 0;
     left: 0;
-    display:none;
     z-index: 2;
 }
 
@@ -553,7 +583,6 @@ header{
     left: 0;
     top: 0;
     background:rgba(255, 255, 255);
-    display:none;
     z-index: 3;
 }
 
@@ -641,12 +670,13 @@ header{
 /* group index*/
 .group{
     max-width:1000px;
-    width: 80%;
+    width: 100%;
     margin:2rem auto;
 }
 
 .group-gate{
     display: flex;
+    column-gap:2rem;
     align-items: center;
     width: 80%;
     margin:1rem auto;
@@ -710,20 +740,24 @@ header{
     margin:0 auto;
 }
 
-#group-contents{
-    width: 65%;
-}
 
 .group-name{
     max-width:800px;
     margin:2rem 0;
     border-bottom:5px solid #ccc;
     word-break: break-word;
+    font-size:1.5rem;
 }
 
 .group-greet{
     word-break:break-word;
-    width: 100%;
+    text-align: center;
+    margin: 2rem auto;
+    width: 80%;
+}
+
+#group h1{
+    margin: 1rem;
 }
 
 #group h2{
@@ -735,6 +769,7 @@ header{
     margin: .5rem auto 0;
     text-align: center;
     cursor:pointer;
+    width: 50%;
 }
 
 #group>p{
@@ -751,7 +786,6 @@ header{
 }
 
 .group-menu{
-    max-width:80%;
     margin:0 auto;
 }
 
@@ -760,7 +794,13 @@ header{
     border-radius:0 0 5px 5px;
     color:#333;
     padding: 1rem;
-    display: none;
+    word-break:break-word;
+}
+
+.group-menu-list p{
+    border-bottom:1px solid #999;
+    padding: 1rem 0;
+    margin-bottom: .3rem;
 }
 
 .create-menu>ul{
@@ -784,7 +824,7 @@ header{
     display:none;
 }
 
-@media screen and (max-width:540px){
+@media screen and (max-width:900px){
     #group{
         justify-content: center;
     }
@@ -804,7 +844,7 @@ header{
         width: 100%;
         position:fixed;
         right: 0;
-        height: auto;
+        height: 100%;
         visibility: hidden;
         opacity:0;
         padding: 0;

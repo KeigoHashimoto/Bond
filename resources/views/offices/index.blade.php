@@ -4,6 +4,14 @@
 <div class="group">
     <h1 class="center">グループ一覧</h1>
 
+    <div class="group-sarch-wrap">
+        {{ Form::open(['route'=>'office.index','method'=>'get','class'=>'sarch']) }}
+            {{ Form::button('<i class="fas fa-search"></i>',['type'=>'submit','class'=>'sarch-btn']) }}
+            {{ Form::text('office_keyword',null,['placeholder'=>'グループを検索','class'=>'sarch-input']) }}
+        {{ Form::close() }}
+
+    </div>
+
     @if($offices->isEmpty())
         <p class="center empty">まだグループがありません。</p>
     @else
