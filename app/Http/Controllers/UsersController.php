@@ -35,7 +35,7 @@ class UsersController extends Controller
     public function show($id){
         $user=User::findOrFail($id);
 
-        $myBoards = BulletinBoard::where('user_id',\Auth::id())
+        $myBoards = BulletinBoard::where('user_id',$user->id)
             ->orderBy('created_at','desc')
             ->paginate(5);
 
