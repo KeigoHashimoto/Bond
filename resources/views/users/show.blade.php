@@ -3,9 +3,9 @@
 @section('content')
 <div class="profile-wrap">
     <div class="profile-header">
-        <img class="profile-header-img" src="{{ asset(uploads/header/{{ $user->profile_header }},true)  }}" alt="">
+        <img class="profile-header-img" src="{{ asset(uploads/header/$user->profile_header,true)  }}" alt="">
     
-        <img class="profile-show-image" src="{{ asset(uploads/profile/{{ $user->profile_img }},true) }}" alt="">
+        <img class="profile-show-image" src="{{ asset(uploads/profile/$user->profile_img,true) }}" alt="">
     
     </div>
     
