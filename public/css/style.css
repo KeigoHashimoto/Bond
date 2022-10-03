@@ -802,6 +802,8 @@ header{
     color:#333;
     padding: 1rem;
     word-break:break-word;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .group-menu-list p{
@@ -834,6 +836,7 @@ header{
 @media screen and (max-width:900px){
     #group{
         justify-content: center;
+        flex-direction:column;
     }
 
     #group-contents{
@@ -854,10 +857,12 @@ header{
     .relative{
         position:fixed;
         right: 0;
+        left: 0;
         height: 100%;
         visibility: hidden;
         opacity:0;
         padding: 0;
+        width: 100%;
     }
 
     .sideSwitch{
