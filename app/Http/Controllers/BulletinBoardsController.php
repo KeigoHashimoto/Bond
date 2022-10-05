@@ -38,7 +38,7 @@ class BulletinBoardsController extends Controller
 
         $opinions=Opinion::where('board_id','=',$board->id)
             ->orderBy('created_at','desc')
-            ->paginate(100);
+            ->get();
 
         $new = $opinions->first();
 
