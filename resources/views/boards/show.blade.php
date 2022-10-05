@@ -36,7 +36,7 @@
                         
                         <p class="self-opinion-at small">{{ $opinion->created_at }}</p>
                     </div>
-                    <div>
+                    <div class="opinion-profile">
                         <a href="{{ route('user.show',[$opinion->user->id]) }}"><img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt=""></a>
                         <p class="opinion-user">{{ $opinion->user->name }}</p>
                     </div>

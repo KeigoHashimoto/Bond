@@ -7,10 +7,6 @@
     <div class="schedule-form">
         {{ Form::model($user,['route'=>['user.edit',$user->id],'enctype'=>'multipart/form-data','method'=>'put']) }}
             <div class="make-title">
-                {{ Form::label('email','メール') }}
-                {{ Form::email('email',null,['class'=>'form-control']) }}
-            </div>
-            <div class="make-title">
                 {{ Form::label('name','名前') }}
                 {{ Form::text('name',null,['class'=>'form-control']) }}
             </div>

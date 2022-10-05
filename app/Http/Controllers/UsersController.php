@@ -51,6 +51,7 @@ class UsersController extends Controller
     public function edit(Request $request,$id){
         $request->validate([
             'profile'=>'string|max:500',
+            'name'=>'required|string|max:255',
             'profile_img'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
             'profile_header'=>'file|mimes:jpeg,png,jpg,bmb|max:5000'
         ]);
@@ -77,6 +78,7 @@ class UsersController extends Controller
 
 
         $profile->profile = $request->profile;
+        $profile->name = $request->name;
         $profile->profile_img = $fileName;
         $profile->profile_header = $headerFileName;
         $profile->save();

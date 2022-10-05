@@ -571,9 +571,22 @@ header{
     width: 100%;
 }
 
+.opinion-profile{
+    width: 20%;
+}
+
 .opinion-user{
     font-weight:bold;
     text-align: center;
+}
+
+.opinion-profile-img{
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    object-fit:cover;
+    display: block;
+    margin:0 auto;
 }
 
 .opinion-content{
@@ -582,7 +595,7 @@ header{
     padding:1rem;
     margin:1rem 0;
     border-radius:5px;
-    width: 60%;
+    width: 70%;
 }
 
 .opinion-content-myself{
@@ -592,23 +605,16 @@ header{
     padding:1rem;
     margin:1rem 0;
     margin-left: auto;
-    width:60%;
-}
-
-.opinion-profile-img{
-    width: 70px;
-    height: 70px;
-    border-radius:50%;
-    object-fit:cover;
+    width:70%;
 }
 
 .opinion-at{
-    text-align: left;
+    margin-right: auto;
     width: fit-content;
 }
 
 .self-opinion-at{
-    text-align: right;
+    margin-left: auto;
     width: fit-content;
 }
 
@@ -671,7 +677,6 @@ header{
         font-size:.8rem;
         width:80%;
     }
-
 
 }
 
