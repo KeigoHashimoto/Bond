@@ -66,7 +66,7 @@
 
                     <div class="group-menu-list" v-show="activeTab === 'discussion'">
                         @foreach($users as $user)
-                            @foreach($user->boards()->where('office_id',$office->id)->get() as $board)
+                            @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->get() as $board)
                                 @if($board->office_id == $office->id)
                                     <p>{!! link_to_route('board.show',$board->title,[$board->id]) !!}</p>
                                 @endif
