@@ -17,7 +17,11 @@
             </div>
             <div class="make-title">
                 {{ Form::label('office_id','グループID') }}
-                {{ Form::text('office_id',$office->id,['class'=>'form-control','readonly']) }}
+                @if(!empty($office->id))
+                    {{ Form::text('office_id',$office->id,['class'=>'form-control','readonly']) }}
+                @else
+                    {{ Form::text('office_id',null,['class'=>'form-control','readonly']) }}
+                @endif
             </div>
 
             <div class="submit-btn">

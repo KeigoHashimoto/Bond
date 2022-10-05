@@ -3,28 +3,54 @@
 @section('content')
 
 @if(\Auth::user()->is_joined($office->id))
+
+
 <div class="flex">
     <h1 class="group-name">
          {{ $office->name }}</h1>
-
     <div class='downmenu-icon' v-on:click="sideSwitch = !sideSwitch"><i class="fas fa-caret-down"></i></div>
 </div>
 
+<div id="group" v-on:click="sideSwitch = false">
 
-<div id="group">
-    <div id="group-contents">
+    {{-- mobile sidemenu --}}
+    <div id="side-menu" v-show="sideSwitch">
+        <div class="relative">
+            <h1 class="center">Group Menu</h1>
+            <div class="create-menu">
+                <div class="group-menu-tabs">
+                    <h2 v-on:click="activeTab = 'menbers',sideSwitch = !sideSwitch">group menbers</h2>
+                    <h2 v-on:click="activeTab = 'discussion',sideSwitch = !sideSwitch">group discussion</h2>
+                    <h2 v-on:click="activeTab = 'infomation',sideSwitch = !sideSwitch">group infomation</h2>        
+                    <h2 v-on:click="activeTab = 'schedules',sideSwitch = !sideSwitch">group schedules</h2>    
+                </div>
+                <ul>
+                    <li v-on:click="activeTab = '',sideSwitch = !sideSwitch">グループトップ</li>
+                    <li v-on:click="activeTab = 'board',sideSwitch = !sideSwitch">議題の作成</li>
+                    <li v-on:click="activeTab = 'info',sideSwitch = !sideSwitch">連絡事項の作成</li>
+                    <li v-on:click="activeTab = 'schedule',sideSwitch = !sideSwitch">予定の作成</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="group-contents" v-show="!sideSwitch">
+        {{-- グループ内掲示板 --}}
         <div v-if="activeTab == 'board'">
             @include('commons.bulletinboardCreate')
         </div>
 
+        {{-- グループ内連絡事項 --}}
         <div v-else-if="activeTab == 'info'">
             @include('commons.infoCreate')
         </div>
             
+        {{-- グループ内スケジュール --}}
         <div v-else-if="activeTab == 'schedule'">
             @include('commons.schedulesCreate')
         </div>
 
+        {{-- 選択無し --}}
         <div v-else>
             <h3 class="group-greet greet">Hello!<br>
             {{ $office->name }}のグループに加入しています。</h3>
@@ -66,28 +92,31 @@
                 </div>
             </div>
         </div>
+
     </div>
 
-    <div id="side-menu">
-        <div class="relative" 
-        v-bind:class="{sideSwitch:sideSwitch}">
+    {{-- desktop-sidemenu --}}
+
+    <div id="sidemenu-desktop">
+        <div class="relative">
             <h1 class="center">Group Menu</h1>
             <div class="create-menu">
                 <div class="group-menu-tabs">
-                    <h2 v-on:click="activeTab = 'menbers',sideSwitch = !sideSwitch">group menbers</h2>
-                    <h2 v-on:click="activeTab = 'discussion',sideSwitch = !sideSwitch">group discussion</h2>
-                    <h2 v-on:click="activeTab = 'infomation',sideSwitch = !sideSwitch">group infomation</h2>        
-                    <h2 v-on:click="activeTab = 'schedules',sideSwitch = !sideSwitch">group schedules</h2>    
+                    <h2 v-on:click="activeTab = 'menbers'">group menbers</h2>
+                    <h2 v-on:click="activeTab = 'discussion'">group discussion</h2>
+                    <h2 v-on:click="activeTab = 'infomation'">group infomation</h2>        
+                    <h2 v-on:click="activeTab = 'schedules'">group schedules</h2>    
                 </div>
                 <ul>
-                    <li v-on:click="activeTab = '',sideSwitch = !sideSwitch">グループトップ</li>
-                    <li v-on:click="activeTab = 'board',sideSwitch = !sideSwitch">議題の作成</li>
-                    <li v-on:click="activeTab = 'info',sideSwitch = !sideSwitch">連絡事項の作成</li>
-                    <li v-on:click="activeTab = 'schedule',sideSwitch = !sideSwitch">予定の作成</li>
+                    <li v-on:click="activeTab = ''">グループトップ</li>
+                    <li v-on:click="activeTab = 'board'">議題の作成</li>
+                    <li v-on:click="activeTab = 'info'">連絡事項の作成</li>
+                    <li v-on:click="activeTab = 'schedule'">予定の作成</li>
                 </ul>
             </div>
         </div>
     </div>
+
 </div>
 
 @else

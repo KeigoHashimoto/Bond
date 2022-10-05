@@ -14,6 +14,14 @@
 
     <p class="small center">{!! link_to_route('info.index','show all infomations') !!}</p>
 
+    <h1 class="center">Affiliation Group</h1>
+
+    <div class="group-wrap">
+        @foreach($user->affiliations()->get() as $office)
+            {!! link_to_route('office.show',$office->name,[$office->id],['class'=>'center']) !!}
+        @endforeach
+    </div>
+
 
     @if(Auth::id() === 1)
         <div class="admin">

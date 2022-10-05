@@ -1,7 +1,3 @@
-//header
-const headerIcon = document.getElementById('nav-icon');
-const navList = document.getElementById('nav-list');
-
 //admin
 const adminBtns = document.getElementById('admin-btns');
 const admin = document.getElementById('admin');
@@ -14,7 +10,7 @@ const dropDown = (btn,content) => {
 };
 
 dropDown(admin,adminBtns);
-dropDown(headerIcon,navList);
+
 
 new Vue({
     el: '#app',
@@ -25,9 +21,16 @@ new Vue({
         onOff2:false,
         onOff3:false,
         onOff4:false,
-        activeProfileTab: 'default',
+        activeProfileTab: 'group',
         sideSwitch:false,
         modalSwitch:false,
         readActive:false,
     },
+})
+
+new Vue({
+    el: '#header',
+    data: {
+        menuSwitch:false,
+    }
 })

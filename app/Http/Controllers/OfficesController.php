@@ -45,7 +45,6 @@ class OfficesController extends Controller
             $user->join($office->id);
         }
 
-
         $users=$office->affiliationUsers()->get();
 
         return view('offices.show',compact('office','user','users'));

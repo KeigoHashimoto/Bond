@@ -14,7 +14,9 @@
     <title>HinodeCommunity</title>
 </head>
 <body>
-    @include('commons.header')
+    <div id="header">
+        @include('commons.header')
+    </div>
     
     @include('commons.error')
     <div id="app">

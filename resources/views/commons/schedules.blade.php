@@ -1,4 +1,5 @@
 <div class="welcome">
+    <h2>Schedules</h2>
     @if($schedules->isEmpty())
         <p class="center empty">予定を登録してください。</p>
     @else
@@ -43,6 +44,5 @@
                 </div>
             @endif
         @endforeach
-        <div class="add">{{ link_to_route('schedule.form','+add',[]) }}</div>
     @endif
 </div>

@@ -46,14 +46,12 @@
     {!! link_to_route('home','topに戻る',[],['class'=>'center']) !!}
 </div>
 
-
-
 <div id="schedules"
     class="board-schedules" 
     v-on:click="modalSwitch = !modalSwitch" 
     v-show="modalSwitch">
     @include('commons.schedules')
-    <div class="add-text">{!! link_to_route('schedule.form','+add Schedules',[],['class'=>'add-icon white']) !!}</div>
+    <div class="add-text">{!! link_to_route('schedule.form','+add Schedules',[$board->id],['class'=>'add-icon white']) !!}</div>
 </div>
 
 <div id="filter" v-on:click="modalSwitch = !modalSwitch" v-show="modalSwitch"></div>

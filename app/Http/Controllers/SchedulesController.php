@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Schedule;
 use App\Models\Office;
+use App\Models\BulletinBoard;
 
 class SchedulesController extends Controller
 {
@@ -24,10 +25,16 @@ class SchedulesController extends Controller
         return view('schedules.all',compact('schedules'));
     }
 
-    public function form(){
-        $office = new Office;
+    public function form($id){
+        $board = BulletinBoard::findOrFail($id);
 
-        return view('schedules.form',compact('office'));
+        if(!empty($board->office_id)){
+            $office=$board->office;
+        }else{
+            $office=null;
+        }
+
+        return view('schedules.form',compact('office','board'));
     }
 
     public function store(Request $request){

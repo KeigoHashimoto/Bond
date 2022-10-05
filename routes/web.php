@@ -62,7 +62,7 @@ Route::group(['middleware'=>['auth']],function(){
     //schedule
     Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
         ->name('schedule.post');
-    Route::get('/schedules/form',[App\Http\Controllers\SchedulesController::class,'form'])
+    Route::get('/schedules/form/{id}',[App\Http\Controllers\SchedulesController::class,'form'])
         ->name('schedule.form');
     Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
         ->name('schedule.current');
