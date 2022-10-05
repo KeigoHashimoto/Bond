@@ -32,9 +32,9 @@
                             @if(!empty($opinion->img_path))
                                 <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="self-opinion-img"></a>
                             @endif
-                    </div>
+                        </div>
                         
-                        <p class="opinion-at small">{{ $opinion->created_at }}</p>
+                        <p class="self-opinion-at small">{{ $opinion->created_at }}</p>
                     </div>
                     <div>
                         <a href="{{ route('user.show',[$opinion->user->id]) }}"><img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt=""></a>
@@ -47,10 +47,12 @@
                     <p class="opinion-user">{{ $opinion->user->name }}</p>
                 </div>
                 <div class="opinion-contents">
-                    <p class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}</p>
-                    @if(!empty($opinion->img_path))
-                        <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img"></a>
-                    @endif
+                    <div class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}
+                        @if(!empty($opinion->img_path))
+                            <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img"></a>
+                        @endif
+                    </div>
+                    
                     <p class="opinion-at small">{{ $opinion->created_at }}</p>
                 </div>
             @endif
