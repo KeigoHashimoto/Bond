@@ -613,7 +613,7 @@ header{
 }
 
 .self-opinion-img{
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     display: block;
@@ -623,7 +623,7 @@ header{
 }
 
 .opinion-img{
-    width: 40%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     display: block;
@@ -661,6 +661,18 @@ header{
     .board-schedules{
         width: 100%;
     }
+    
+    .opinion-content{
+        font-size:.8rem;
+        width: 80%;
+    }
+    
+    .opinion-content-myself{
+        font-size:.8rem;
+        width:80%;
+    }
+
+
 }
 
 .open{
