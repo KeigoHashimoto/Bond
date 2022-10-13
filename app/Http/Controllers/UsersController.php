@@ -68,8 +68,7 @@ class UsersController extends Controller
             //画像を保存
             $file->move($path,$fileName);
         }else{
-            $fileName = "default.jpg";
-            $path = public_path('/uploads/');
+            $fileName = $profile->profile_img;
         }
 
         if($file = $request->profile_header){
@@ -77,8 +76,7 @@ class UsersController extends Controller
             $path = public_path('/uploads/');
             $file->move($path,$headerFileName);
         }else{
-            $headerFileName = "default.jpeg";
-            $path = public_path('/uploads/');
+            $headerFileName = $profile->profile_header;
         }
 
 
