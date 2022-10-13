@@ -58,9 +58,14 @@ class UsersController extends Controller
 
         $profile = User::findOrFail($id);
 
+        //requestの中にprofile_imgがあったら
+
         if($file = $request->profile_img){
+            //file名をつける
             $fileName = time(). $file->getClientOriginalName();
+            //保存先を指定
             $path = public_path('/uploads/');
+            //画像を保存
             $file->move($path,$fileName);
         }else{
             $fileName = "default.jpg";

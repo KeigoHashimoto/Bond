@@ -50,7 +50,7 @@
             @include('commons.schedulesCreate')
         </div>
 
-        {{-- 選択無し --}}
+        {{-- tabの選択無し --}}
         <div v-else>
             <h3 class="group-greet greet">Hello!<br>
             {{ $office->name }}のグループに加入しています。</h3>

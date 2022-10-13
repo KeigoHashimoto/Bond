@@ -14,7 +14,7 @@ class OpinionsController extends Controller
 {
     public function store(Request $request, $id){
         $request->validate([
-            'opinion'=>'required|string|max:500',
+            'opinion'=>'string|max:500',
             'img_path'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
         ]);
 
