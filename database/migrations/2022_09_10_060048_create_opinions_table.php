@@ -17,7 +17,7 @@ class CreateOpinionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('board_id');
-            $table->text('opinion')->nullable();
+            $table->text('opinion')->nullable()->change();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
