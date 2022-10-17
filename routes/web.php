@@ -13,86 +13,111 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\UsersController::class,'index'])
-    ->name('home');
-Route::get('/show/{id}',[App\Http\Controllers\UsersController::class,'show'])
-    ->name('user.show');
-Route::get('/create/{id}',[App\Http\Controllers\UsersController::class,'create'])
-    ->name('user.create');
-Route::put('/edit/{id}',[App\Http\Controllers\UsersController::class,'edit'])
-    ->name('user.edit');
+Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
+    ->name('users');
 
-//register login Route
-Route::get('/register',[App\Http\Controllers\RegisterController::class,'create'])
-    ->middleware('guest')
-    ->name('register');
-Route::post('/register',[App\Http\Controllers\RegisterController::class,'store'])
-    ->middleware('guest')
-    ->name('regist.post');
+    //register login Route
+    Route::middleware(['guest:web'])->group(function(){
+        Route::get('/register',[App\Http\Controllers\RegisterController::class,'create'])
+        ->name('register');
+        Route::post('/register',[App\Http\Controllers\RegisterController::class,'store'])
+            ->name('regist.post');
+        Route::get('/login',[App\Http\Controllers\LoginController::class,'index'])
+            ->name('login');
+        Route::post('/login',[App\Http\Controllers\LoginController::class,'doLogin'])
+            ->name('doLogin');
+    });
 
-Route::get('/login',[App\Http\Controllers\LoginController::class,'index'])
-    ->middleware('guest')
-    ->name('login');
-Route::post('/login',[App\Http\Controllers\LoginController::class,'auth'])
-    ->middleware('guest')
-    ->name('auth');
-    Route::get('/logout',[App\Http\Controllers\LoginController::class,'logout'])
-    ->middleware('auth')
-    ->name('logout');
+    Route::prefix('admin')->name('admin.')->group(function(){
+        Route::middleware(['guest:admin'])->group(function(){
+            Route::get('/register',[App\Http\Controllers\AdminController::class,'create'])
+            ->name('register');
+            Route::post('/register',[App\Http\Controllers\AdminController::class,'store'])
+                ->name('regist.post');
+            Route::get('/login',[App\Http\Controllers\AdminController::class,'index'])
+                ->name('login');
+            Route::post('/login',[App\Http\Controllers\AdminController::class,'doLogin'])
+                ->name('doLogin');
+        });
 
-    //board
-Route::group(['middleware'=>['auth']],function(){
-    Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
-        ->name('users');
-        
-    Route::get('/boards',[App\Http\Controllers\BulletinBoardsController::class,'index'])
-        ->name('board.index');
-    Route::get('/boards/form',[App\Http\Controllers\BulletinBoardsController::class,'form'])
-        ->name('board.form');
-    Route::post('/boards',[App\Http\Controllers\BulletinBoardsController::class,'store'])
-        ->name('board.post');
-    Route::get('/board/show/{id}',[App\Http\Controllers\BulletinBoardsController::class,'show'])
-        ->name('board.show');
-    Route::delete('/board/delete/{id}',[App\Http\Controllers\BulletinBoardsController::class,'destroy'])
-        ->name('board.delete');
+        Route::middleware(['auth:admin'])->group(function(){
+            Route::post('/logout',[App\Http\Controllers\AdminController::class,'logout'])
+            ->name('logout');
+            Route::get('/home',[App\Http\Controllers\AdminController::class,'home'])
+            ->name('home');
 
-    Route::post('/{id}/opinions',[App\Http\Controllers\OpinionsController::class,'store'])
-        ->name('opinion.post');
+            // 掲示板の削除
+            Route::delete('/board/delete/{id}',[App\Http\Controllers\BulletinBoardsController::class,'destroy'])
+            ->name('board.delete');
+            // 管理人からの連絡作成
+            Route::post('/info/store',[App\Http\Controllers\InfomationsController::class,'store'])
+            ->name('info.post');
+            // グループの削除
+            Route::delete('/office/delete/{id}',[App\Http\Controllers\OfficesController::class,'destroy'])
+            ->name('office.delete');
 
-    //schedule
-    Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
-        ->name('schedule.post');
-    Route::get('/schedules/form/{id}',[App\Http\Controllers\SchedulesController::class,'form'])
-        ->name('schedule.form');
-    Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
-        ->name('schedule.current');
-    Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])
-        ->name('schedules.all');
-    Route::get('/schedules/edit/{id}',[App\Http\Controllers\SchedulesController::class,'edit'])
-        ->name('schedule.edit');
-    Route::put('/schedules/update/{id}',[App\Http\Controllers\SchedulesController::class,'update'])
-        ->name('schedule.update');
-    Route::delete('/schedules/delete/{id}',[App\Http\Controllers\SchedulesController::class,'destroy'])
-        ->name('schedule.delete');
+        });
+    });
 
-    //infomation
-    Route::get('/info/form',[App\Http\Controllers\InfomationsController::class,'form'])
-        ->name('info.form');
-    Route::post('/info/store',[App\Http\Controllers\InfomationsController::class,'store'])
-        ->name('info.post');
-    Route::get('/info',[App\Http\Controllers\InfomationsController::class,'index'])
-        ->name('info.index');
-    Route::get('/info/show/{id}',[App\Http\Controllers\InfomationsController::class,'show'])
-        ->name('info.show');
+    Route::middleware(['auth:web'])->group(function(){
+        Route::get('/logout',[App\Http\Controllers\LoginController::class,'logout'])
+        ->name('logout');
+
+        //user
+        Route::get('/', [App\Http\Controllers\UsersController::class,'index'])
+            ->name('home');
+        Route::get('/show/{id}',[App\Http\Controllers\UsersController::class,'show'])
+            ->name('user.show');
+        Route::get('/create/{id}',[App\Http\Controllers\UsersController::class,'create'])
+            ->name('user.create');
+        Route::put('/edit/{id}',[App\Http\Controllers\UsersController::class,'edit'])
+            ->name('user.edit');
+
+        //board
+        Route::get('/boards',[App\Http\Controllers\BulletinBoardsController::class,'index'])
+            ->name('board.index');
+        Route::get('/boards/form',[App\Http\Controllers\BulletinBoardsController::class,'form'])
+            ->name('board.form');
+        Route::post('/boards',[App\Http\Controllers\BulletinBoardsController::class,'store'])
+            ->name('board.post');
+        Route::get('/board/show/{id}',[App\Http\Controllers\BulletinBoardsController::class,'show'])
+            ->name('board.show');
+        Route::post('/{id}/opinions',[App\Http\Controllers\OpinionsController::class,'store'])
+            ->name('opinion.post');
+
+        //schedule
+        Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
+            ->name('schedule.post');
+        Route::get('/schedules/form/{id}',[App\Http\Controllers\SchedulesController::class,'form'])
+            ->name('schedule.form');
+        Route::get('/schedules',[App\Http\Controllers\SchedulesController::class,'currentMonth'])
+            ->name('schedule.current');
+        Route::get('/schedules/all',[App\Http\Controllers\SchedulesController::class,'index'])
+            ->name('schedules.all');
+        Route::get('/schedules/edit/{id}',[App\Http\Controllers\SchedulesController::class,'edit'])
+            ->name('schedule.edit');
+        Route::put('/schedules/update/{id}',[App\Http\Controllers\SchedulesController::class,'update'])
+            ->name('schedule.update');
+        Route::delete('/schedules/delete/{id}',[App\Http\Controllers\SchedulesController::class,'destroy'])
+            ->name('schedule.delete');
+
+        //infomation
+        Route::post('/info/store',[App\Http\Controllers\InfomationsController::class,'store'])
+            ->name('info.post');
+        Route::get('/info',[App\Http\Controllers\InfomationsController::class,'index'])
+            ->name('info.index');
+        Route::get('/info/show/{id}',[App\Http\Controllers\InfomationsController::class,'show'])
+            ->name('info.show');
+
+        //office
+        Route::post('/office/store',[App\Http\Controllers\OfficesController::class,'store'])
+            ->name('office.post');
+        Route::get('/office',[App\Http\Controllers\OfficesController::class,'index'])
+            ->name('office.index');
+        Route::get('office/form',[App\Http\Controllers\OfficesController::class,'form'])
+            ->name('office.form');
+        Route::get('/office/show/{id}',[App\Http\Controllers\OfficesController::class,'show'])
+            ->name('office.show');
+    });
 
 
-    //office
-    Route::post('/office/store',[App\Http\Controllers\OfficesController::class,'store'])
-        ->name('office.post');
-    Route::get('/office',[App\Http\Controllers\OfficesController::class,'index'])
-        ->name('office.index');
-    Route::get('office/form',[App\Http\Controllers\OfficesController::class,'form'])
-        ->name('office.form');
-    Route::get('/office/show/{id}',[App\Http\Controllers\OfficesController::class,'show'])
-        ->name('office.show');
-});

@@ -21,16 +21,6 @@
             {!! link_to_route('office.show',$office->name,[$office->id],['class'=>'center']) !!}
         @endforeach
     </div>
-
-
-    @if(Auth::id() === 1)
-        <div class="admin">
-            <p class="white">管理者メニュー</p>
-            {!! link_to_route('users','users list',[],['class'=>'delete']) !!}
-            {!! link_to_route('info.form','info create',[],['class'=>'delete']) !!}
-        </div>
-    @endif
-
 </div>
 
 @else

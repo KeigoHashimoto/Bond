@@ -1088,6 +1088,15 @@ header{
     }
 }
 
-/* vue transition animation */
+/*admin*/
+.admin-space{
+    background: #fff;
+    border-radius:5px;
+    padding:2rem;
+    margin-bottom: 1rem;
+}
 
-/* name=menu */
+.admin-board-sarch{
+    display: flex;
+    align-items: center;
+}

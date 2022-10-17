@@ -1,16 +1,3 @@
-//admin
-const adminBtns = document.getElementById('admin-btns');
-const admin = document.getElementById('admin');
-
-
-const dropDown = (btn,content) => {
-    $(btn).on('click',() => {
-        $(content).slideToggle();
-    });
-};
-
-dropDown(admin,adminBtns);
-
 
 new Vue({
     el: '#app',

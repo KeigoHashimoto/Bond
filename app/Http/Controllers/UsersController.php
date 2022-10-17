@@ -21,17 +21,6 @@ class UsersController extends Controller
         return view('welcome',compact('user','infos'));
     }
 
-    public function users(){
-        if(\Auth::check()){
-            if(\Auth::id() === 1){
-                $users=User::orderBy('id')->get();
-                return view('users.index',compact('users'));
-            }
-        }else{
-            return redirect("/");
-        }
-    }
-
     public function show($id){
         $user=User::findOrFail($id);
 

@@ -8,10 +8,6 @@ use App\Models\User;
 
 class InfomationsController extends Controller
 {
-    public function form(){
-        return view('infomation.form');
-    }
-
     public function store(Request $request){
         $request->validate([
             'title'=>'required|string|max:255',

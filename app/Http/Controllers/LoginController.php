@@ -12,7 +12,7 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function auth(Request $request){
+    public function doLogin(Request $request){
         $roles=$request->only('email','password');
 
         if(Auth::attempt($roles)){
