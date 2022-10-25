@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Opinion;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -21,9 +22,9 @@ class MessageCreated implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Opinion $opinions)
     {
-        //
+        $this->opinions = $opinions;
     }
 
     /**
@@ -33,6 +34,6 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chat');
+        return new Channel('chat');
     }
 }

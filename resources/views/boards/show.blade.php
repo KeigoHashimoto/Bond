@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="schedules-icon" v-on:click="modalSwitch = !modalSwitch">
-    <i class="fas fa-calendar-alt"></i>
+    <i class="far fa-calendar-alt"></i>
 </div>
 
 <div class="main">
@@ -22,7 +22,9 @@
         </div>
     {{ Form::close() }}
 
-    @foreach($opinions as $opinion)
+    <example-component :board='@json($board)'></example-component>
+
+    {{-- @foreach($opinions as $opinion)
     <div class="opinion">
         @if(!empty($opinion->user->name))
             @if($opinion->user->id === Auth::id())
@@ -63,7 +65,7 @@
             @endif
         @endif
     </div>
-    @endforeach
+    @endforeach --}}
 
     {!! link_to_route('home','topに戻る',[],['class'=>'center']) !!}
 </div>

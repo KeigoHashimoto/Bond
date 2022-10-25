@@ -40,13 +40,11 @@ class BulletinBoardsController extends Controller
             ->orderBy('created_at','desc')
             ->get();
 
-        $new = $opinions->first();
-
         $date=date('Y-m');
 
         $schedules = Schedule::where('date','like',$date.'%')->orderBy('date')->get();        
 
-        return view('boards.show',compact('board','opinions','new','schedules'));
+        return view('boards.show',compact('board','opinions','schedules'));
     }
 
     public function form(){

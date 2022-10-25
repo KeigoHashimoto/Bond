@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
-    ->name('users');
+    Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
+        ->name('users');
 
     //register login Route
     Route::middleware(['guest:web'])->group(function(){
@@ -85,7 +85,12 @@ Route::get('/users',[App\Http\Controllers\UsersController::class,'users'])
         Route::post('/{id}/opinions',[App\Http\Controllers\OpinionsController::class,'store'])
             ->name('opinion.post');
 
-        //schedule
+        //ajax
+        Route::get('/ajax/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
+        Route::get('/ajax/users',[App\Http\Controllers\Ajax\MessagesController::class,'users']);
+        Route::get('/ajax/authUser',[App\Http\Controllers\Ajax\MessagesController::class,'authUser']);
+
+        //scheduleSS
         Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
             ->name('schedule.post');
         Route::get('/schedules/form/{id}',[App\Http\Controllers\SchedulesController::class,'form'])

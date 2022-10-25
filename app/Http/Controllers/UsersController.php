@@ -67,14 +67,11 @@ class UsersController extends Controller
         }else{
             $headerFileName = $profile->profile_header;
         }
-
-
         $profile->profile = $request->profile;
         $profile->name = $request->name;
         $profile->profile_img = $fileName;
         $profile->profile_header = $headerFileName;
         $profile->save();
-
         // dd($profile->profile_header);
 
         return redirect('/');

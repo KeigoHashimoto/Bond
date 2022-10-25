@@ -45,6 +45,7 @@ class OpinionsController extends Controller
             $users=User::get();
         }
 
+        event(new MessageCreated($opinions));
 
         $time = date('H');
         $greet;
@@ -59,8 +60,6 @@ class OpinionsController extends Controller
             $greet = 'こんばんは！';
             $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
         }
-
-        event(new MessageCreated($opinions));
 
         Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
 
