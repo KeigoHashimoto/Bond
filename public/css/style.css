@@ -207,9 +207,14 @@ header{
     background: var(--main);
 }
 
-.logo{
-    font-size:2rem;
+.header-logo{
+    color:#333;
     font-weight:bold;
+    font-size:2rem;
+    text-decoration:none;
+}
+
+.header-logo:hover{
     color:#333;
 }
 
@@ -915,6 +920,23 @@ header{
     padding-bottom:.5rem;
     margin-bottom: 1rem;
     word-break:break-word;
+}
+
+.new-discussion{
+    padding:2rem 0;
+    background: #fff;
+    width: 80%;
+    margin: 0 auto 3rem;
+}
+
+.new-discussion h4{
+    border-bottom:3px solid #ccc;
+    width: 80%;
+    padding:.5rem 0;
+    margin: .5rem auto;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width:900px){

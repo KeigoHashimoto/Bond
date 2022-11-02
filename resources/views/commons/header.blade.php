@@ -1,6 +1,6 @@
 <header>
     <div class="logo">
-        HinodeCommunity
+        {!! link_to_route('home','HinodeCommunity',[],['class' => 'header-logo']) !!}
     </div>
 
     @if(Auth::check())

@@ -56,6 +56,17 @@
             {{ $office->name }}のグループに加入しています。</h3>
             <p class="center">ここでの内容はグループメンバーのみに公開されます。</p>
 
+            <div class="new-discussion" v-show="activeTab === ''" >
+                <h2>最新の議論</h2>
+                @foreach($users as $user)
+                    @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->limit(3)->get() as $board)
+                        @if($board->office_id == $office->id)
+                            <h4 class="center">{!! link_to_route('board.show',$board->title,[$board->id]) !!}</h4>
+                        @endif
+                    @endforeach
+                @endforeach
+            </div>
+
             <div class="group-menu">
                 <div class="group-menu-contents">
                     <div class="group-menu-list" v-show="activeTab === 'menbers'">
