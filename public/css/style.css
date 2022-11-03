@@ -549,7 +549,7 @@ header{
 /* 自分の投稿 */
 .self-opinion{
     display: flex;
-    margin-right: auto;
+    justify-content: flex-end;
     width: 90%;
 }
 
