@@ -363,6 +363,9 @@ header{
 
     .sarch-wrap{
         background: var(--point);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .space{
         display:none;
