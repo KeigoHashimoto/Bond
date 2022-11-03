@@ -314,7 +314,8 @@ header{
 @media screen and (max-width:900px){
     .nav-list{
         flex-direction:column;
-        background: #fff;
+        background: var(--point);
+        color:#fff;
         padding:10rem 0;
         z-index:10;
         position:fixed;
