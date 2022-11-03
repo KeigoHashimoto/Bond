@@ -22935,17 +22935,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
       activeProfileTab: 'group',
       sideSwitch: false,
       modalSwitch: false,
-      readActive: false
-    };
-  }
-}).mount('#app');
-(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
-  data: function data() {
-    return {
+      readActive: false,
       menuSwitch: false
     };
   }
-}).mount('#header');
+}).mount('#app');
 
 /***/ }),
 

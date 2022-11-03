@@ -13,13 +13,10 @@
     <title>HinodeCommunity</title>
 </head>
 <body>
-    <div id="header">
-        @include('commons.header')
-    </div>
-    
+
     @include('commons.error')
     <div id="app">
-
+        @include('commons.header')
         @yield('content')
     </div>
 

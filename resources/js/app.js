@@ -20,15 +20,7 @@ createApp({
             sideSwitch:false,
             modalSwitch:false,
             readActive:false,
+            menuSwitch:false,
         };
     },
 }).mount('#app');
-
-
-createApp({
-    data(){
-        return {
-            menuSwitch:false,
-        }
-    },
-}).mount('#header');
