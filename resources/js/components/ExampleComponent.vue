@@ -6,25 +6,26 @@
             <div v-if="opinion.user_id != null">
                 <div v-if="opinion.board_id === board.id">
                     <!-- 自分の投稿 -->
-                    <div class="self-opinion">
+                    <div class="self-opinion" v-if="opinion.user_id === authUser.id">
 
-                        <div class="self-opinion-content" v-if="opinion.user_id === authUser.id">{{ opinion.opinion }}</div>
+                        <div class="self-opinion-content">{{ opinion.opinion }}</div>
 
                         <div class="self-opinion-profile">
                             <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
                             <p>{{ authUser.name }}</p>
                         </div>
                     </div>
-
-                    <!-- 自分以外の投稿 -->
-                    <div class="opinion">
-                        <div v-for="user in users" :key="user.id">
-                            <div v-if="user.id === opinion.user_id" class="opinion-profile">
-                                <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
-                                <p>{{ user.name }}</p>
+                    <div v-else>
+                        <!-- 自分以外の投稿 -->
+                        <div class="opinion">
+                            <div v-for="user in users" :key="user.id">
+                                <div v-if="user.id === opinion.user_id" class="opinion-profile">
+                                    <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
+                                    <p>{{ user.name }}</p>
+                                </div>
+                
+                                <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                             </div>
-            
-                            <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                         </div>
                     </div>
                 </div>
