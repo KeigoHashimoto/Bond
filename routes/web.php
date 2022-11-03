@@ -86,9 +86,9 @@ use Illuminate\Support\Facades\Route;
             ->name('opinion.post');
 
         //ajax
-        Route::get('/ajax/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
-        Route::get('/ajax/users',[App\Http\Controllers\Ajax\MessagesController::class,'users']);
-        Route::get('/ajax/authUser',[App\Http\Controllers\Ajax\MessagesController::class,'authUser']);
+        Route::get('community-app/ajax/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
+        Route::get('community-app/ajax/users',[App\Http\Controllers\Ajax\MessagesController::class,'users']);
+        Route::get('community-app/ajax/authUser',[App\Http\Controllers\Ajax\MessagesController::class,'authUser']);
 
         //scheduleSS
         Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])

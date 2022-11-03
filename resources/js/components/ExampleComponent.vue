@@ -63,13 +63,13 @@ import axios from 'axios';
         },
         methods:{
             getMessages(){
-                axios.get('/ajax/messages').then(response => this.opinions = response.data);
+                axios.get('community-app/ajax/messages').then(response => this.opinions = response.data);
             },
             getUsers(){
-                axios.get('/ajax/users').then(response => this.users = response.data);
+                axios.get('community-app/ajax/users').then(response => this.users = response.data);
             },
             getAuthUser(){
-                axios.get('/ajax/authUser').then(response => this.authUser = response.data);
+                axios.get('community-app/ajax/authUser').then(response => this.authUser = response.data);
             }, 
         },
         mounted() {
