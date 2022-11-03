@@ -315,7 +315,7 @@ header{
     .nav-list{
         flex-direction:column;
         background: #fff;
-        padding:1rem;
+        padding:10rem;
         z-index:10;
         position:fixed;
         top: 0;
