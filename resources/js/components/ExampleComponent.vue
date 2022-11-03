@@ -63,7 +63,7 @@ import axios from 'axios';
         },
         methods:{
             getMessages(){
-                axios.get('/messages').then(response => this.opinions = response.data);
+                axios.get('/community-app/messages').then(response => this.opinions = response.data);
             },
             getUsers(){
                 axios.get('/users').then(response => this.users = response.data);
