@@ -558,9 +558,9 @@ header{
     height: auto;
     object-fit: cover;
     display: block;
-    margin-left: auto;
-    margin-top: 1rem;
+    margin: 0 auto;
     margin-bottom: 1rem;
+    border-radius:50%;
 }
 
 .self-opinion-profile{

@@ -17,15 +17,13 @@
                     </div>
                     <div v-else>
                         <!-- 自分以外の投稿 -->
-                        <div class="opinion">
-                            <div v-for="user in users" :key="user.id">
-                                <div v-if="user.id === opinion.user_id" class="opinion-profile">
-                                    <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
-                                    <p>{{ user.name }}</p>
-                                </div>
-                
-                                <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
+                        <div class="opinion" v-for="user in users" :key="user.id">
+                            <div v-if="user.id === opinion.user_id" class="opinion-profile">
+                                <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
+                                <p>{{ user.name }}</p>
                             </div>
+            
+                            <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                         </div>
                     </div>
                 </div>
