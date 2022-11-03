@@ -549,8 +549,9 @@ header{
 /* 自分の投稿 */
 .self-opinion{
     display: flex;
-    justify-content: flex-end;
+    justify-content:right;
     width: 90%;
+    margin-bottom: 1rem;
 }
 
 .self-opinion-profile-img{
@@ -581,6 +582,7 @@ header{
 .opinion{
     display: flex;
     width: 90%;
+    margin-bottom: 1rem;
 }
 
 .opinion-profile{
