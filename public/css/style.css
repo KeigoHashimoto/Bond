@@ -314,8 +314,7 @@ header{
 @media screen and (max-width:900px){
     .nav-list{
         flex-direction:column;
-        background: var(--point);
-        color:#fff;
+        background: #333;
         padding:10rem 0;
         z-index:10;
         position:fixed;
@@ -347,6 +346,7 @@ header{
         display: block;
         font-size:1rem;
         margin-bottom:.5rem;
+        color: #fff;
     }
 
     .nav-item a{
