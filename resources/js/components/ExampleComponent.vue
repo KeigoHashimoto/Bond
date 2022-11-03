@@ -5,42 +5,27 @@
             <!-- 掲示板作成のためのopinionを表示させない -->
             <div v-if="opinion.user_id != null">
                 <div v-if="opinion.board_id === board.id">
-                    <!-- 発言者が自分の場合 -->
-                    <div v-if="opinion.user_id === authUser.id">
-                        <!-- 発言の内容 -->
-                        <div class="self-opinion">
-                            <div class="opinion-contents">
-                                <div class="opinion-content-myself">
-                                    {{ opinion.opinion }}
-                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
-                                </div>
-                            </div>
-                            <!-- 全てのユーザーを取得 -->
-                            <div v-for="user in users" :key="user.id">
-                                <div class="opinion-profile">
-                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
-                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
-                                </div>
-                            </div>  
-                        </div>            
+                    <!-- 自分の投稿 -->
+                    <div class="self-opinion">
+
+                        <div class="self-opinion-content" v-if="opinion.user_id === authUser.id">{{ opinion.opinion }}</div>
+
+                        <div class="self-opinion-profile">
+                            <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
+                            <p>{{ authUser.name }}</p>
+                        </div>
                     </div>
-                    <!-- 発信者が自分以外の場合 -->
-                    <div v-else>
-                        <div class="opinion">
-                            <!-- 全てのユーザーを取得 -->
-                            <div v-for="user in users" :key="user.id">
-                                <div class="opinion-profile">
-                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
-                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
-                                </div>
-                            </div>  
-                            <div class="opinion-contents">
-                                <div class="opinion-content">
-                                    {{ opinion.opinion }}
-                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
-                                </div>
+
+                    <!-- 自分以外の投稿 -->
+                    <div class="opinion">
+                        <div v-if="user in users" :key="user.id">
+                            <div v-if="user.id === opinion.user_id" class="opinion-profile">
+                                <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
+                                <p>{{ user.name }}</p>
                             </div>
-                        </div>            
+                        </div>
+
+                        <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                     </div>
                 </div>
             </div>

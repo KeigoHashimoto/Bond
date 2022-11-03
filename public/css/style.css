@@ -546,33 +546,50 @@ header{
     margin: 0 auto;
 }
 
-.opinion{
+/* 自分の投稿 */
+.self-opinion{
     display: flex;
-    width: 100%;
+    margin-right: auto;
+    width: 90%;
+}
+
+.self-opinion-profile-img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.self-opinion-profile{
+    width: 25%;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.self-opinion-content{
+    word-break:break-word;
+    background: var(--point);
+    padding:1rem;
+    border-radius:5px;
+    width: 70%;
     margin-right: auto;
 }
 
-.opinion-contents{
-    width: 100%;
-}
-
-.self-opinion{
+/* 自分以外の投稿 */
+.opinion{
     display: flex;
+    width: 90%;
     margin-left: auto;
-    width: 100%;
 }
 
 .opinion-profile{
-    width: 20%;
+    width: 25%;
     display: flex;
     flex-direction:column;
     margin: 0 1rem;
-}
-
-.opinion-user{
-    font-weight:bold;
-    text-align: center;
-    white-space:nowrap;
 }
 
 .opinion-profile-img{
@@ -594,36 +611,7 @@ header{
     margin-right: auto;
 }
 
-.opinion-content-myself{
-    overflow-wrap:break-word;
-    background: var(--point);
-    border-radius:5px;
-    padding:1rem;
-    margin:1rem 0;
-    margin-left: auto;
-    width:70%;
-}
-
-.opinion-at{
-    margin-right: auto;
-    width: fit-content;
-}
-
-.self-opinion-at{
-    margin-left: auto;
-    width: fit-content;
-}
-
-.self-opinion-img{
-    width: 50%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin-left: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
+/* 投稿された画像 */
 .opinion-img{
     width: 50%;
     height: auto;
