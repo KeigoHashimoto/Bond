@@ -22763,11 +22763,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  computed: {
-    imgSrc: function imgSrc() {
-      return Object(function webpackMissingModule() { var e = new Error("Cannot find module 'undefined'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-    }
-  },
   mounted: function mounted() {
     var _this4 = this;
 
@@ -22859,7 +22854,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         href: '/show/' + user.id
       }, [user.id === opinion.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
         key: 0,
-        src: $options.imgSrc,
+        src: "/uploads/" + user.profile_img,
         alt: "",
         "class": "opinion-profile-img"
       }, null, 8
@@ -22878,7 +22873,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         key: user.id
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [user.id === opinion.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
         key: 0,
-        src: $options.imgSrc,
+        src: "/uploads/" + user.profile_img,
         alt: "",
         "class": "opinion-profile-img"
       }, null, 8
