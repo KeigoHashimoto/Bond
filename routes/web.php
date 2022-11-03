@@ -86,11 +86,11 @@ use Illuminate\Support\Facades\Route;
             ->name('opinion.post');
 
         //ajax
-        Route::get('/community-app/ajax/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
+        Route::get('ajax/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
         Route::get('/ajax/users',[App\Http\Controllers\Ajax\MessagesController::class,'users']);
         Route::get('/ajax/authUser',[App\Http\Controllers\Ajax\MessagesController::class,'authUser']);
 
-        //scheduls
+        //schedules
         Route::post('/schedules',[App\Http\Controllers\SchedulesController::class,'store'])
             ->name('schedule.post');
         Route::get('/schedules/form/{id}',[App\Http\Controllers\SchedulesController::class,'form'])
