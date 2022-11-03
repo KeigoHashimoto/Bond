@@ -23,9 +23,9 @@
                                 <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
                                 <p>{{ user.name }}</p>
                             </div>
+            
+                            <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                         </div>
-
-                        <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}</div>
                     </div>
                 </div>
             </div>
