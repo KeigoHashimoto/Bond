@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Office;
 use App\Models\User;
+use App\Models\BulletinBoard;
 
 class OfficesController extends Controller
 {
