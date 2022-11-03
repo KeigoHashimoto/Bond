@@ -18,8 +18,8 @@
                             <!-- 全てのユーザーを取得 -->
                             <div v-for="user in users" :key="user.id">
                                 <div class="opinion-profile">
-                                    <a :href="'/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
-                                    <div v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</div>
+                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
+                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
                             </div>  
                         </div>            
@@ -30,15 +30,14 @@
                             <!-- 全てのユーザーを取得 -->
                             <div v-for="user in users" :key="user.id">
                                 <div class="opinion-profile">
-                                    <a :href="'/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
-                                    <div v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</div>
+                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
+                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
                             </div>  
                             <div class="opinion-contents">
                                 <div class="opinion-content">
-                                    <p>{{ opinion.opinion }}
-                                        <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
-                                    </p>
+                                    {{ opinion.opinion }}
+                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
                                 </div>
                             </div>
                         </div>            
