@@ -8,7 +8,7 @@
 
             <div class="nav-icon" v-on:click="menuSwitch = !menuSwitch"><i class="fas fa-bars"></i></div>
 
-            <div class="nav-list" v-show="menuSwitch">
+            <div class="nav-list" v-show="menuSwitch" v-on:click="menuSwitch = !menuSwitch">
                 <ul>
                     <li class="nav-item">{!! link_to_route('home','トップ',[]) !!}</li>
                     <li class="nav-item">{!! link_to_route('board.index','オープン会議室',[]) !!}</li>

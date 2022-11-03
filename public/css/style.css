@@ -317,9 +317,10 @@ header{
         background: #fff;
         padding:1rem;
         border-radius:5px;
-        position:absolute;
         z-index:10;
-        right: 0;
+        position:fixed;
+        width: 100%;
+        height: 100vh;
         box-shadow:2px 2px 5px 1px #777;
         text-align: right;
     }
