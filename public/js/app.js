@@ -22744,7 +22744,7 @@ __webpack_require__.r(__webpack_exports__);
     getMessages: function getMessages() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/ajax/messages').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/ajax/messages').then(function (response) {
         return _this.opinions = response.data;
       });
     },
