@@ -2,8 +2,8 @@
 
 @section('content')
 
+{{-- グループに加入しているか --}}
 @if(\Auth::user()->is_joined($office->id))
-
 
 <div class="flex">
     <h1 class="group-name">

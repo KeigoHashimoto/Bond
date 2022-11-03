@@ -22,50 +22,8 @@
         </div>
     {{ Form::close() }}
 
+    {{-- opinion リアルタイムチャット　vuejs --}}
     <example-component :board='@json($board)'></example-component>
-
-    {{-- @foreach($opinions as $opinion)
-    <div class="opinion">
-        @if(!empty($opinion->user->name))
-            @if($opinion->user->id === Auth::id())
-                <div class="self-opinion">
-                    <div class="opinion-contents">
-                        <div class="opinion-content-myself">{!! nl2br(e($opinion->opinion)) !!}
-                            @if(!empty($opinion->img_path))
-                                <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="self-opinion-img"></a>
-                            @endif
-                        </div>
-                        
-                        <p class="self-opinion-at small">{{ $opinion->created_at }}</p>
-                    </div>
-                    <div class="opinion-profile">
-                        <a href="{{ route('user.show',[$opinion->user->id]) }}"><img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt=""></a>
-                        <p class="opinion-user">{{ $opinion->user->name }}</p>
-                    </div>
-                </div>
-            @else
-                <div>
-                    <a href="{{ route('user.show',[$opinion->user->id]) }}"><img class="opinion-profile-img" src="{{ asset('uploads/'. $opinion->user->profile_img ) }}" alt=""></a>
-                    <p class="opinion-user">{{ $opinion->user->name }}</p>
-                </div>
-                <div class="opinion-contents">
-                    <div class="opinion-content">{!! nl2br(e($opinion->opinion)) !!}
-                        @if(!empty($opinion->img_path))
-                            <a href="{{ asset('uploads/' . $opinion->img_path) }}"><img src="{{ asset('uploads/'. $opinion->img_path )}}" alt="" class="opinion-img"></a>
-                        @endif
-                    </div>
-                    
-                    <p class="opinion-at small">{{ $opinion->created_at }}</p>
-                </div>
-            @endif
-
-        @else
-            @if($opinion === null)
-                <p>議論を開始して下さい</p>
-            @endif
-        @endif
-    </div>
-    @endforeach --}}
 
     {!! link_to_route('home','topに戻る',[],['class'=>'center']) !!}
     @if($board->office_id)
