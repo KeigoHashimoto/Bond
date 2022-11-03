@@ -1,4 +1,4 @@
-<header>
+<header v-on:click="menuSwitch = !menuSwitch">
     <div class="logo">
         {!! link_to_route('home','HinodeCommunity',[],['class' => 'header-logo']) !!}
     </div>
