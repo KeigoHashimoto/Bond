@@ -554,13 +554,12 @@ header{
 }
 
 .self-opinion-profile-img{
-    width: 50%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    width: 70px;
+    height: 70px;
     border-radius:50%;
+    object-fit:cover;
+    display: block;
+    margin:0 auto;
 }
 
 .self-opinion-profile{
@@ -582,7 +581,6 @@ header{
 .opinion{
     display: flex;
     width: 90%;
-    margin-left: auto;
 }
 
 .opinion-profile{
