@@ -346,11 +346,10 @@ header{
         display: block;
         font-size:1rem;
         margin-bottom:.5rem;
-        color: #fff;
     }
 
     .nav-item a{
-        color:#333;
+        color: #fff;
     }
 
     .sarch-input{
