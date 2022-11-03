@@ -315,7 +315,7 @@ header{
     .nav-list{
         flex-direction:column;
         background: #fff;
-        padding:10rem;
+        padding:10rem 0;
         z-index:10;
         position:fixed;
         top: 0;
@@ -363,6 +363,9 @@ header{
 
     .sarch-wrap{
         background: var(--point);
+    }
+    .space{
+        display:none;
     }
 
 
