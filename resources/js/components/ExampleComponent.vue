@@ -66,10 +66,10 @@ import axios from 'axios';
                 axios.get('/community-app/messages').then(response => this.opinions = response.data);
             },
             getUsers(){
-                axios.get('/users').then(response => this.users = response.data);
+                axios.get('/community-app/users').then(response => this.users = response.data);
             },
             getAuthUser(){
-                axios.get('/authUser').then(response => this.authUser = response.data);
+                axios.get('/community-app/authUser').then(response => this.authUser = response.data);
             }, 
         },
         mounted() {

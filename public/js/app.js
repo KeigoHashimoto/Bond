@@ -22751,14 +22751,14 @@ __webpack_require__.r(__webpack_exports__);
     getUsers: function getUsers() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/users').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/users').then(function (response) {
         return _this2.users = response.data;
       });
     },
     getAuthUser: function getAuthUser() {
       var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/authUser').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/authUser').then(function (response) {
         return _this3.authUser = response.data;
       });
     }
