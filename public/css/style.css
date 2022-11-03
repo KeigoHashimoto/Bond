@@ -545,6 +545,7 @@ header{
     padding:4rem 1rem;
     width: 90%;
     margin: 0 auto;
+    text-align: left;
 }
 
 /* 自分の投稿 */
