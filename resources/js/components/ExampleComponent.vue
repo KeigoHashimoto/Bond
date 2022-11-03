@@ -6,13 +6,14 @@
             <div v-if="opinion.user_id != null">
                 <div v-if="opinion.board_id === board.id">
                     <!-- 自分の投稿 -->
-                    <div class="self-opinion" v-if="opinion.user_id === authUser.id">
+                    <div v-if="opinion.user_id === authUser.id">
+                        <div class="self-opinion" >
+                            <div class="self-opinion-content">{{ opinion.opinion }}</div>
 
-                        <div class="self-opinion-content">{{ opinion.opinion }}</div>
-
-                        <div class="self-opinion-profile">
-                            <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
-                            <p>{{ authUser.name }}</p>
+                            <div class="self-opinion-profile">
+                                <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
+                                <p>{{ authUser.name }}</p>
+                            </div>
                         </div>
                     </div>
                     <div v-else>
