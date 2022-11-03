@@ -571,13 +571,14 @@ header{
 }
 
 .opinion-profile{
-    width: 30%;
+    width: 20%;
 }
 
 .opinion-user{
     font-weight:bold;
     text-align: center;
     white-space:nowrap;
+    width: 20%;
 }
 
 .opinion-profile-img{

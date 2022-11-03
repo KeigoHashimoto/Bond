@@ -12,7 +12,7 @@
                             <div class="opinion-contents">
                                 <div class="opinion-content-myself">
                                     {{ opinion.opinion }}
-                                    <img :src="'/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
+                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
                                 </div>
                             </div>
                             <!-- 全てのユーザーを取得 -->
@@ -30,13 +30,15 @@
                             <!-- 全てのユーザーを取得 -->
                             <div v-for="user in users" :key="user.id">
                                 <div class="opinion-profile">
-                                    <img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img">
+                                    <a :href="'/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
                                     <div v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</div>
                                 </div>
                             </div>  
                             <div class="opinion-contents">
                                 <div class="opinion-content">
-                                    <p>{{ opinion.opinion }}</p>
+                                    <p>{{ opinion.opinion }}
+                                        <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
+                                    </p>
                                 </div>
                             </div>
                         </div>            
