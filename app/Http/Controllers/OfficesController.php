@@ -34,8 +34,13 @@ class OfficesController extends Controller
         if($request->password == $office->password){
             $user->join($office->id);
         }
+        $boards = BulletinBoard::where('office_id',$office->id)
+            ->orderBy('created_at','desc')
+            ->offset(0)
+            ->limit(2)
+            ->get();
         $users=$office->affiliationUsers()->get();
-        return view('offices.show',compact('office','user','users'));
+        return view('offices.show',compact('office','user','users','boards'));
     }
     public function form(){
         return view('offices.form');

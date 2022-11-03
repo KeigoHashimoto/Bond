@@ -58,7 +58,7 @@
 
             <div class="new-discussion" v-show="activeTab === ''" >
                 <h2>最新の議論</h2>
-                @foreach(BulletinBoard::where('office_id',$office->id)->orderBy('created_at','desc')->offset(0)->limit(2)->get() as $board)
+                @foreach($boards as $board)
                     @if($board->office_id == $office->id)
                         <h4 class="center">{!! link_to_route('board.show',$board->title,[$board->id]) !!}</h4>
                     @endif
