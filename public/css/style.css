@@ -573,6 +573,7 @@ header{
     word-break:break-word;
     background: var(--point);
     padding:1rem;
+    margin:1rem 0;
     border-radius:5px;
     width: 70%;
     margin-right: auto;
