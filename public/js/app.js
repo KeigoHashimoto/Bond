@@ -22744,21 +22744,21 @@ __webpack_require__.r(__webpack_exports__);
     getMessages: function getMessages() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/ajax/messages').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/ajax/messages').then(function (response) {
         return _this.opinions = response.data;
       });
     },
     getUsers: function getUsers() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/ajax/users').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/ajax/users').then(function (response) {
         return _this2.users = response.data;
       });
     },
     getAuthUser: function getAuthUser() {
       var _this3 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/ajax/authUser').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/ajax/authUser').then(function (response) {
         return _this3.authUser = response.data;
       });
     }
