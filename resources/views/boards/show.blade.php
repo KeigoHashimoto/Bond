@@ -68,6 +68,9 @@
     @endforeach --}}
 
     {!! link_to_route('home','topに戻る',[],['class'=>'center']) !!}
+    @if($board->office_id)
+        {!! link_to_route('office.show','グループへ戻る',[$board->office_id],['class'=>'center']) !!}
+    @endif
 </div>
 
 <div id="schedules"
