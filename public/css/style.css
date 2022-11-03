@@ -361,6 +361,10 @@ header{
         width: fit-content;
         margin:0 auto;
     }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
 }
 /* welcome */
 
