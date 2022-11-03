@@ -26,18 +26,19 @@
                     </div>
                     <!-- 発信者が自分以外の場合 -->
                     <div v-else>
-                        <div class="opinion">
-                            <!-- 全てのユーザーを取得 -->
-                            <div class="opinion-profile"></div>
-                                <div v-for="user in users" :key="user.id">
+                        <!-- 全てのユーザーを取得 -->
+                        <div v-for="user in users" :key="user.id">
+                            <div class="opinion">
+                                <div class="opinion-profile">
                                     <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
                                     <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
-                            </div>  
-                            <div class="opinion-contents">
-                                <div class="opinion-content">
-                                    {{ opinion.opinion }}
-                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
+                              
+                                <div class="opinion-contents">
+                                    <div class="opinion-content">
+                                        {{ opinion.opinion }}
+                                        <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
+                                    </div>
                                 </div>
                             </div>
                         </div>            
