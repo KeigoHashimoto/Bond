@@ -917,6 +917,7 @@ header{
     font-size:.8rem;
 }
 
+
 .new-discussion h4{
     border-bottom:3px solid #ccc;
     width: 80%;
@@ -928,6 +929,10 @@ header{
 }
 
 @media screen and (max-width:900px){
+    .new-discussion h4{
+        font-size:.6rem;
+    }
+    
     #group{
         justify-content: center;
         flex-direction:column;
