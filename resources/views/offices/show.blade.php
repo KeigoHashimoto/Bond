@@ -59,7 +59,7 @@
             <div class="new-discussion" v-show="activeTab === ''" >
                 <h2>最新の議論</h2>
                 @foreach($users as $user)
-                    @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->limit(3)->get() as $board)
+                    @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->offset(0)->limit(3)->get() as $board)
                         @if($board->office_id == $office->id)
                             <h4 class="center">{!! link_to_route('board.show',$board->title,[$board->id]) !!}</h4>
                         @endif
