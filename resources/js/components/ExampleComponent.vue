@@ -28,8 +28,8 @@
                     <div v-else>
                         <div class="opinion">
                             <!-- 全てのユーザーを取得 -->
-                            <div v-for="user in users" :key="user.id">
-                                <div class="opinion-profile">
+                            <div class="opinion-profile"></div>
+                                <div v-for="user in users" :key="user.id">
                                     <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
                                     <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
