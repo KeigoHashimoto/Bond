@@ -20,7 +20,7 @@
                 
     
                 <div class="sarch-container">
-                    <div class="space"></div>
+                    <div></div>
     
                     <div class='sarch-wrap'>
                         {{ Form::open(['route'=>'board.index','method'=>'get','class'=>'group-sarch']) }}

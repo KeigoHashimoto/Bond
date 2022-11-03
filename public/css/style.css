@@ -344,13 +344,8 @@ header{
 
     .nav-item{
         display: block;
-        font-size:1.2rem;
-        border-bottom:1px solid #777;
+        font-size:1rem;
         margin-bottom:.5rem;
-    }
-
-    .nav-item:last-child{
-        border-bottom:none;
     }
 
     .nav-item a{
@@ -363,16 +358,9 @@ header{
 
     .sarch-wrap{
         background: var(--point);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: fit-content;
+        margin:0 auto;
     }
-    .space{
-        display:none;
-    }
-
-
-
 }
 /* welcome */
 
