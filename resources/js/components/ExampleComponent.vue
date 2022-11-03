@@ -5,39 +5,42 @@
             <!-- 掲示板作成のためのopinionを表示させない -->
             <div v-if="opinion.user_id != null">
                 <div v-if="opinion.board_id === board.id">
-                    <div v-for="user in users" :key="user.id">
-                        <!-- 発言者が自分の場合 -->
-                        <div v-if="opinion.user_id === authUser.id">
-                            <!-- 発言の内容 -->
-                            <div class="self-opinion">
-                                <div class="opinion-contents">
-                                    <div class="opinion-content-myself">
-                                        {{ opinion.opinion }}
-                                        <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
-                                    </div>
+                    <!-- 発言者が自分の場合 -->
+                    <div v-if="opinion.user_id === authUser.id">
+                        <!-- 発言の内容 -->
+                        <div class="self-opinion">
+                            <div class="opinion-contents">
+                                <div class="opinion-content-myself">
+                                    {{ opinion.opinion }}
+                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
                                 </div>
-                                <div class="opinion-profile">
-                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
-                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
-                                </div>                           
-                            </div>            
-                        </div>
-                        <!-- 発信者が自分以外の場合 -->
-                        <div v-else>
-                            <div class="opinion">
+                            </div>
+                            <!-- 全てのユーザーを取得 -->
+                            <div v-for="user in users" :key="user.id">
                                 <div class="opinion-profile">
                                     <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
                                     <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
-                                
-                                <div class="opinion-contents">
-                                    <div class="opinion-content">
-                                        {{ opinion.opinion }}
-                                        <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
-                                    </div>
+                            </div>  
+                        </div>            
+                    </div>
+                    <!-- 発信者が自分以外の場合 -->
+                    <div v-else>
+                        <div class="opinion">
+                            <!-- 全てのユーザーを取得 -->
+                            <div v-for="user in users" :key="user.id">
+                                <div class="opinion-profile">
+                                    <a :href="'/community-app/show/' + user.id"><img v-if="user.id === opinion.user_id" :src="'/community-app/uploads/' + user.profile_img" alt="" class="opinion-profile-img"></a>
+                                    <p v-if="user.id === opinion.user_id" class="opinion-user">{{ user.name }}</p>
                                 </div>
-                            </div>           
-                        </div>
+                            </div>  
+                            <div class="opinion-contents">
+                                <div class="opinion-content">
+                                    {{ opinion.opinion }}
+                                    <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="self-opinion-img">
+                                </div>
+                            </div>
+                        </div>            
                     </div>
                 </div>
             </div>
