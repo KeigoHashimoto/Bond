@@ -10,7 +10,8 @@
                         <div>
                             <div class="self-opinion" >
                                 <div class="self-opinion-content">{{ opinion.opinion }}<br>
-                                <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
+                                    
+                                <a v-if="opinion.img_path != null" :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
 
                                 <div class="self-opinion-profile">
                                     <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
@@ -29,7 +30,7 @@
                                 </div>
             
                                 <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}<br>
-                                <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
+                                <a v-if="opinion.img_path != null" :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
                             </div>
                         </div>
                     </div>
