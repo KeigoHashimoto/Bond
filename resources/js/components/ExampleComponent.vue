@@ -9,7 +9,7 @@
                     <div v-if="opinion.user_id === authUser.id">
                         <div>
                             <div class="self-opinion" >
-                                <div class="self-opinion-content">{{ opinion.opinion }}<br>
+                                <div class="self-opinion-content">{{ opinion.opinion.replace(/\r\n/g, "<br />") }}<br>
                                 <div  v-show="opinion.img_path != ''">
                                     <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
                                 </div>
@@ -30,7 +30,7 @@
                                     <p>{{ user.name }}</p>
                                 </div>
             
-                                <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}<br>
+                                <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion.replace(/\r\n/g, "<br />") }}<br>
                                 <div  v-show="opinion.img_path != ''">
                                     <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
                                 </div>
