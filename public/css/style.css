@@ -585,6 +585,7 @@ header{
     margin:0 0 1rem auto;
     border-radius:5px;
     width: 70%;
+    white-space:pre-wrap;
 }
 
 /* 自分以外の投稿 */
