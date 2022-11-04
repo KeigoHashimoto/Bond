@@ -556,6 +556,7 @@ header{
     margin-left: auto;
     width: 90%;
     margin-bottom: 2rem;
+    align-items: start;
 }
 
 .self-opinion-profile-img{
@@ -587,6 +588,7 @@ header{
     display: flex;
     width: 90%;
     margin-bottom: 1rem;
+    align-items: start;
 }
 
 .opinion-profile{
