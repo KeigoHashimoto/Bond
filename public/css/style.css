@@ -303,6 +303,9 @@ header{
 .sarch-input{
     border:none;
 }
+.sarch-input::placeholder{
+    color:#fff;
+}
 
 .sarch-btn{
     border:none;
