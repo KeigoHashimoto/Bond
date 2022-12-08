@@ -51,7 +51,7 @@ class OfficesController extends Controller
         $office = Office::findOrFail($id);
         $user=\Auth::user();
         //Hash化したパスワードがリクエストと一致しているか
-        if($request->password == password_verify($request->password,$office->password)){
+        if(password_verify($request->password,$office->password)){
             $user->join($office->id);
         }
         $boards = BulletinBoard::where('office_id',$office->id)
