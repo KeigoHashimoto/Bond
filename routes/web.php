@@ -30,10 +30,10 @@ use Illuminate\Support\Facades\Route;
 
     Route::prefix('admin')->name('admin.')->group(function(){
         Route::middleware(['guest:admin'])->group(function(){
-            Route::get('/register',[App\Http\Controllers\AdminController::class,'create'])
-            ->name('register');
-            Route::post('/register',[App\Http\Controllers\AdminController::class,'store'])
-                ->name('regist.post');
+            // Route::get('/register',[App\Http\Controllers\AdminController::class,'create'])
+            // ->name('register');
+            // Route::post('/register',[App\Http\Controllers\AdminController::class,'store'])
+            //     ->name('regist.post');
             Route::get('/login',[App\Http\Controllers\AdminController::class,'index'])
                 ->name('login');
             Route::post('/login',[App\Http\Controllers\AdminController::class,'doLogin'])

@@ -3,7 +3,7 @@
 @section('content')
     <div class="home">
         @if(Session::has('error'))
-            <p>{{ Session::get('error') }}</p>
+            <p style="text-align:center; color:red;">{{ Session::get('error') }}</p>
         @endif
         
         <h1 class="center">Admin Login</h1>
@@ -23,7 +23,7 @@
             
         {{ Form::close() }}
 
-        {{ link_to_route('admin.register','新規登録',[],['class'=>'center black-link']) }}
+        {{-- {{ link_to_route('admin.register','新規登録',[],['class'=>'center black-link']) }} --}}
     </div>
 
 @endsection
