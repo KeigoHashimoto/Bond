@@ -20,7 +20,7 @@ class OfficesController extends Controller
         ]);
         $office = new Office;
         $office->name = $request->name;
-        $office->password = $request->password;
+        $office->password = Hash::make($request->password);
         $office->save();
         return redirect('/office');
     }
@@ -50,7 +50,8 @@ class OfficesController extends Controller
     public function show(Request $request ,$id){
         $office = Office::findOrFail($id);
         $user=\Auth::user();
-        if($request->password == $office->password){
+        //Hash化したパスワードがリクエストと一致しているか
+        if($request->password == password_verify($request->password,$office->password)){
             $user->join($office->id);
         }
         $boards = BulletinBoard::where('office_id',$office->id)
@@ -81,7 +82,7 @@ class OfficesController extends Controller
     {
         $office=Office::findOrFail($id);
         $office->delete();
-        return back();
+        return redirect('/');
     }
 
     /**

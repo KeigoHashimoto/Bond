@@ -23,5 +23,6 @@
     <script src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src={{ asset('/js/app.js') }}></script>
+    <script src={{ asset('/js/main.js') }}></script>
 </body>
 </html>

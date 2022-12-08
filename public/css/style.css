@@ -996,6 +996,10 @@ header{
     }
 }
 
+#delete-btn{
+    color:red;
+}
+
 /* profile */
 .profile-top-image{
     border-radius:50%;

@@ -25,7 +25,7 @@
                 {{ Form::open(['route'=>['office.show',$office->id],'method'=>'get']) }}
                     <div class="group-gate">
                         <p class="group-label">{{ $office->name }} :</p>
-                        {{ Form::text('password',null,['class'=>'group-input','placeholder'=>'パスワードを入力']) }}
+                        {{ Form::password('password',null,['class'=>'group-input','placeholder'=>'パスワードを入力']) }}
                         {{ Form::submit('join',['class'=>'group-btn']) }}
                     </div>
                 {{ Form::close() }}

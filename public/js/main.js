@@ -1,23 +1,10 @@
+const deletebtn = document.getElementById('delete-btn');
 
-new Vue({
-    el: '#app',
-    data:{
-        isActive: false,
-        activeTab:'',
-        onOff1:false,
-        onOff2:false,
-        onOff3:false,
-        onOff4:false,
-        activeProfileTab: 'group',
-        sideSwitch:false,
-        modalSwitch:false,
-        readActive:false,
-    },
-})
-
-new Vue({
-    el: '#header',
-    data: {
-        menuSwitch:false,
+deletebtn.addEventListener('click',function(e){
+    if(confirm('削除しますか？')){
+        return true;
+    }else{
+        alert('削除を取り消しました');
+        e.preventDefault();
     }
 })
