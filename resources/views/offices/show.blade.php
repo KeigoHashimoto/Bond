@@ -29,6 +29,7 @@
                     <li v-on:click="activeTab = 'board',sideSwitch = !sideSwitch">議題の作成</li>
                     <li v-on:click="activeTab = 'info',sideSwitch = !sideSwitch">連絡事項の作成</li>
                     <li v-on:click="activeTab = 'schedule',sideSwitch = !sideSwitch">予定の作成</li>
+                    <li v-on:click="activeTab = 'edit',sideSwitch = !sideSwitch">グループ情報の編集</li>
                 </ul>
             </div>
         </div>
@@ -48,6 +49,11 @@
         {{-- グループ内スケジュール --}}
         <div v-else-if="activeTab == 'schedule'">
             @include('commons.schedulesCreate')
+        </div>
+
+        {{-- グループ情報の編集 --}}
+        <div v-else-if="activeTab == 'edit'">
+            @include('commons.groupEdit')
         </div>
 
         {{-- tabの選択無し --}}
@@ -121,6 +127,7 @@
                     <li v-on:click="activeTab = 'board'">議題の作成</li>
                     <li v-on:click="activeTab = 'info'">連絡事項の作成</li>
                     <li v-on:click="activeTab = 'schedule'">予定の作成</li>
+                    <li v-on:click="activeTab = 'edit'">グループ情報の編集</li>
                 </ul>
             </div>
         </div>

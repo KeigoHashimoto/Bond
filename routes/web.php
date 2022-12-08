@@ -123,6 +123,8 @@ use Illuminate\Support\Facades\Route;
             ->name('office.form');
         Route::get('/office/show/{id}',[App\Http\Controllers\OfficesController::class,'show'])
             ->name('office.show');
+        Route::put('/office/update/{id}',[App\Http\Controllers\OfficesController::class,'update'])
+            ->name('office.update');
     });
 
 

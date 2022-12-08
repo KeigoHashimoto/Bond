@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Office;
 use App\Models\User;
 use App\Models\BulletinBoard;
+use Hash;
 
 class OfficesController extends Controller
 {
+    /**
+     * 新しいグループの作成
+     */
     public function store(Request $request){
         $request->validate([
             'name'=>'required|string|max:255',
@@ -20,8 +24,14 @@ class OfficesController extends Controller
         $office->save();
         return redirect('/office');
     }
+    /**
+     * グループの一覧ページ
+     */
     public function index(Request $request){
+        //グループ検索機能
+        //全てのグループを名前順で取得
         $query= Office::orderBy('name');
+
         $keyword = $request->input('office_keyword');
         if(!empty($keyword)){
             $query->where('name','like',"%{$keyword}%");
@@ -29,6 +39,14 @@ class OfficesController extends Controller
         $offices = $query->get();
         return view('offices.index',compact('offices'));
     }
+
+    /**
+     * グループの詳細ページ
+     *
+     * @param Request $request
+     * @param [type] $id
+     * @return void
+     */
     public function show(Request $request ,$id){
         $office = Office::findOrFail($id);
         $user=\Auth::user();
@@ -43,12 +61,45 @@ class OfficesController extends Controller
         $users=$office->affiliationUsers()->get();
         return view('offices.show',compact('office','user','users','boards'));
     }
+
+    /**
+     * グループ作成フォーム
+     *
+     * @return void
+     */
     public function form(){
         return view('offices.form');
     }
-    public function destroy($id){
+
+    /**
+     * グループ削除機能
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function destroy($id)
+    {
         $office=Office::findOrFail($id);
         $office->delete();
         return back();
+    }
+
+    /**
+     * グループ情報の更新
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'password'=>'string|max:255|min:8',
+        ]);
+        $office=Office::findOrFail($id);
+        $office->name = $request->name;
+        $office->password = Hash::make($request->password);
+        $office->save();
+        return redirect('/office/show/'.$office->id);
     }
 }
