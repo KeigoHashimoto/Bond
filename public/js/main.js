@@ -1,10 +1,8 @@
-const deletebtn = document.getElementById('delete-btn');
-
-deletebtn.addEventListener('click',function(e){
-    if(confirm('削除しますか？')){
+$('#delete-btn').on('click',function(e){
+    if(confirm('本当に削除しますか？')){
         return true;
     }else{
-        alert('削除を取り消しました');
+        alert('削除を取り消しました。');
         e.preventDefault();
     }
 })
