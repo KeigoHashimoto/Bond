@@ -5,7 +5,7 @@
         {{ Form::open(['route'=>['cell.store',$table->id]]) }}
             <div class="make-title">
                 {{ Form::label('content1','内容１') }}
-                {{ Form::text('content1',null,['class'=>'form-control']) }}
+                {{ Form::text('content1',null,['class'=>'form-control','placeholder' =>'見出し1に対応']) }}
             </div>
             <div class="make-title">
                 {{ Form::label('content2','内容２') }}
