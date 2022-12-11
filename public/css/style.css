@@ -1261,9 +1261,8 @@ td{
 
 .cells{
     max-width:1000px;
-    width: fit-content;
+    width: 100vw;
     margin :2rem auto;
-    overflow-x:auto;
     position :relative;
+    overflow: scroll;
 }
-
