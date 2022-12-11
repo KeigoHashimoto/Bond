@@ -1,5 +1,6 @@
 <div class="welcome tables">
     <div class="cell-form">
+        <div class="close" v-on:click="cellTab = !cellTab">×</div>
         <h1 class="center">add Table</h1>
         <p class="center">表の内容を作成します</p>
         {{ Form::open(['route'=>['cell.store',$table->id]]) }}

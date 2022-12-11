@@ -1,5 +1,6 @@
 <div class="welcome tables">
     <div class="table-form">
+        <div class="close" v-on:click="tableTab = !tableTab">×</div>
         <h1 class="center">add Table</h1>
         <p class="center">表の見出しを作成します</p>
         {{ Form::open(['route'=>['table.store',$office->id]]) }}
