@@ -1213,8 +1213,7 @@ ____________________________________________*/
 .table-form{
     display:flex;
     flex-direction:column;
-    max-width: 600px;
-    width: 30rem;
+    width: 80vw;
     background: #fff;
     padding:1.5rem 1rem;
     border-radius:10px;
@@ -1231,8 +1230,7 @@ ____________________________________________*/
 .cell-form{
     display:flex;
     flex-direction:column;
-    max-width: 800px;
-    width: 30rem;
+    width: 80vw;
     background: #fff;
     padding: 3rem 1rem;
     border-radius:10px;
