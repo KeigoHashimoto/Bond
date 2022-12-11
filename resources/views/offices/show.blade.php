@@ -132,12 +132,16 @@
                     <li v-on:click="activeTab = 'board'">議題の作成</li>
                     <li v-on:click="activeTab = 'info'">連絡事項の作成</li>
                     <li v-on:click="activeTab = 'schedule'">予定の作成</li>
+                    <li>
+                        {{ link_to_route('table.index','リストの作成',[$office->id]) }}
+                    </li>
                     <li v-on:click="activeTab = 'edit'">グループ情報の編集</li>
                     <li>
                         {{ Form::open(['route'=>['office.delete',$office->id],'method'=>'delete']) }}
                             {{ Form::submit('グループの削除',['class'=>'delete-btn']) }}
                         {{ Form::close() }}
                     </li>
+                    
                 </ul>
             </div>
         </div>

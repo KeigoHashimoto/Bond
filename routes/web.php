@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TablesController;
+use App\Http\Controllers\CellsController;
+use App\Http\Controllers\TableHeadsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -127,6 +131,29 @@ use Illuminate\Support\Facades\Route;
             ->name('office.delete');
         Route::put('/office/update/{id}',[App\Http\Controllers\OfficesController::class,'update'])
             ->name('office.update');
+
+        //tables
+        Route::prefix('table')->name('table.')->group(function(){
+            Route::get('/{officeId}',[TablesController::class,'index'])->name('index');
+            Route::get('{id}/show',[TablesController::class,'show'])->name('show');
+            Route::post('{id}/post',[TablesController::class,'store'])->name('store');
+            Route::put('{id}/update',[TablesController::class,'update'])->name('update');
+            Route::delete('{id}/delete',[TablesController::class,'destroy'])->name('delete');
+        });
+
+        //cell
+        Route::prefix('cell')->name('cell.')->group(function(){
+            Route::post('{id}/post',[CellsController::class,'store'])->name('store');
+            Route::put('{id}/update',[CellsController::class,'update'])->name('update');
+            Route::delete('{id}/delete',[CellsController::class,'destroy'])->name('delete');
+        });
+
+        //table head
+        Route::prefix('head')->name('head.')->group(function(){
+            Route::post('{id}/post',[TableHeadsController::class,'store'])->name('store');
+            Route::put('{id}/update',[TableHeadsController::class,'update'])->name('update');
+            Route::delete('{id}/delete',[TableHeadsController::class,'destroy'])->name('delete');
+        });
     });
 
 

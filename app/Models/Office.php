@@ -30,4 +30,8 @@ class Office extends Model
     public function schedules(){
         return $this->hasMany(Schedule::class);
     }
+    
+    public function tables(){
+        return $this->hasMany(Table::class);
+    }
 }

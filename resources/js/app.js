@@ -21,6 +21,10 @@ createApp({
             modalSwitch:false,
             readActive:false,
             menuSwitch:false,
+            //tables
+            tableTab:false,
+            //cell
+            cellTab:false,
         };
     },
 }).mount('#app');

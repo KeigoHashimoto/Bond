@@ -39,5 +39,5 @@
     <div class="add-text">{!! link_to_route('schedule.form','+add Schedules',[$board->id],['class'=>'add-icon white']) !!}</div>
 </div>
 
-<div id="filter" v-on:click="modalSwitch = !modalSwitch" v-show="modalSwitch"></div>
+<div class="filter" v-on:click="modalSwitch = !modalSwitch" v-show="modalSwitch"></div>
 @endsection
