@@ -2,7 +2,8 @@
     <div class="table-form">
         <div class="close" v-on:click="tableTab = !tableTab">×</div>
         <h1 class="center">add Table</h1>
-        <p class="center">表の見出しを作成します</p>
+        <p class="center">表の見出しを作成します。<br/>
+        最大5個の見出しを作れます。</p>
         {{ Form::open(['route'=>['table.store',$office->id]]) }}
             <div class="make-title">
                 {{ Form::label('title','表のタイトル') }}
