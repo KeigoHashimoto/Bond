@@ -31,6 +31,9 @@
                     <li v-on:click="activeTab = 'schedule',sideSwitch = !sideSwitch">予定の作成</li>
                     <li v-on:click="activeTab = 'edit',sideSwitch = !sideSwitch">グループ情報の編集</li>
                     <li>
+                        {{ link_to_route('table.index','リスト',[$office->id]) }}
+                    </li>
+                    <li>
                         {{ Form::open(['route'=>['office.delete',$office->id],'method'=>'delete']) }}
                             {{ Form::submit('グループの削除',['class'=>'delete-btn']) }}
                         {{ Form::close() }}
@@ -133,7 +136,7 @@
                     <li v-on:click="activeTab = 'info'">連絡事項の作成</li>
                     <li v-on:click="activeTab = 'schedule'">予定の作成</li>
                     <li>
-                        {{ link_to_route('table.index','リストの作成',[$office->id]) }}
+                        {{ link_to_route('table.index','リスト',[$office->id]) }}
                     </li>
                     <li v-on:click="activeTab = 'edit'">グループ情報の編集</li>
                     <li>
