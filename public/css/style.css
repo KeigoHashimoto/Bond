@@ -209,6 +209,10 @@ ____________________________________________*/
     box-shadow:2px 2px 2px #ccc;
 }
 
+ul{
+    margin: 0;
+    padding: 0;
+}
 
 /*____________________________________________ 
 css 
@@ -348,6 +352,9 @@ header{
     border:none;
 }
 
+/*
+group index sarch
+*/
 .sarch{
     display: flex;
     column-gap:5px;
@@ -383,6 +390,10 @@ header{
         text-align: center;
     }
 
+    .group-sarch-input{
+        width: 70%;
+    }
+
     .nav-list-desktop{
         display: none;
     }
@@ -408,6 +419,10 @@ header{
         color: #fff;
     }
 
+    /*
+    group index sarch
+    */
+
     .sarch-input{
         font-size:.8rem;
     }
@@ -416,10 +431,6 @@ header{
         background: var(--point);
         width: fit-content;
         margin:0 auto;
-    }
-    ul{
-        margin: 0;
-        padding: 0;
     }
 }
 
@@ -1083,6 +1094,7 @@ ____________________________________________*/
     display: block;
     text-align: center;
     cursor: pointer;
+    padding-bottom: .5rem;
 }
 
 .switchActive{
@@ -1194,6 +1206,7 @@ ____________________________________________*/
 .tables-list{
     max-width:1200px;
     min-width: 70vw;
+    margin: 2rem auto;
 }
 
 /*____________________________________________

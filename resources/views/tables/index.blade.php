@@ -42,6 +42,9 @@
 
     {{-- モーダル用バックグラウンドフィルター --}}
     <div class="filter" v-show="tableTab" v-on:click="tableTab = !tableTab"></div>
+
+    {{-- グループに戻るボタン --}}
+    {{ link_to_route('office.show','グループに戻る',[$office->id],['class'=>'center']) }}
 </div>
 
 
