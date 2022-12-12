@@ -1,4 +1,4 @@
-<div class="welcome tables">
+<div class="tables">
     <div class="table-form">
         <div class="close" v-on:click="tableTab = !tableTab">×</div>
         <h1 class="center">add Table</h1>

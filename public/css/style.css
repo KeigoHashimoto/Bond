@@ -208,16 +208,7 @@ ____________________________________________*/
     border:none;
     box-shadow:2px 2px 2px #ccc;
 }
-.table-add-btn:hover{
-    filter:brightness(120%);
-}
 
-.close{
-    position:absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor:pointer;
-}
 
 /*____________________________________________ 
 css 
@@ -1198,32 +1189,47 @@ ____________________________________________*/
 }
 
 /*____________________________________________
-tables
+tables index
 ____________________________________________*/
-.tables{
-    position:relative;
-    z-index:3;
+.tables-list{
+    max-width:1200px;
+    min-width: 70vw;
 }
 
-.tables>a{
-    color:#fff;
-}
-
-
+/*____________________________________________
+tables form
+____________________________________________*/
 .table-form{
-    display:flex;
-    flex-direction:column;
-    width: 80vw;
-    background: #fff;
-    padding:1.5rem 1rem;
-    border-radius:10px;
-    box-shadow:2px 2px 10px #999;
-    position:absolute;
+    width: 60vw;
+    height: 80vh;
+    position:fixed;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-30%);
+    transform:translate(-50%,-50%);
+    overflow-y:scroll;
+    z-index:3;
+    background: #fff;
+    border-radius:8px;
+    padding:1rem 0;
 }
 
+@media screen and (max-width: 767px) {
+    .table-form {
+        width: 80vw;
+        height:80vh;
+    }
+}
+
+.table-add-btn:hover{
+    filter:brightness(120%);
+}
+
+.close{
+    position:fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor:pointer;
+}
 /*____________________________________________
 cell
 ____________________________________________*/
@@ -1232,13 +1238,13 @@ ____________________________________________*/
     flex-direction:column;
     width: 80vw;
     background: #fff;
-    padding: 3rem 1rem;
+    padding: 1.5rem 1rem;
     border-radius:10px;
     box-shadow:2px 2px 10px #999;
     position:absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%,-30%);
+    transform:translate(-50%,-50%);
 }
 
 
@@ -1260,9 +1266,9 @@ td{
 }
 
 .cells{
-    max-width:1000px;
-    width: 100vw;
-    margin :2rem auto;
     position :relative;
     overflow: scroll;
+    max-width:1000px;
+    width: 80vw;
+    margin: 2rem auto;
 }
