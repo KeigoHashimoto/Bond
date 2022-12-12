@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="cells">
+<div class="tables-main">
     <table class="tables-list">
         <thead>
             <tr>

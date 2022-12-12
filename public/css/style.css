@@ -1203,9 +1203,15 @@ ____________________________________________*/
 /*____________________________________________
 tables index
 ____________________________________________*/
-.tables-list{
+.tables-main{
     max-width:1200px;
-    min-width: 70vw;
+    width: 80vw;
+    margin:0 auto;
+    padding: 2rem 0;
+}
+
+.tables-list{
+    width: 100%;
     margin: 2rem auto;
 }
 
@@ -1276,12 +1282,4 @@ th{
 td{
     padding:.5rem 1rem;
     min-width:8rem;
-}
-
-.cells >table{
-    position :relative;
-    overflow: scroll;
-    max-width:1000px;
-    min-width: 80vw;
-    margin: 2rem auto;
 }

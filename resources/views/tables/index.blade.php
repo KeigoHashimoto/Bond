@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="main">
+<div class="tables-main">
     {{-- テーブルが一つもないとき --}}
     @if($tables->isEmpty())
         <p>まだ表がありません</p>
