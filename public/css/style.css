@@ -1278,7 +1278,7 @@ td{
     min-width:8rem;
 }
 
-.cells{
+.cells >table{
     position :relative;
     overflow: scroll;
     max-width:1000px;

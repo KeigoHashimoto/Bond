@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="cells">
-    <table>
+    <table class="tables-list">
         <thead>
             <tr>
                 @if (!empty($table->head1 ))
