@@ -5,7 +5,7 @@
 
     @if(Auth::check())
         <nav>
-
+            {{-- モバイル用メニュー --}}
             <div class="nav-icon" v-on:click="menuSwitch = !menuSwitch"><i class="fas fa-bars"></i></div>
 
             <div class="nav-list" v-show="menuSwitch" v-on:click.self="menuSwitch = !menuSwitch">
@@ -20,8 +20,6 @@
                 
     
                 <div class="sarch-container">
-                    <div></div>
-    
                     <div class='sarch-wrap'>
                         {{ Form::open(['route'=>'board.index','method'=>'get','class'=>'group-sarch']) }}
                             {{ Form::button('<i class="fas fa-search"></i>',['type'=>'submit','class'=>'sarch-btn']) }}
@@ -31,6 +29,7 @@
                 </div>
             </div>
 
+            {{-- デスクトップ用メニュー --}}
             <div class="nav-list-desktop">
                 <ul>
                     <li class="nav-item">{!! link_to_route('home','トップ',[]) !!}</li>
@@ -53,8 +52,6 @@
                     </div>    
                 </div>
             </div>
-            
-
         </nav>
     @endif
 

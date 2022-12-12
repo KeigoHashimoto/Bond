@@ -325,6 +325,7 @@ header{
     display: flex;
     position:relative;
     z-index:2;
+    max-width:80%;
 }
 
 .sarch-container{
