@@ -10,12 +10,17 @@
                         <div>
                             <div class="self-opinion" >
                                 <div class="self-opinion-content">{{ opinion.opinion }}<br>
-                                <div  v-show="opinion.img_path != ''">
-                                    <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
+                                    <div  v-show="opinion.img_path != ''">
+                                        <a :href="'/uploads/' + opinion.img_path">
+                                            <img :src="'/uploads/' + opinion.img_path" alt="" class="opinion-img">
+                                        </a>
+                                    </div>
                                 </div>
     
                                 <div class="self-opinion-profile">
-                                    <a :href="'/community-app/show/' + authUser.id"><img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt=""></a>
+                                    <a :href="'/show/' + authUser.id">
+                                        <img class="self-opinion-profile-img" :src="'/uploads/' + authUser.profile_img" alt="">
+                                    </a>
                                     <p>{{ authUser.name }}</p>
                                 </div>
                             </div>
@@ -26,13 +31,18 @@
                         <div v-for="user in users" :key="user.id">
                             <div class="opinion">
                                 <div v-if="user.id === opinion.user_id" class="opinion-profile">
-                                    <a :href="'/community-app/show/' + user.id"><img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt=""></a>
+                                    <a :href="'/show/' + user.id">
+                                        <img class="opinion-profile-img" :src="'/uploads/' + user.profile_img" alt="">
+                                    </a>
                                     <p>{{ user.name }}</p>
                                 </div>
             
                                 <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}<br>
-                                <div  v-show="opinion.img_path != ''">
-                                    <a :href="'/community-app/uploads/' + opinion.img_path"><img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img"></a></div>
+                                    <div  v-show="opinion.img_path != ''">
+                                        <a :href="'/uploads/' + opinion.img_path">
+                                            <img :src="'/uploads/' + opinion.img_path" alt="" class="opinion-img">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,13 +69,27 @@ import axios from 'axios';
         },
         methods:{
             getMessages(){
-                axios.get('/community-app/messages').then(response => this.opinions = response.data);
+                if(window.location.hostname =='localhost'){
+                    axios.get('/messages').then(response => this.opinions = response.data);
+
+                }else{
+                    axios.get('/community-app/messages').then(response => this.opinions = response.data);
+                }
             },
             getUsers(){
-                axios.get('/community-app/users').then(response => this.users = response.data);
+                if(window.location.hostname =='localhost'){
+                    axios.get('/users').then(response => this.users = response.data);
+
+                }else{
+                    axios.get('/community-app/users').then(response => this.users = response.data);
+                }
             },
             getAuthUser(){
-                axios.get('/community-app/authUser').then(response => this.authUser = response.data);
+                if(window.location.hostname =='localhost'){
+                    axios.get('/authUser').then(response => this.authUser = response.data);
+                }else{
+                    axios.get('/community-app/authUser').then(response => this.authUser = response.data);
+                }
             }, 
         },
         mounted() {

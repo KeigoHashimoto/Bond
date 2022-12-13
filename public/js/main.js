@@ -1,4 +1,4 @@
-const deletebtn = document.querySelectorAll('.delete-btn');
+const deletebtn = document.querySelectorAll('.delete');
 
 for(i=0; i<deletebtn.length; i++){
     deletebtn[i].addEventListener('click',function(e){

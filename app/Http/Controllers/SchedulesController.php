@@ -37,7 +37,7 @@ class SchedulesController extends Controller
         return view('schedules.form',compact('office','board'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request,){
         $request->validate([
             'date'=>'required|date|',
             'content'=>'required|string|max:255',
@@ -51,7 +51,12 @@ class SchedulesController extends Controller
         $schedule->office_id = $request->office_id;
         $schedule->save();
 
-        return back();
+        if(empty($schedule->office_id)){
+            return redirect('/');
+        }else{
+            return redirect('/office/show/'.$schedule->office_id);
+        }
+        
     }
 
     public function edit($id){
