@@ -4,11 +4,12 @@
 <div class="board">
     <div class="contents-width">
         <h1 class="title">Discussion Board</h1>
+        <p class="small-discription">ユーザー全員に公開される掲示板です。<br>
+            右下のアイコンからボードを作成してください。</p>
         
         @if($boards->isEmpty())
             <p class="center empty">まだボードがありません。</p>
-            <p class="center">ユーザー全員に公開される掲示板です。<br>
-            右下のアイコンからボードを作成してください。</p>
+            
         @else
             @foreach ($boards as $board)
                 @if(empty($board->office_id))

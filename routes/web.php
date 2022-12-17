@@ -131,6 +131,8 @@ use App\Http\Controllers\TableHeadsController;
             ->name('office.delete');
         Route::put('/office/update/{id}',[App\Http\Controllers\OfficesController::class,'update'])
             ->name('office.update');
+        Route::put('/office/password-reset/{id}',[App\Http\Controllers\OfficesController::class,'passwordReset'])
+            ->name('office.password.reset');
 
         //tables
         Route::prefix('table')->name('table.')->group(function(){

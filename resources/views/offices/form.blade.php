@@ -4,7 +4,7 @@
 <div class="home">
     <div class="user-form">
         <h2 class="center">グループの登録</h2>
-        <p class="center">グループを作成してください。<br>
+        <p class="center small">グループを作成してください。<br>
         グループに所属することでグループ内だけのやり取りをすることができます。</p>
         <div class="board-form">
             {{ Form::open(['route'=>'office.post']) }}

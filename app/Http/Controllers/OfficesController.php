@@ -95,10 +95,20 @@ class OfficesController extends Controller
     {
         $request->validate([
             'name'=>'required|string|max:255',
-            'password'=>'string|max:255|min:8',
         ]);
         $office=Office::findOrFail($id);
         $office->name = $request->name;
+
+        $office->save();
+        return redirect('/office/show/'.$office->id);
+    }
+
+    public function passwordReset(Request $request,$id)
+    {
+        $request->validate([
+            'password'=>'string|max:255|min:8',
+        ]);
+        $office=Office::findOrFail($id);
         $office->password = Hash::make($request->password);
         $office->save();
         return redirect('/office/show/'.$office->id);

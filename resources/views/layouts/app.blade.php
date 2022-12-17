@@ -14,9 +14,10 @@
 </head>
 <body>
 
-    @include('commons.error')
     <div id="app">
         @include('commons.header')
+    
+        @include('commons.error')
         @yield('content')
     </div>
 
