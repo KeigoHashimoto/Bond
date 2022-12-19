@@ -22880,7 +22880,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       href: '/community-app/show/' + $data.authUser.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "self-opinion-profile-img",
-      src: 'community-app//uploads/' + $data.authUser.profile_img,
+      src: '/community-app/uploads/' + $data.authUser.profile_img,
       alt: ""
     }, null, 8
     /* PROPS */

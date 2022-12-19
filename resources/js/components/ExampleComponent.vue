@@ -19,7 +19,7 @@
     
                                 <div class="self-opinion-profile">
                                     <a :href="'/community-app/show/' + authUser.id">
-                                        <img class="self-opinion-profile-img" :src="'community-app//uploads/' + authUser.profile_img" alt="">
+                                        <img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt="">
                                     </a>
                                     <p>{{ authUser.name }}</p>
                                 </div>
