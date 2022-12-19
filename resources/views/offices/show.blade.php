@@ -5,7 +5,7 @@
 {{-- グループに加入しているか --}}
 @if(\Auth::user()->is_joined($office->id))
 
-    <div class="group-show">
+    <div class="group-show" >
         <div class="contents-width">
             <div class="group-name-wrap">
                 <h2 class="group-name title">
@@ -50,10 +50,10 @@
                         <h1 class="center">Group Menu</h1>
                         <div class="create-menu">
                             <div class="group-menu-tabs">
-                                <h2 v-on:click="activeTab = 'menbers',sideSwitch = !sideSwitch">Menbers</h2>
-                                <h2 v-on:click="activeTab = 'discussion',sideSwitch = !sideSwitch">Discussion</h2>
-                                <h2 v-on:click="activeTab = 'infomation',sideSwitch = !sideSwitch">Infomation</h2>        
-                                <h2 v-on:click="activeTab = 'schedules',sideSwitch = !sideSwitch">Schedules</h2>    
+                                <h3 v-on:click="activeTab = 'menbers',sideSwitch = !sideSwitch">Menbers</h3>
+                                <h3 v-on:click="activeTab = 'discussion',sideSwitch = !sideSwitch">Discussion</h3>
+                                <h3 v-on:click="activeTab = 'infomation',sideSwitch = !sideSwitch">Infomation</h3>        
+                                <h3 v-on:click="activeTab = 'schedules',sideSwitch = !sideSwitch">Schedules</h3>    
                             </div>
                             <ul>
                                 <li v-on:click="activeTab = '',sideSwitch = !sideSwitch">グループトップ</li>
