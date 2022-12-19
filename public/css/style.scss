@@ -274,6 +274,7 @@ __________________________________________________________*/
             left: 4rem;
             bottom: -25%;
             z-index: 3;
+            object-fit:cover;
         }
     }
 
@@ -593,9 +594,6 @@ __________________________________________________________*/
             }
         }
     
-        .logo{
-    
-        }
         .nav-list-desktop{
             display: none;
         }
@@ -631,6 +629,7 @@ __________________________________________________________*/
             border-color:rgba(194, 67, 230,.5);
             margin: 4rem auto 1rem;
             box-shadow:2px 2px 10px #ccc;
+            object-fit:cover;
         }
 
         .home-contents{
@@ -801,6 +800,7 @@ __________________________________________________________*/
                     width: 8rem;
                     height: 8rem;
                     border-radius:50%;
+                    object-fit:cover;
                 }
             }
 
@@ -847,6 +847,7 @@ __________________________________________________________*/
                     width: 8rem;
                     height: 8rem;
                     border-radius:50%;
+                    object-fit:cover;
                 }
             }
 
@@ -889,6 +890,7 @@ __________________________________________________________*/
                         width: 50px;
                         height: 50px;
                         border-radius:50%;
+                        object-fit:cover;
                     }
                 }
             }
@@ -905,6 +907,7 @@ __________________________________________________________*/
                     .opinion-profile-img{
                         width: 50px;
                         height: 50px;
+                        object-fit:cover;
                     }
                 }
             }

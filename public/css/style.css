@@ -239,6 +239,8 @@ __________________________________________________________*/
   left: 4rem;
   bottom: -25%;
   z-index: 3;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile-container .profile-contents-width {
   width: 85%;
@@ -528,6 +530,8 @@ __________________________________________________________*/
   border-color: rgba(194, 67, 230, 0.5);
   margin: 4rem auto 1rem;
   box-shadow: 2px 2px 10px #ccc;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .home .contents-width .home-contents {
   width: 90%;
@@ -668,6 +672,8 @@ __________________________________________________________*/
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .board-show .self-opinion .self-opinion-profile p {
   margin: 0 auto;
@@ -707,6 +713,8 @@ __________________________________________________________*/
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .board-show .opinion .opinion-profile p {
   margin: 0 auto;
@@ -734,6 +742,8 @@ __________________________________________________________*/
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .board-show .opinion .opinion-content {
     font-size: 1.6rem;
@@ -741,6 +751,8 @@ __________________________________________________________*/
   .board-show .opinion .opinion-profile a .opinion-profile-img {
     width: 50px;
     height: 50px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .schedules {
