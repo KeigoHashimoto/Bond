@@ -1156,83 +1156,28 @@ __________________________________________________________*/
     display: none;
   }
   .group-show #group .group-menu-tabs {
-    display: flex;
     flex-direction: column;
+    row-gap: 2px;
   }
   .group-show #group .group-menu-tabs h3 {
-    padding: 1rem;
-    background: rgba(130, 217, 217, 0.7254901961);
-    color: #fff;
     width: 100%;
-    cursor: pointer;
-    text-align: center;
-  }
-  .group-show #group .group-menu-tabs h3 .table-link {
-    color: #fff;
   }
   .group-show #group ul {
     flex-direction: column;
+    row-gap: 2px;
   }
   .group-show #group ul li {
     width: 100%;
   }
-  .group-show #group #group-contents .center {
-    margin: 2rem auto;
-  }
   .group-show #group #group-contents .new-discussion {
-    padding: 1rem;
-    background: #f5f5f5;
-    border-radius: 7px;
     width: 100%;
-    margin: 0 auto;
-  }
-  .group-show #group #group-contents .new-discussion h4 a {
-    border-bottom: 1px solid #999;
-    display: block;
-    margin: 2rem 0;
   }
   .group-show #group .group-menu .group-menu-list {
     width: 100%;
     height: 80%;
-    overflow-y: scroll;
-    margin: 0 auto;
-    background: #f5f5f5;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .group-show #group .group-menu .group-menu-list .member {
-    display: flex;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #999;
-    margin-bottom: 1rem;
   }
   .group-show #group .group-menu .group-menu-list .member a {
     font-size: 1rem;
-  }
-  .group-show #group .group-content {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #999;
-    display: block;
-  }
-  .group-show #group .edit-wrap {
-    display: flex;
-    justify-content: space-between;
-  }
-  .group-show #group .edit-wrap .form-group {
-    width: 80%;
-  }
-  .group-show #group .edit-wrap .form-group .label {
-    width: 40%;
-  }
-  .group-show #group .edit-wrap .form-group .form-group {
-    width: 60%;
-  }
-  .group-show #group .edit-wrap .submit-btn {
-    width: 10%;
   }
 }
 /*__________________________________________________________

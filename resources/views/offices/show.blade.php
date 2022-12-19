@@ -83,7 +83,7 @@
                         <p class="center">ここでの内容はグループメンバーのみに公開されます。</p>
         
                         <div class="new-discussion" v-show="activeTab === ''" >
-                            <h2 class="sub-title">最新の議論</h2>
+                            <h2 class="sub-title center">最新の議論</h2>
                             @if($boards->isEmpty())
                                 <p>まだ議論がありません。</p>
                             @else
@@ -99,7 +99,7 @@
                             <div class="group-menu-contents">
                                 {{-- メンバー --}}
                                 <div class="group-menu-list" v-show="activeTab === 'menbers'">
-                                    <h2 class="sub-title">グループメンバー</h2>
+                                    <h2 class="sub-title center">グループメンバー</h2>
                                     @foreach($users as $user)
                                         <div class="member">
                                             <p>{{ $user->name }}</p>
@@ -110,7 +110,7 @@
         
                                 {{-- グループ内の議論 --}}
                                 <div class="group-menu-list" v-show="activeTab === 'discussion'">
-                                    <h2 class="sub-title">グループ内の議論</h2>
+                                    <h2 class="sub-title center">グループ内の議論</h2>
                                     
                                     @foreach($users as $user)
                                         @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->get() as $board)
@@ -127,7 +127,7 @@
         
                                 {{-- グループ内のインフォメーション --}}
                                 <div class="group-menu-list" v-show="activeTab === 'infomation'">
-                                    <h2 class="sub-title">グループ内の連絡事項</h2>
+                                    <h2 class="sub-title center">グループ内の連絡事項</h2>
                                     @foreach($users as $user)
                                         @foreach($user->infomations()->where('office_id',$office->id)->get() as $info)
                                             <p>{!! link_to_route('info.show',$info->title,[$info->id],['class'=>'group-content']) !!}</p>
@@ -137,7 +137,7 @@
         
                                 {{-- グループ内のスケジュール --}}
                                 <div class="group-menu-list" v-show="activeTab === 'schedules'">
-                                    <h2 class="sub-title">グループ内のスケジュール</h2>
+                                    <h2 class="sub-title center">グループ内のスケジュール</h2>
                                     @foreach($users as $user)
                                         @foreach($user->schedules()->where('office_id',$office->id)->get() as $schedule)
                                             <p class="group-content">{{ $schedule->date }} | {{ $schedule->time }} | {{ $schedule->content }}</p>
