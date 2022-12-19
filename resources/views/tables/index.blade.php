@@ -7,45 +7,50 @@
     @if($tables->isEmpty())
         <p>まだ表がありません</p>
     @else
-        <table class="tables-list">
-            <thead>
-                <tr>
-                    <th>title</th>
-                    <th>discription</th>
-                </tr>
-            </thead>
-            {{-- テーブルのタイトルと説明文を挿入 --}}
-            @foreach($tables as $table)
-                <tbody>
+        <div class="table-container">
+            <table class="tables-list">
+                <thead>
                     <tr>
-                        <td>{{ link_to_route('table.show',$table->title,[$table->id]) }}</td>
-                        <td> 
-                            @if (!empty($table->discription))
-                                {{ $table->discription }}
-                            @else
-                                <p>説明はありません</p>
-                            @endif
-                        </td>
+                        <th>title</th>
+                        <th>discription</th>
                     </tr>
-                </tbody>
-            @endforeach
-        </table>
+                </thead>
+                {{-- テーブルのタイトルと説明文を挿入 --}}
+                @foreach($tables as $table)
+                    <tbody>
+                        <tr>
+                            <td>{{ link_to_route('table.show',$table->title,[$table->id]) }}</td>
+                            <td> 
+                                @if (!empty($table->discription))
+                                    {{ $table->discription }}
+                                @else
+                                    <p>説明はありません</p>
+                                @endif
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
+            </table>
+
+            {{-- グループに戻るボタン --}}
+            {{ link_to_route('office.show','グループに戻る',[$office->id],['class'=>'center']) }}
+
+        </div>
     @endif
+
+</div>
+
+
+    {{-- モーダル用バックグラウンドフィルター --}}
+    <div class="filter" v-show="tableTab" v-on:click="tableTab = !tableTab"></div>
+
+    {{-- 表の作成ボタン --}}
+    <button v-on:click="tableTab = !tableTab" class="table-add-btn">表を作成</button>
 
     {{-- テーブル作成フォームがモーダルで表示 --}}
     <div class="table-create" v-show="tableTab ">
         @include('tables.headCreate')
     </div>
-
-    {{-- 表の作成ボタン --}}
-    <button v-on:click="tableTab = !tableTab" class="table-add-btn">表を作成</button>
-
-    {{-- モーダル用バックグラウンドフィルター --}}
-    <div class="filter" v-show="tableTab" v-on:click="tableTab = !tableTab"></div>
-
-    {{-- グループに戻るボタン --}}
-    {{ link_to_route('office.show','グループに戻る',[$office->id],['class'=>'center']) }}
-</div>
 
 
 @endsection

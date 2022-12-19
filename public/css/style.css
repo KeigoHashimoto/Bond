@@ -38,6 +38,18 @@ body {
   background-image: repeating-linear-gradient(-45deg, #fff 0, #fff 10px, #f1fffb 0, #f1fffb 20px);
 }
 
+.errors {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  color: #fff;
+  background: #C22F2B;
+  text-align: center;
+  padding: 3rem 4rem;
+  margin-top: 2rem;
+  box-shadow: 2px 2px 10px #999;
+}
+
 .form-group .label {
   width: 25%;
 }
@@ -511,6 +523,14 @@ __________________________________________________________*/
   padding: 3rem;
   background: #f5f5f5;
   margin: 2rem auto;
+}
+.home .contents-width .home-contents .home-content {
+  padding: 1rem;
+  border-bottom: 1px solid #999;
+}
+.home .contents-width .home-contents .home-content a {
+  font-size: 2rem;
+  display: block;
 }
 
 @media screen and (max-width: 767px) {
@@ -1052,4 +1072,90 @@ __________________________________________________________*/
 }
 .group-show #group .edit-wrap .submit-btn {
   width: 10%;
+}
+
+/*__________________________________________________________
+    table index
+__________________________________________________________*/
+.tables-main {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+.tables-main .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+.tables-main .table-container table {
+  overflow-x: scroll;
+}
+.tables-main .table-container table, .tables-main .table-container tr, .tables-main .table-container th, .tables-main .table-container td {
+  border-collapse: collapse;
+  border: 2px solid #999;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.tables-main .table-container th {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.tables-main .table-container th, .tables-main .table-container td {
+  max-width: 40%;
+  padding: 1rem 4rem;
+}
+.tables-main .table-container th a, .tables-main .table-container td a {
+  text-decoration: underline;
+}
+.tables-main .table-container a {
+  margin-top: 2rem;
+}
+
+.tables .tables-form {
+  width: 50vw;
+  height: 70vh;
+  padding: 3rem;
+  background: #f5f5f5;
+  border-radius: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  overflow-y: scroll;
+}
+.tables .tables-form h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.tables .tables-form p {
+  margin: 1rem;
+}
+.tables .tables-form .form-group {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+.tables .tables-form .form-group input {
+  width: 80%;
+  font-size: 1.6rem;
+}
+
+.table-add-btn {
+  background: rgba(130, 217, 217, 0.7254901961);
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 7px;
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  box-shadow: 2px 2px 0 #999;
+  cursor: pointer;
+}
+
+.table-add-btn:hover {
+  box-shadow: none;
 }/*# sourceMappingURL=style.css.map */

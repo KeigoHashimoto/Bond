@@ -21,7 +21,10 @@
     
                 <div class="home-contents">
                     @foreach($user->affiliations()->get() as $office)
-                        {!! link_to_route('office.show',$office->name,[$office->id],['class'=>'center']) !!}
+                        <div class="home-content">
+                            <p class="small">{{ $office->created_at }}</p>
+                            {!! link_to_route('office.show',$office->name,[$office->id]) !!}
+                        </div>
                     @endforeach
                 </div>
             </div>

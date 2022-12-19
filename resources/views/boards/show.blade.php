@@ -19,6 +19,7 @@
         個人名を出したり、誹謗中傷はしないでください。</p>
     
         <div class="opinion-form">
+            
             {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
                 {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
                 <div class="form-group">
