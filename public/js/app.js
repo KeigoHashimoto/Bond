@@ -22865,9 +22865,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 掲示板作成のためのopinionを表示させない "), opinion.user_id != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [opinion.board_id === $props.board.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 自分の投稿 "), opinion.user_id === $data.authUser.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(opinion.opinion), 1
     /* TEXT */
     ), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/uploads/' + opinion.img_path
+      href: '/community-app/uploads/' + opinion.img_path
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-      src: '/uploads/' + opinion.img_path,
+      src: 'community-app//uploads/' + opinion.img_path,
       alt: "",
       "class": "opinion-img"
     }, null, 8
@@ -22877,10 +22877,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_7)], 512
     /* NEED_PATCH */
     ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, opinion.img_path != '']])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/show/' + $data.authUser.id
+      href: 'community-app//show/' + $data.authUser.id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "self-opinion-profile-img",
-      src: '/uploads/' + $data.authUser.profile_img,
+      src: 'community-app//uploads/' + $data.authUser.profile_img,
       alt: ""
     }, null, 8
     /* PROPS */
@@ -22892,10 +22892,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         key: user.id
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [user.id === opinion.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-        href: '/show/' + user.id
+        href: 'community-app//show/' + user.id
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
         "class": "opinion-profile-img",
-        src: '/uploads/' + user.profile_img,
+        src: 'community-app//uploads/' + user.profile_img,
         alt: ""
       }, null, 8
       /* PROPS */
@@ -22906,9 +22906,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), opinion.user_id === user.id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(opinion.opinion), 1
       /* TEXT */
       ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-        href: '/uploads/' + opinion.img_path
+        href: 'community-app//uploads/' + opinion.img_path
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        src: '/uploads/' + opinion.img_path,
+        src: 'community-app//uploads/' + opinion.img_path,
         alt: "",
         "class": "opinion-img"
       }, null, 8
