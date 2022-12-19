@@ -1,6 +1,6 @@
 <div class="header">
     <div class="logo">
-        {!! link_to_route('home','Bond',[],['class' => 'header-logo']) !!}
+        <a href="{{ route('home') }}" class="header-logo"><img src={{ asset('images/bond_logo.png') }} alt=""></a>
     </div>
 
     @if(Auth::check())

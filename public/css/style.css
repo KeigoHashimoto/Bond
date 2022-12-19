@@ -417,6 +417,17 @@ __________________________________________________________*/
 .header nav .nav-icon {
   display: none;
 }
+.header .logo {
+  width: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3rem;
+}
+.header .logo .header-logo img {
+  width: 100%;
+  display: block;
+}
 .header .nav-list-desktop ul {
   display: flex;
   justify-self: flex-start;

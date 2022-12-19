@@ -487,6 +487,18 @@ __________________________________________________________*/
     }
 
     .logo{
+        width: 17%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left:3rem;
+        .header-logo{
+            
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
 
     }
     .nav-list-desktop{
