@@ -485,6 +485,10 @@ __________________________________________________________*/
         .nav-icon{
             display: none;
         }
+
+        .nav-list{
+            display: none;
+        }
     }
 
     .logo{
@@ -905,8 +909,8 @@ __________________________________________________________*/
 
                 a{
                     .self-opinion-profile-img{
-                        width: 3px;
-                        height: 30px;
+                        width: 3rem;
+                        height: 3rem;
                         border-radius:50%;
                         object-fit:cover;
                     }
@@ -924,8 +928,8 @@ __________________________________________________________*/
     
                 a{
                     .opinion-profile-img{
-                        width: 30px;
-                        height: 30px;
+                        width: 3rem;
+                        height: 3rem;
                         object-fit:cover;
                     }
                 }
