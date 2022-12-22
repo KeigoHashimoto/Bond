@@ -1234,9 +1234,7 @@ __________________________________________________________*/
 .tables-main .table-container th, .tables-main .table-container td {
   padding: 1rem 4rem;
   white-space: pre-line;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 50vw;
 }
 .tables-main .table-container th a, .tables-main .table-container td a {
   text-decoration: underline;
