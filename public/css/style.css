@@ -1201,10 +1201,6 @@ __________________________________________________________*/
   width: 100%;
   overflow-x: auto;
 }
-.tables-main .table-container table {
-  overflow-x: scroll;
-  white-space: nowrap;
-}
 .tables-main .table-container table td .delete {
   background: none;
   font-size: 2rem;
@@ -1237,9 +1233,8 @@ __________________________________________________________*/
   font-size: 2rem;
 }
 .tables-main .table-container th, .tables-main .table-container td {
-  max-width: 40vw;
+  width: 60%;
   padding: 1rem 4rem;
-  white-space: pre-line;
   word-break: break-word;
 }
 .tables-main .table-container th a, .tables-main .table-container td a {

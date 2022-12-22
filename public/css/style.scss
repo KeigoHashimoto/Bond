@@ -1431,8 +1431,6 @@ __________________________________________________________*/
         overflow-x:auto;
     
         table{
-            overflow-x:scroll;
-            white-space: nowrap;
 
             td{
                 .delete{
@@ -1471,9 +1469,8 @@ __________________________________________________________*/
         }
 
         th,td{
-            max-width:40vw;
+            width: 60%;
             padding: 1rem 4rem;
-            white-space: pre-line;
             word-break: break-word;
 
             a{
@@ -1486,9 +1483,8 @@ __________________________________________________________*/
             margin-top: 2rem;
         }
     }
-
-    
 }
+
 
 //make table form
 .tables{
