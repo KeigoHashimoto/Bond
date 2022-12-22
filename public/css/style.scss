@@ -1431,8 +1431,15 @@ __________________________________________________________*/
         overflow-x:scroll;
     
         table{
+            th{
+                width: 50%;
+                word-break:break-word;
+            }
 
             td{
+                width: 50%;
+                word-break:break-word;
+                
                 .delete{
                     background: none;
                     font-size: 2rem;

@@ -1201,6 +1201,14 @@ __________________________________________________________*/
   width: 100%;
   overflow-x: scroll;
 }
+.tables-main .table-container table th {
+  width: 50%;
+  word-break: break-word;
+}
+.tables-main .table-container table td {
+  width: 50%;
+  word-break: break-word;
+}
 .tables-main .table-container table td .delete {
   background: none;
   font-size: 2rem;
