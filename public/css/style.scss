@@ -1428,7 +1428,7 @@ __________________________________________________________*/
 
     .table-container{
         width: 100%;
-        overflow-x:auto;
+        overflow-x:scroll;
     
         table{
 
@@ -1460,7 +1460,6 @@ __________________________________________________________*/
             border-collapse:collapse;
             border:2px solid #999;
             margin: 0 auto;
-            white-space:nowrap;
         }
 
         th{
@@ -1471,7 +1470,7 @@ __________________________________________________________*/
         th,td{
             width: 60%;
             padding: 1rem 4rem;
-            word-break: break-word;
+            white-space: pre-line;
 
             a{
                 text-decoration:underline;

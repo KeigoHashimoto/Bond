@@ -1199,7 +1199,7 @@ __________________________________________________________*/
 }
 .tables-main .table-container {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 .tables-main .table-container table td .delete {
   background: none;
@@ -1226,7 +1226,6 @@ __________________________________________________________*/
   border-collapse: collapse;
   border: 2px solid #999;
   margin: 0 auto;
-  white-space: nowrap;
 }
 .tables-main .table-container th {
   font-weight: bold;
@@ -1235,7 +1234,7 @@ __________________________________________________________*/
 .tables-main .table-container th, .tables-main .table-container td {
   width: 60%;
   padding: 1rem 4rem;
-  word-break: break-word;
+  white-space: pre-line;
 }
 .tables-main .table-container th a, .tables-main .table-container td a {
   text-decoration: underline;
