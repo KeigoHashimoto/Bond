@@ -1232,7 +1232,6 @@ __________________________________________________________*/
   font-size: 2rem;
 }
 .tables-main .table-container th, .tables-main .table-container td {
-  width: 60%;
   padding: 1rem 4rem;
   white-space: pre-line;
 }
