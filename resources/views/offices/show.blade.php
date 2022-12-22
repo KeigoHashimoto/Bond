@@ -112,15 +112,11 @@
                                 <div class="group-menu-list" v-show="activeTab === 'discussion'">
                                     <h2 class="sub-title center">グループ内の議論</h2>
                                     
+                                    {{-- グループメンバー --}}
                                     @foreach($users as $user)
+                                        {{-- グループメンバーが作ったこのグループの議論 --}}
                                         @foreach($user->boards()->where('office_id',$office->id)->orderBy('created_at','desc')->get() as $board)
-                                            @if($board->office_id == $office->id)
-                                                @foreach($boards as $board)
-                                                    @if($board->office_id == $office->id)
-                                                        <h4>{!! link_to_route('board.show',$board->title,[$board->id],['class' => 'group-content']) !!}</h4>
-                                                    @endif
-                                                @endforeach
-                                            @endif
+                                            <h4>{!! link_to_route('board.show',$board->title,[$board->id],['class' => 'group-content']) !!}</h4>
                                         @endforeach
                                     @endforeach
                                 </div>
