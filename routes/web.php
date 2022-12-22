@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TablesController;
 use App\Http\Controllers\CellsController;
-use App\Http\Controllers\TableHeadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,6 +137,7 @@ use App\Http\Controllers\TableHeadsController;
         Route::prefix('table')->name('table.')->group(function(){
             Route::get('/{officeId}',[TablesController::class,'index'])->name('index');
             Route::get('{id}/show',[TablesController::class,'show'])->name('show');
+            Route::get('{id}/edit',[TablesController::class,'edit'])->name('edit');
             Route::post('{id}/post',[TablesController::class,'store'])->name('store');
             Route::put('{id}/update',[TablesController::class,'update'])->name('update');
             Route::delete('{id}/delete',[TablesController::class,'destroy'])->name('delete');
@@ -146,16 +146,11 @@ use App\Http\Controllers\TableHeadsController;
         //cell
         Route::prefix('cell')->name('cell.')->group(function(){
             Route::post('{id}/post',[CellsController::class,'store'])->name('store');
+            Route::get('{id}/edit',[CellsController::class,'edit'])->name('edit');
             Route::put('{id}/update',[CellsController::class,'update'])->name('update');
             Route::delete('{id}/delete',[CellsController::class,'destroy'])->name('delete');
         });
 
-        //table head
-        Route::prefix('head')->name('head.')->group(function(){
-            Route::post('{id}/post',[TableHeadsController::class,'store'])->name('store');
-            Route::put('{id}/update',[TableHeadsController::class,'update'])->name('update');
-            Route::delete('{id}/delete',[TableHeadsController::class,'destroy'])->name('delete');
-        });
     });
 
 

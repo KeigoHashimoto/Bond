@@ -23,8 +23,11 @@ createApp({
             menuSwitch:false,
             //tables
             tableTab:false,
+            tableEdit:false,
             //cell
             cellTab:false,
+            cellEdit:false,
+
         };
     },
 }).mount('#app');

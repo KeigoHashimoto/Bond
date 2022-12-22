@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Office;
 use App\Models\Table;
 use App\Models\Cell;
-use App\Models\TableHead;
 
 class TablesController extends Controller
 {
@@ -37,6 +36,18 @@ class TablesController extends Controller
         ->orderBy('id')
         ->get();
         return view('tables.show',compact('table','cells','office'));
+    }
+
+    /**
+     * 表の編集
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function edit($id)
+    {
+        $table = Table::findOrFail($id);
+        return view('tables.edit',compact('table'));
     }
 
     /**
@@ -78,9 +89,29 @@ class TablesController extends Controller
      * @param Request $request
      * @return void
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
+        $request->validate([
+            'title'=>'required|max:100',
+            'discription' =>'max:200',
+            'head1' => 'max:50',
+            'head2' => 'max:50',
+            'head3' => 'max:50',
+            'head4' => 'max:50',
+            'head5' => 'max:50',
+        ]);
+        
+        $table = Table::findOrFail($id);
+        $table->title = $request->title;
+        $table->discription = $request->discription;
+        $table->head1 = $request->head1;
+        $table->head2 = $request->head2;
+        $table->head3 = $request->head3;
+        $table->head4 = $request->head4;
+        $table->head5 = $request->head5;
+        $table->save();
 
+        return redirect()->back();
     }
 
     /**
@@ -89,8 +120,10 @@ class TablesController extends Controller
      * @param [type] $id
      * @return void
      */
-    public function delete($id)
+    public function destroy($id)
     {
-
+        $table = Table::findOrFail($id);
+        $table->delete();
+        return redirect()->back();
     }
 }

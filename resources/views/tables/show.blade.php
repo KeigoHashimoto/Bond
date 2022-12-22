@@ -8,49 +8,58 @@
                 <tr>
                     @if (!empty($table->head1 ))
                         <th>{{ $table->head1 }}</th>
+                    @else
+                        <th></th>
                     @endif
     
                     @if (!empty($table->head2 ))
                         <th>{{ $table->head2 }}</th>
+                    @else
+                        <th></th>
                     @endif
     
                     @if (!empty($table->head3 ))
                         <th>{{ $table->head3 }}</th>
+                    @else
+                        <th></th>
                     @endif
     
                     @if (!empty($table->head4 ))
                         <th>{{ $table->head4 }}</th>
+                    @else
+                        <th></th>
                     @endif
     
                     @if (!empty($table->head5 ))
                         <th>{{ $table->head5 }}</th>
+                    @else
+                        <th></th>
                     @endif
+
                 </tr>
             </thead>
     
             <tbody>
-                {{-- テーブルのヘッドに対応して表示を切り替える --}}
                 @foreach($cells as $cell)
                     <tr>
-                        @if (!empty($table->head1 && $cell->content1))
-                            <td>{{ $cell->content1 }}</td>
-                        @endif
-    
-                        @if (!empty($table->head2 && $cell->content2))
-                            <td>{{ $cell->content2 }}</td>
-                        @endif
-    
-                        @if (!empty($table->head3 && $cell->content3))
-                            <td>{{ $cell->content3 }}</td>
-                        @endif
-    
-                        @if (!empty($table->head4 && $cell->content4))
-                            <td>{{ $cell->content4 }}</td>
-                        @endif
-    
-                        @if (!empty($table->head5 && $cell->content5))
-                            <td>{{ $cell->content5 }}</td>
-                        @endif
+                        @for($i=1;$i<6;$i++)
+                            @if(!empty($cell->{'content'.$i}) || !empty($cell->table->{'head'.$i}))
+
+                                <td>
+                                    {{ $cell->{'content'.$i} }}
+                                </td>
+                            @endif
+                        @endfor
+
+                        <td>
+                            {{ Form::open(['route'=>['cell.delete',$cell->id],'method'=>'delete']) }}
+                                {{ Form::button('<i class="fas fa-trash"></i>',['class'=>'delete','type'=>'submit']) }}
+                            {{ Form::close() }}
+                        </td>
+
+                        <td>
+                            <a href="{{ route('cell.edit',$cell->id,$cell->table->id) }}"  class="table-edit-btn"><i class="fas fa-pen"></i></a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -58,14 +67,20 @@
     </div>
 </div>
 
-
+{{-- セルの作成フォーム --}}
 <div class="table-create" v-show="cellTab ">
     @include('cells.create')
 </div>
 
+{{-- セルの作成ボタン --}}
 <button v-on:click="cellTab = !cellTab" class="table-add-btn">表の内容を作成</button>
 
-<div class="filter" v-show="cellTab" v-on:click="cellTab = !cellTab"></div>
+
+{{-- フィルター --}}
+<div class="filter" v-show="cellTab" v-on:click="cellTab = false"></div>
+
+{{-- editフィルター --}}
+<div class="filter" v-show="cellEdit" v-on:click="cellEdit = false"></div>
 
 {{ link_to_route('table.index','表一覧に戻る',[$office->id],['class'=>'center']) }}
 

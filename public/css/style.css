@@ -121,6 +121,11 @@ body {
   margin: 0 auto;
 }
 
+input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .submit-btn input {
   width: 100%;
   background: #0367A6;
@@ -417,6 +422,9 @@ __________________________________________________________*/
   background: linear-gradient(-45deg, rgb(106, 195, 220), rgba(130, 217, 217, 0.7254901961));
 }
 .header nav .nav-icon {
+  display: none;
+}
+.header nav .nav-list {
   display: none;
 }
 .header .logo {
@@ -752,8 +760,8 @@ __________________________________________________________*/
     width: 60px;
   }
   .board-show .self-opinion .self-opinion-profile a .self-opinion-profile-img {
-    width: 3px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     -o-object-fit: cover;
        object-fit: cover;
@@ -763,8 +771,8 @@ __________________________________________________________*/
     width: 100%;
   }
   .board-show .opinion .opinion-profile a .opinion-profile-img {
-    width: 30px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -1196,6 +1204,27 @@ __________________________________________________________*/
 .tables-main .table-container table {
   overflow-x: scroll;
 }
+.tables-main .table-container table td .delete {
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: #C22F2B;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+.tables-main .table-container table td .table-edit-btn {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: #6FBFBF;
+  cursor: pointer;
+  margin: 0 auto;
+}
 .tables-main .table-container table, .tables-main .table-container tr, .tables-main .table-container th, .tables-main .table-container td {
   border-collapse: collapse;
   border: 2px solid #999;
@@ -1207,8 +1236,10 @@ __________________________________________________________*/
   font-size: 2rem;
 }
 .tables-main .table-container th, .tables-main .table-container td {
-  max-width: 40%;
+  max-width: 40vw;
   padding: 1rem 4rem;
+  white-space: pre-line;
+  word-break: break-word;
 }
 .tables-main .table-container th a, .tables-main .table-container td a {
   text-decoration: underline;
@@ -1217,6 +1248,9 @@ __________________________________________________________*/
   margin-top: 2rem;
 }
 
+.tables {
+  padding: 5rem 0;
+}
 .tables .tables-form {
   width: 50vw;
   height: 70vh;
@@ -1229,6 +1263,12 @@ __________________________________________________________*/
   transform: translate(-50%, -50%);
   z-index: 4;
   overflow-y: scroll;
+}
+.tables .tables-form .close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  cursor: pointer;
 }
 .tables .tables-form h2 {
   font-size: 3rem;
@@ -1248,6 +1288,13 @@ __________________________________________________________*/
 .tables .tables-form .form-group input {
   width: 80%;
   font-size: 1.6rem;
+}
+.tables a {
+  margin-top: 1rem;
+}
+
+.user-form .close {
+  display: none;
 }
 
 .table-add-btn {

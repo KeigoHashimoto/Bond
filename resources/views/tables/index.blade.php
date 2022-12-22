@@ -11,8 +11,10 @@
             <table class="tables-list">
                 <thead>
                     <tr>
-                        <th>title</th>
-                        <th>discription</th>
+                        <th>TITLE</th>
+                        <th>DISCRIPTION</th>
+                        <th>DELETE</th>
+                        <th>EDIT</th>
                     </tr>
                 </thead>
                 {{-- テーブルのタイトルと説明文を挿入 --}}
@@ -27,6 +29,15 @@
                                     <p>説明はありません</p>
                                 @endif
                             </td>
+                            <td>
+                                {{ Form::open(['route'=>['table.delete',$table->id],'method'=>'delete']) }}
+                                    {{ Form::button('<i class="fas fa-trash"></i>',['class'=>'delete','type'=>'submit']) }}
+                                {{ Form::close() }}
+                            </td>
+
+                            <td>
+                                <a href="{{ route('table.edit',$table->id) }}" class="table-edit-btn"><i class="fas fa-pen"></i></a>
+                            </td>
                         </tr>
                     </tbody>
                 @endforeach
@@ -40,9 +51,11 @@
 
 </div>
 
-
     {{-- モーダル用バックグラウンドフィルター --}}
-    <div class="filter" v-show="tableTab" v-on:click="tableTab = !tableTab"></div>
+    <div class="filter" v-show="tableTab" v-on:click="tableTab = false"></div>
+    
+    {{-- editモーダル用バックグラウンドフィルター --}}
+    <div class="filter" v-show="tableEdit" v-on:click="tableEdit = false"></div>
 
     {{-- 表の作成ボタン --}}
     <button v-on:click="tableTab = !tableTab" class="table-add-btn">表を作成</button>
@@ -51,6 +64,8 @@
     <div class="table-create" v-show="tableTab ">
         @include('tables.headCreate')
     </div>
+
+    
 
 
 @endsection

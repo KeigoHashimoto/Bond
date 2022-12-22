@@ -35,7 +35,7 @@
             </div>
 
             <div class="submit-btn">
-                {{ Form::submit('regist',['class'=>'white']) }}
+                {{ Form::submit('create',['class'=>'white']) }}
             </div>
         {{ Form::close() }}
     </div>

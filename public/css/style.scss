@@ -134,6 +134,11 @@ body
     margin:0 auto;
 }
 
+input[type="submit"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
 // 共通サブミットボタン
 .submit-btn{
     input{
@@ -166,6 +171,8 @@ body
     transform:translate(-50%,-50%);
     z-index:2;
 }
+
+
 
 /*__________________________________________________________
     welcome(login,register)
@@ -1425,6 +1432,29 @@ __________________________________________________________*/
     
         table{
             overflow-x:scroll;
+
+            td{
+                .delete{
+                    background: none;
+                    font-size: 2rem;
+                    border:none;
+                    color:$danger;
+                    cursor:pointer;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .table-edit-btn{
+                    display: block;
+                    width: fit-content;
+                    background: none;
+                    font-size: 2rem;
+                    border:none;
+                    color:$main;
+                    cursor:pointer;
+                    margin: 0 auto;
+                }
+            }
         }
 
         table, tr, th, td{
@@ -1440,21 +1470,28 @@ __________________________________________________________*/
         }
 
         th,td{
-            max-width:40%;
+            max-width:40vw;
             padding: 1rem 4rem;
+            white-space: pre-line;
+            word-break: break-word;
 
             a{
                 text-decoration:underline;
             }
+
         }
 
         a{
             margin-top: 2rem;
         }
     }
+
+    
 }
 
+//make table form
 .tables{
+    padding:5rem 0;
 
     .tables-form{
         width: 50vw;
@@ -1468,6 +1505,13 @@ __________________________________________________________*/
         transform:translate(-50%,-50%);
         z-index:4;
         overflow-y:scroll;
+
+        .close{
+            position:absolute;
+            top: 3rem;
+            right: 3rem;
+            cursor:pointer;
+        }
     
         h2{
             font-size:3rem;
@@ -1491,7 +1535,19 @@ __________________________________________________________*/
             }
         }
     }
-}   
+
+    a{
+        margin-top: 1rem;
+    }
+
+}
+
+.user-form{
+
+    .close{
+        display: none;
+    }
+}
 
 .table-add-btn{
     background: $point;

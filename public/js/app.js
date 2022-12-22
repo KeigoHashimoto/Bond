@@ -22961,8 +22961,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
       menuSwitch: false,
       //tables
       tableTab: false,
+      tableEdit: false,
       //cell
-      cellTab: false
+      cellTab: false,
+      cellEdit: false
     };
   }
 }).mount('#app');
