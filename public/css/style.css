@@ -1233,7 +1233,6 @@ __________________________________________________________*/
 }
 .tables-main .table-container th, .tables-main .table-container td {
   padding: 1rem 4rem;
-  white-space: pre-line;
   width: 50vw;
 }
 .tables-main .table-container th a, .tables-main .table-container td a {
