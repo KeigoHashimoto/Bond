@@ -38,6 +38,18 @@ class CellsController extends Controller
     }
 
     /**
+     * 表の編集
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function edit($id)
+    {
+        $cell = Cell::findOrFail($id);
+        return view('cells.edit',compact('cell'));
+    }
+
+    /**
      * 表の内容の更新
      *
      * @param Request $request
@@ -63,20 +75,7 @@ class CellsController extends Controller
         $cell->save();
 
         return redirect()->back();
-    }
-
-    /**
-     * 表の編集
-     *
-     * @param [type] $id
-     * @return void
-     */
-    public function edit($id)
-    {
-        $cell = Cell::findOrFail($id);
-        return view('cells.edit',compact('cell'));
-    }
-    
+    }    
 
     public function destroy($id)
     {

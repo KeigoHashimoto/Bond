@@ -6,7 +6,7 @@
     <div class="user-form">
         <h1 class="center">Edit Cell</h1>
         <p class="center">表の内容を編集します。。</p>
-        {{ Form::model($cell,['route'=>['cell.edit',$cell->table->id]]) }}
+        {{ Form::model($cell,['route'=>['cell.update',$cell->id],'method'=>'put']) }}
             @if(!empty($cell->content1))
                 <div class="form-group">
                     {{ Form::label('content1','内容１',['class' => 'label']) }}

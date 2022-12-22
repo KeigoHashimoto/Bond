@@ -1203,6 +1203,7 @@ __________________________________________________________*/
 }
 .tables-main .table-container table {
   overflow-x: scroll;
+  white-space: nowrap;
 }
 .tables-main .table-container table td .delete {
   background: none;
