@@ -1441,12 +1441,15 @@ table,th,td{
 
                 th{
                     padding:1rem 2rem;
+                    min-width:20vw;
                 }
             }
 
             tbody{
                 td{
                     padding:1rem 2rem;
+                    min-width:10vw;
+                    max-width:50vw;
 
                     button{
                         color:$danger;

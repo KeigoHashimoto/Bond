@@ -1211,9 +1211,12 @@ table, th, td {
 }
 .tables-main .table-container .tables-list thead th {
   padding: 1rem 2rem;
+  min-width: 20vw;
 }
 .tables-main .table-container .tables-list tbody td {
   padding: 1rem 2rem;
+  min-width: 10vw;
+  max-width: 50vw;
 }
 .tables-main .table-container .tables-list tbody td button {
   color: #C22F2B;
