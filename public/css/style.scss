@@ -1419,72 +1419,54 @@ __________________________________________________________*/
 /*__________________________________________________________
     table index
 __________________________________________________________*/
+table,th,td{
+    border:2px solid #999;
+    border-collapse: collapse;
+}
 
 .tables-main{
     max-width:1200px;
-    width:80%;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width:90%;
+    margin :0 auto;
+    padding: 5rem 0 ;
 
     .table-container{
         width: 100%;
-        overflow-x:scroll;
-    
-        table{
-            th{
-                width: 50%;
-                word-break:break-word;
-            }
+        overflow-x: auto;
 
-            td{
-                width: 50%;
-                word-break:break-word;
-                
-                .delete{
-                    background: none;
-                    font-size: 2rem;
-                    border:none;
-                    color:$danger;
-                    cursor:pointer;
-                    display: block;
-                    margin: 0 auto;
-                }
+        .tables-list{
+            margin:0 auto 3rem;
 
-                .table-edit-btn{
-                    display: block;
-                    width: fit-content;
-                    background: none;
-                    font-size: 2rem;
-                    border:none;
-                    color:$main;
-                    cursor:pointer;
-                    margin: 0 auto;
+            thead{
+
+                th{
+                    padding:1rem 2rem;
                 }
             }
-        }
 
-        table, tr, th, td{
-            border-collapse:collapse;
-            border:2px solid #999;
-            margin: 0 auto;
-        }
+            tbody{
+                td{
+                    padding:1rem 2rem;
 
-        th{
-            font-weight: bold;
-            font-size:2rem;
-        }
+                    button{
+                        color:$danger;
+                        border:none;
+                        background: none;
+                        display: block;
+                        width: fit-content;
+                        margin: 0 auto;
+                        font-size:2rem;
+                    }
 
-        th,td{
-            padding: 1rem 4rem;
-
-            a{
-                text-decoration:underline;
+                    .table-edit-btn{
+                        color:$main;
+                        display: block;
+                        width: fit-content;
+                        margin: 0 auto;
+                        font-size:2rem;
+                    }
+                }
             }
-
-        }
-
-        a{
-            margin-top: 2rem;
         }
     }
 }

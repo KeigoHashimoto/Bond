@@ -1191,62 +1191,49 @@ __________________________________________________________*/
 /*__________________________________________________________
     table index
 __________________________________________________________*/
+table, th, td {
+  border: 2px solid #999;
+  border-collapse: collapse;
+}
+
 .tables-main {
   max-width: 1200px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 5rem 0;
 }
 .tables-main .table-container {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
-.tables-main .table-container table th {
-  width: 50%;
-  word-break: break-word;
+.tables-main .table-container .tables-list {
+  margin: 0 auto 3rem;
 }
-.tables-main .table-container table td {
-  width: 50%;
-  word-break: break-word;
+.tables-main .table-container .tables-list thead th {
+  padding: 1rem 2rem;
 }
-.tables-main .table-container table td .delete {
-  background: none;
-  font-size: 2rem;
-  border: none;
+.tables-main .table-container .tables-list tbody td {
+  padding: 1rem 2rem;
+}
+.tables-main .table-container .tables-list tbody td button {
   color: #C22F2B;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-}
-.tables-main .table-container table td .table-edit-btn {
+  border: none;
+  background: none;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background: none;
+  margin: 0 auto;
   font-size: 2rem;
-  border: none;
+}
+.tables-main .table-container .tables-list tbody td .table-edit-btn {
   color: #6FBFBF;
-  cursor: pointer;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 0 auto;
-}
-.tables-main .table-container table, .tables-main .table-container tr, .tables-main .table-container th, .tables-main .table-container td {
-  border-collapse: collapse;
-  border: 2px solid #999;
-  margin: 0 auto;
-}
-.tables-main .table-container th {
-  font-weight: bold;
   font-size: 2rem;
-}
-.tables-main .table-container th, .tables-main .table-container td {
-  padding: 1rem 4rem;
-}
-.tables-main .table-container th a, .tables-main .table-container td a {
-  text-decoration: underline;
-}
-.tables-main .table-container a {
-  margin-top: 2rem;
 }
 
 .tables {

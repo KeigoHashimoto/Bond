@@ -8,32 +8,22 @@
                 <tr>
                     @if (!empty($table->head1 ))
                         <th>{{ $table->head1 }}</th>
-                    @else
-                        <th></th>
                     @endif
     
                     @if (!empty($table->head2 ))
                         <th>{{ $table->head2 }}</th>
-                    @else
-                        <th></th>
                     @endif
     
                     @if (!empty($table->head3 ))
                         <th>{{ $table->head3 }}</th>
-                    @else
-                        <th></th>
                     @endif
     
                     @if (!empty($table->head4 ))
                         <th>{{ $table->head4 }}</th>
-                    @else
-                        <th></th>
                     @endif
     
                     @if (!empty($table->head5 ))
                         <th>{{ $table->head5 }}</th>
-                    @else
-                        <th></th>
                     @endif
 
                 </tr>
