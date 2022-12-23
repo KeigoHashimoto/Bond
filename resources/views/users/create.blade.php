@@ -3,8 +3,8 @@
 @section('content')
 <div class="home">
     <div class="user-form">
-        <h1 class="center">プロフィール登録画面</h1>
-        <p class="center">プロフィールが登録できます。</p>
+        <h1 class="center">プロフィール編集</h1>
+        <p class="center">プロフィールが編集できます。</p>
         <div class="schedule-form">
             {{ Form::model($user,['route'=>['user.edit',$user->id],'enctype'=>'multipart/form-data','method'=>'put']) }}
                 <div class="form-group">

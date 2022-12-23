@@ -35,7 +35,7 @@
                         @for($i=1;$i<6;$i++)
                             @if(!empty($cell->{'content'.$i}) || !empty($cell->table->{'head'.$i}))
                                 <td>
-                                    {{ $cell->{'content'.$i} }}
+                                    {!! nl2br(e($cell->{'content'.$i})) !!}
                                 </td>
                             @endif
                         @endfor
