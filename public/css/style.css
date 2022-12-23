@@ -876,6 +876,33 @@ __________________________________________________________*/
   }
 }
 /*__________________________________________________________
+    infomation show
+__________________________________________________________*/
+.info-show {
+  padding: 3rem;
+  margin: 2rem auto;
+  background: #f5f5f5;
+}
+.info-show .info-content {
+  padding: 3rem 0;
+}
+
+.readed-btn {
+  background: rgba(130, 217, 217, 0.7254901961);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.readed-member {
+  padding: 2rem;
+  border-radius: 5px;
+  background: #f5f5f5;
+}
+
+/*__________________________________________________________
     office index(group)
 __________________________________________________________*/
 .group-index {

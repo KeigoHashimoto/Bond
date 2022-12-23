@@ -1040,6 +1040,31 @@ __________________________________________________________*/
         }
     }
 }
+/*__________________________________________________________
+    infomation show
+__________________________________________________________*/
+.info-show{
+    padding:3rem;
+    margin: 2rem auto;
+    background: $white;
+
+    .info-content{
+        padding: 3rem 0;
+    }
+}
+
+.readed-btn{
+    background: $point;
+    padding:.5rem 1rem;
+    border-radius:5px;
+    width: fit-content;
+}
+
+.readed-member{
+    padding:2rem;
+    border-radius:5px;
+    background: $white;
+}
 
 /*__________________________________________________________
     office index(group)
