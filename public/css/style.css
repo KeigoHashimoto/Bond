@@ -75,6 +75,8 @@ body {
   border-radius: 15px;
   margin-top: 2rem;
   box-shadow: 2px 2px 10px #ccc;
+  font-weight: bold;
+  text-align: center;
 }
 
 .small {
@@ -482,7 +484,7 @@ __________________________________________________________*/
     display: block;
     font-size: 2rem;
   }
-  .header .nav-list {
+  .header nav .nav-list {
     position: fixed;
     top: 0;
     left: 0;
@@ -495,19 +497,19 @@ __________________________________________________________*/
     align-items: center;
     text-align: center;
   }
-  .header .nav-list .nav-item {
+  .header nav .nav-list .nav-item {
     margin-bottom: 2rem;
     color: #999;
   }
-  .header .nav-list .nav-item a {
+  .header nav .nav-list .nav-item a {
     color: #fff;
   }
-  .header .nav-list .header-img {
+  .header nav .nav-list .header-img {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
   }
-  .header .nav-list .sarch-container {
+  .header nav .nav-list .sarch-container {
     margin-right: auto;
   }
   .header .logo {
