@@ -434,42 +434,19 @@ __________________________________________________________*/
     padding: 2rem;
   }
   .profile-container .tab-contents .board-title-card {
-    width: 80%;
-    margin: 0 auto;
-    background: rgba(130, 217, 217, 0.7254901961);
-    margin-bottom: 1rem;
-    box-shadow: 2px 2px 10px #ccc;
-    padding: 0.5rem 2rem;
+    width: 90%;
   }
   .profile-container .tab-contents .board-title-card .small-contents {
-    display: flex;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    flex-direction: column;
   }
   .profile-container .tab-contents .board-title-card .board-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .profile-container .tab-contents .small {
     color: #777;
   }
   .profile-container .tab-contents .tab-content-group {
-    width: 70%;
-    margin: 0 auto;
-    padding-bottom: 5rem;
-  }
-  .profile-container .tab-contents .tab-content-group .group-label {
-    padding: 1rem;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-  }
-  .profile-container .tab-contents .tab-content-group .group-label a {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .profile-container .tab-contents .tab-content-group .group-label:hover {
-    background: #ccc;
+    width: 90%;
   }
   .profile-container .tab-contents .tab-content-group .group-gate-yet {
     margin: 2rem auto;

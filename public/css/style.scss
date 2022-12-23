@@ -513,20 +513,14 @@ __________________________________________________________*/
         .tab-contents{
             padding:2rem;
             .board-title-card{
-                width: 80%;
-                margin:0 auto;
-                background: $point;
-                margin-bottom: 1rem; 
-                box-shadow:2px 2px 10px #ccc;   
-                padding:.5rem 2rem;
+                width: 90%;
     
                 .small-contents{
-                    display: flex;
-                    column-gap:2rem;
+                    flex-direction:column;
                 }
     
                 .board-title{
-                    font-size:2rem;
+                    font-size:1.6rem;
                 }
             }
     
@@ -536,28 +530,8 @@ __________________________________________________________*/
     
             // 所属グループタブ
             .tab-content-group{
-                width: 70%;
-                margin:0 auto;
-                padding-bottom:5rem;
-    
-                .group-label{
-                    padding: 1rem;
-                    width: 100%;
-                    border-bottom:1px solid #ccc;
-    
-                    a{
-                        display: block;
-                        white-space:nowrap;
-                        overflow:hidden;
-                        text-overflow:ellipsis;
-    
-                    }
-                }
-    
-                .group-label:hover{
-                    background: #ccc;
-                }
-    
+                width: 90%;
+            
                 .group-gate-yet{
                     margin:2rem auto;
                     padding:1rem 0;
