@@ -1474,6 +1474,47 @@ table,th,td{
     }
 }
 
+@media screen and (max-width: 767px) {
+    .tables-main{    
+        .table-container{
+            .tables-list{   
+                thead{
+    
+                    th{
+                        padding:1rem 2rem;
+                        min-width:20vw;
+                    }
+                }
+    
+                tbody{
+                    td{
+                        padding:1rem 2rem;
+                        min-width:40vw;
+                        max-width:70vw;
+    
+                        button{
+                            color:$danger;
+                            border:none;
+                            background: none;
+                            display: block;
+                            width: fit-content;
+                            margin: 0 auto;
+                            font-size:2rem;
+                        }
+    
+                        .table-edit-btn{
+                            color:$main;
+                            display: block;
+                            width: fit-content;
+                            margin: 0 auto;
+                            font-size:2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 //make table form
 .tables{
