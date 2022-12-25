@@ -307,13 +307,11 @@ __________________________________________________________*/
                 
 
                 .profile-name{
-                    font-size:5rem;
+                    font-size:3rem;
                     font-weight:900;
                     margin-bottom: 3rem;
-                    position:absolute;
-                    line-height:0;
-                    left: 3rem;
-                    top: 0;
+                    width: 100%;
+                    white-space: pre-wrap;
                 }
 
                 .profile-content{
@@ -469,7 +467,7 @@ __________________________________________________________*/
             border:none;
     
             .profile{
-                padding-top: 13rem;
+                padding-top: 6rem;
                 max-width:1000px;
                 margin: 0 auto;
                 position:relative;
@@ -486,7 +484,7 @@ __________________________________________________________*/
     
                     .profile-content{
                         padding-top: 2rem;
-                        width: 70%;
+                        width: 100%;
                         word-break: break-word;
                     }
                 }

@@ -1,6 +1,6 @@
 <div class="home">
     <div class="user-form">
-        <h1 class="center">add Infomation</h1>
+        <h1 class="center">連絡事項の作成</h1>
         <p class="center">連絡事項を登録してください。<br>
         これはグループメンバーに表示されます。</p>
         <div class="schedule-form">
