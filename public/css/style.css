@@ -539,6 +539,8 @@ __________________________________________________________*/
 }
 .header .logo .header-logo img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .header .nav-list-desktop ul {
@@ -558,6 +560,8 @@ __________________________________________________________*/
 .header .nav-list-desktop ul li .header-img {
   width: 10rem;
   height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 .header .nav-list-desktop ul li:hover {
@@ -754,6 +758,7 @@ __________________________________________________________*/
   width: 100%;
   height: 30vh;
   margin-top: 1rem;
+  padding: 1rem;
 }
 .board-show .opinion-form .form-group {
   margin: 2rem 0;

@@ -637,6 +637,7 @@ __________________________________________________________*/
             
             img{
                 width: 100%;
+                object-fit: cover;
                 display: block;
             }
         }
@@ -662,6 +663,7 @@ __________________________________________________________*/
                 .header-img {
                     width: 10rem;
                     height: 10rem;
+                    object-fit: cover;
                     border-radius:50%;
                 }
             }
@@ -913,6 +915,7 @@ __________________________________________________________*/
             width: 100%;
             height: 30vh;
             margin-top: 1rem;
+            padding:1rem;
         }
 
         .form-group{
