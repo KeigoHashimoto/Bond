@@ -42,12 +42,10 @@
                     </tbody>
                 @endforeach
             </table>
-
-            {{-- グループに戻るボタン --}}
-            {{ link_to_route('office.show','グループに戻る',[$office->id],['class'=>'center']) }}
-
         </div>
     @endif
+    {{-- グループに戻るボタン --}}
+    {{ link_to_route('office.show','グループに戻る',[$office->id],['class'=>'center']) }}
 
 </div>
 

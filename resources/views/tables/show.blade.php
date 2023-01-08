@@ -55,7 +55,7 @@
         </table>
     </div>
     {{ link_to_route('table.index','表一覧に戻る',[$office->id],['class'=>'center']) }}
-
+    {{ link_to_route('office.show','グループトップに戻る',[$office->id],['class'=>'center']) }}
 </div>
 
 {{-- セルの作成フォーム --}}
