@@ -54,6 +54,9 @@
                                 <h3 v-on:click="activeTab = 'discussion',sideSwitch = !sideSwitch">Discussion</h3>
                                 <h3 v-on:click="activeTab = 'infomation',sideSwitch = !sideSwitch">Infomation</h3>        
                                 <h3 v-on:click="activeTab = 'schedules',sideSwitch = !sideSwitch">Schedules</h3>    
+                                <h3>
+                                    {{ link_to_route('table.index','Table',[$office->id],['class'=>'white']) }}
+                                </h3>
                             </div>
                             <ul>
                                 <li v-on:click="activeTab = '',sideSwitch = !sideSwitch">グループトップ</li>
@@ -61,9 +64,6 @@
                                 <li v-on:click="activeTab = 'info',sideSwitch = !sideSwitch">連絡事項の作成</li>
                                 <li v-on:click="activeTab = 'schedule',sideSwitch = !sideSwitch">予定の作成</li>
                                 <li v-on:click="activeTab = 'edit',sideSwitch = !sideSwitch">グループ情報の編集</li>
-                                <li>
-                                    {{ link_to_route('table.index','リスト',[$office->id],['class'=>'white']) }}
-                                </li>
                                 <li>
                                     {{ Form::open(['route'=>['office.delete',$office->id],'method'=>'delete']) }}
                                         {{ Form::submit('グループの削除',['class'=>'delete']) }}

@@ -155,6 +155,10 @@ input[type=submit] {
   z-index: 2;
 }
 
+.white {
+  color: #fff;
+}
+
 /*__________________________________________________________
     welcome(login,register)
 __________________________________________________________*/
@@ -549,6 +553,7 @@ __________________________________________________________*/
 }
 .header .nav-list-desktop ul li a {
   color: #777;
+  font-size: 1.25vw;
 }
 .header .nav-list-desktop ul li .header-img {
   width: 10rem;
@@ -1163,6 +1168,7 @@ __________________________________________________________*/
 }
 .group-show .group-name-wrap h2 {
   padding: 0;
+  font-size: 4vw;
 }
 .group-show .group-name-wrap .downmenu-icon {
   display: none;
@@ -1180,6 +1186,7 @@ __________________________________________________________*/
   width: 16%;
   cursor: pointer;
   text-align: center;
+  font-size: 1.25vw;
 }
 .group-show #group .group-menu-tabs h3 .table-link {
   color: #fff;
@@ -1195,6 +1202,7 @@ __________________________________________________________*/
   width: 16%;
   cursor: pointer;
   text-align: center;
+  font-size: 1.25vw;
 }
 .group-show #group ul li .delete {
   background: none;
@@ -1274,7 +1282,7 @@ __________________________________________________________*/
   }
   .group-show .group-name-wrap h2 {
     padding: 0;
-    font-size: 2.6rem;
+    font-size: 4vw;
   }
   .group-show .group-name-wrap .downmenu-icon {
     display: flex;
@@ -1330,7 +1338,7 @@ table, th, td {
 }
 .tables-main .table-container {
   width: 100%;
-  overflow-x: auto;
+  overflow: scroll;
 }
 .tables-main .table-container .tables-list {
   margin: 0 auto 3rem;
@@ -1344,6 +1352,10 @@ table, th, td {
   min-width: 10vw;
   width: 0;
   white-space: nowrap;
+}
+.tables-main .table-container .tables-list tbody td .table-title {
+  text-decoration: underline;
+  color: blue;
 }
 .tables-main .table-container .tables-list tbody td button {
   color: #C22F2B;

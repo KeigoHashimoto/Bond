@@ -54,6 +54,8 @@
             </tbody>
         </table>
     </div>
+    {{ link_to_route('table.index','表一覧に戻る',[$office->id],['class'=>'center']) }}
+
 </div>
 
 {{-- セルの作成フォーム --}}
@@ -70,8 +72,6 @@
 
 {{-- editフィルター --}}
 <div class="filter" v-show="cellEdit" v-on:click="cellEdit = false"></div>
-
-{{ link_to_route('table.index','表一覧に戻る',[$office->id],['class'=>'center']) }}
 
 
 @endsection

@@ -21,7 +21,7 @@
                 @foreach($tables as $table)
                     <tbody>
                         <tr>
-                            <td>{{ link_to_route('table.show',$table->title,[$table->id]) }}</td>
+                            <td>{{ link_to_route('table.show',$table->title,[$table->id],['class' => 'table-title']) }}</td>
                             <td> 
                                 @if (!empty($table->discription))
                                     {{ $table->discription }}

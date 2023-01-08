@@ -174,7 +174,9 @@ input[type="submit"] {
     z-index:2;
 }
 
-
+.white{
+    color:#fff;
+}
 
 /*__________________________________________________________
     welcome(login,register)
@@ -650,9 +652,11 @@ __________________________________________________________*/
 
             li{
                 position:relative;
+
                 
                 a{
                     color:#777;
+                    font-size:calc(100vw / 80)
                 }
                 
                 .header-img {
@@ -1373,6 +1377,7 @@ __________________________________________________________*/
 
         h2{
             padding: 0;
+            font-size:calc(100vw / 25);
         }
 
         .downmenu-icon{
@@ -1393,6 +1398,7 @@ __________________________________________________________*/
                 width: 16%;
                 cursor:pointer;
                 text-align: center;
+                font-size:calc(100vw / 80);
 
                 .table-link{
                     color:#fff;
@@ -1410,6 +1416,7 @@ __________________________________________________________*/
                 width: 16%;
                 cursor:pointer;
                 text-align: center;
+                font-size:calc(100vw / 80);
 
                 .delete{
                     background: none;
@@ -1508,7 +1515,7 @@ __________________________________________________________*/
     
             h2{
                 padding: 0;
-                font-size:2.6rem;
+                font-size:calc(100vw /25);
             }
     
             .downmenu-icon{
@@ -1586,7 +1593,7 @@ table,th,td{
 
     .table-container{
         width: 100%;
-        overflow-x: auto;
+        overflow: scroll;
 
         .tables-list{
             margin:0 auto 3rem;
@@ -1605,6 +1612,11 @@ table,th,td{
                     min-width:10vw;
                     width: 0;
                     white-space: nowrap;
+
+                    .table-title{
+                        text-decoration:underline;
+                        color:blue;
+                    }
                     
 
                     button{
