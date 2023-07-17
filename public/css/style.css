@@ -776,6 +776,7 @@ __________________________________________________________*/
   border-radius: 7px;
   padding: 3rem;
   margin-bottom: 1rem;
+  white-space: pre-wrap;
 }
 .board-show .self-opinion .self-opinion-content a .opinion-img {
   width: 80%;
@@ -815,6 +816,7 @@ __________________________________________________________*/
   border-radius: 7px;
   padding: 3rem;
   margin-bottom: 1rem;
+  white-space: pre-wrap;
 }
 .board-show .opinion .opinion-content a .opinion-img {
   width: 80%;
