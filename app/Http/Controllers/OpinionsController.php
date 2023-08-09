@@ -12,21 +12,21 @@ use Illuminate\Support\Facades\Mail;
 
 class OpinionsController extends Controller
 {
-    public function store(Request $request, $id){
+    public function store(Request $request){
         $request->validate([
             'opinion'=>'required|max:500',
             'img_path'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
         ]);
 
         $user=\Auth::user();
-        $board = BulletinBoard::findOrFail($id);
+        $board = BulletinBoard::findOrFail($request->board_id);
         if(!empty($board->office_id)){
             $office = $board->office;
         }
 
         if($file = $request->img_path){
             $file_name = time() . $file->getClientOriginalName();
-            $file_path = public_path('/uploads/');
+            // $file_path = public_path('/uploads/');
             $file -> move($file_path,$file_name);
         }else{
             $file_name="";
@@ -47,22 +47,22 @@ class OpinionsController extends Controller
 
         event(new MessageCreated($opinions));
 
-        $time = date('H');
-        $greet;
-        $words;
-        if($time >= 6 && $time <= 11){
-            $greet = 'おっはー！';
-            $words = '今日も元気してるー？？今日も一日頑張りまっしょい！';
-        }else if($time > 11 && $time <= 18 ){
-            $greet = 'Hallo';
-            $words = '今日も張り切ってる？？みんな頑張ってるの知ってるよ！無理しないでね！';
-        }else{
-            $greet = 'こんばんは！';
-            $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
-        }
+        // $time = date('H');
+        // $greet;
+        // $words;
+        // if($time >= 6 && $time <= 11){
+        //     $greet = 'おっはー！';
+        //     $words = '今日も元気してるー？？今日も一日頑張りまっしょい！';
+        // }else if($time > 11 && $time <= 18 ){
+        //     $greet = 'Hallo';
+        //     $words = '今日も張り切ってる？？みんな頑張ってるの知ってるよ！無理しないでね！';
+        // }else{
+        //     $greet = 'こんばんは！';
+        //     $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
+        // }
 
-        Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
+        // Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
 
-        return back();
+        return response()->json('test');
     }
 }

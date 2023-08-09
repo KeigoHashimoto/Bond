@@ -2,11 +2,13 @@ require('./bootstrap');
 
 import { createApp } from 'vue'
 import ExampleComponent from './components/ExampleComponent.vue'
+import PostForm from './components/PostForm.vue'
 
 
 createApp({
     components:{
         ExampleComponent,
+        PostForm
     },
     data(){
         return{

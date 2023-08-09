@@ -20,7 +20,7 @@
     
         <div class="opinion-form">
             
-            {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
+            {{-- {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
                 {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
                 <div class="form-group">
                     {{ Form::label('img_path','画像：') }}
@@ -30,7 +30,8 @@
                 <div class="submit-btn">
                     {{ Form::submit('送信',['class'=>'white']) }}
                 </div>
-            {{ Form::close() }}
+            {{ Form::close() }} --}}
+            <post-form :board_id='{{$board->id}}'></post-form>
         </div>
     
         {{-- opinion リアルタイムチャット　vuejs --}}

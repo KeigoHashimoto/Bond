@@ -76,7 +76,7 @@
         
                 <div id="group-contents" v-show="!sideSwitch">
                     {{-- tabの選択無し --}}
-                    <div v-else>
+                    <div>
                         <h3 class="greet">Hello!<br>
                             {{ $office->name }}のグループに加入しています。
                         </h3>
