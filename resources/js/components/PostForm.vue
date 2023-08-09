@@ -10,9 +10,13 @@
             <input type="submit" value="送信" class="white">
         </div>
     </form>
+
+    <NowLoading v-show="load"></NowLoading>
 </template>
 
 <script>
+import NowLoading from './NowLoading.vue';
+
 export default{
     data(){
         return{
@@ -24,6 +28,7 @@ export default{
     props:['board_id'],
     methods:{
         posted(){
+            this.load =true;
             const data = {
                 opinion:this.opinion,
                 board_id:this.board_id,
@@ -32,9 +37,18 @@ export default{
             .then(res =>{
                 console.log(res);
             })
-        }
-    }
+            .catch(()=>{
 
+            })
+            .finally(()=>{
+                this.load=false;
+                this.opinion='';
+            })
+        }
+    },
+    components:{
+        NowLoading
+    }
 }
 
 </script>

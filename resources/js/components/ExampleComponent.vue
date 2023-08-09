@@ -99,7 +99,6 @@ import axios from 'axios';
 
             Echo.channel('chat')
                 .listen('MessageCreated',(e) => {
-                    console.log('no err');
                     this.getMessages();
                 });
         },
