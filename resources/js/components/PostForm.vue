@@ -21,6 +21,7 @@ export default{
     data(){
         return{
             load:false,
+            // url:'/'+this.board_id+'/opinions',
             url:'/community-app/'+this.board_id+'/opinions',
             opinion:'',
             file:null

@@ -17,25 +17,15 @@
     
         <p class="small center">議題に沿った話し合いをしてください。<br>
         個人名を出したり、誹謗中傷はしないでください。</p>
-    
+        
         <div class="opinion-form">
-            
-            {{-- {{ Form::open(['route'=>['opinion.post',$board->id],'enctype'=>'multipart/form-data']) }}
-                {{ Form::textarea('opinion',null,['class'=>'textarea']) }}
-                <div class="form-group">
-                    {{ Form::label('img_path','画像：') }}
-                    {{ Form::file('img_path') }}
-                </div>
-
-                <div class="submit-btn">
-                    {{ Form::submit('送信',['class'=>'white']) }}
-                </div>
-            {{ Form::close() }} --}}
-            <post-form :board_id='{{$board->id}}'></post-form>
+            <post-form :board_id='{{$board->id}}' class="opinion-form-component"></post-form>
         </div>
     
         {{-- opinion リアルタイムチャット　vuejs --}}
         <example-component :board='@json($board)'></example-component>
+
+
     
         {!! link_to_route('home','topに戻る',[],['class'=>'center small']) !!}
         @if($board->office_id)

@@ -12,7 +12,7 @@ class MessagesController extends Controller
 {
     public function index()
     {
-        return Opinion::orderBy('created_at','desc')->get();
+        return Opinion::orderBy('created_at','desc')->paginate(7);
     }
     public function users()
     {
