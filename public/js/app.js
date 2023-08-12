@@ -22973,7 +22973,11 @@ __webpack_require__.r(__webpack_exports__);
 
       this.load = true;
       var formData = new FormData();
-      formData.append('image', this.file);
+
+      if (this.file) {
+        formData.append('image', this.file);
+      }
+
       formData.append('opinion', this.opinion);
       formData.append('board_id', this.board_id);
       axios.post(this.url, formData).then(function (res) {
