@@ -22746,7 +22746,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       users: [],
       authUser: [],
       load: false,
-      nextPageUrl: ''
+      nextPageUrl: '',
+      moreactive: true
     };
   },
   props: {
@@ -22868,6 +22869,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             _this5.getPage(_this5.nextPageUrl);
           }
         });
+      } else {
+        this.moreactive = false;
       }
     },
     autoPageLoader: function autoPageLoader() {
@@ -23079,6 +23082,7 @@ var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_21 = ["href"];
 var _hoisted_22 = ["src"];
 var _hoisted_23 = {
+  key: 0,
   ref: "more",
   "class": "more"
 };
@@ -23149,9 +23153,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ))]))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, null, 512
+  )), $data.moreactive ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_23, null, 512
   /* NEED_PATCH */
-  )], 512
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 512
   /* NEED_PATCH */
   )], 512
   /* NEED_PATCH */

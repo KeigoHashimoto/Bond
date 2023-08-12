@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div ref="more" class="more"></div>
+            <div ref="more" class="more" v-if="moreactive"></div>
         </div>
     </div>
 <NowLoading v-show="load"></NowLoading>
@@ -81,6 +81,7 @@ import NowLoading from './NowLoading.vue';
                 authUser:[],
                 load:false,
                 nextPageUrl:'',
+                moreactive:true,
             };
         },
         props:{
@@ -158,6 +159,8 @@ import NowLoading from './NowLoading.vue';
                             this.getPage(this.nextPageUrl);
                         }
                     })
+                }else{
+                    this.moreactive = false;
                 }
             },
 
