@@ -49,6 +49,11 @@ export default{
             //     board_id:this.board_id,
             //     image:this.file,
             // }
+
+            if(this.file == null){
+                formData.delete('image');
+            }
+
             axios.post(this.url,formData)
             .then(res =>{
                 console.log(res);

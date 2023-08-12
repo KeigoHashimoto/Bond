@@ -66,7 +66,7 @@
             <div ref="more" class="more" v-if="moreactive"></div>
         </div>
     </div>
-<NowLoading v-show="load"></NowLoading>
+
 </template>
 
 <script>
