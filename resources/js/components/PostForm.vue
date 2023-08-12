@@ -2,7 +2,7 @@
     <form @submit.prevent='posted'>
         <div class="mb-wrap">
             <div class="mb-rayout">
-                <textarea class="postform" v-model="opinion"></textarea>
+                <textarea class="textarea" v-model="opinion"></textarea>
                 <div class="form-group">
                     <label for="">画像</label>
                     <input type="file" ref="file" @change="handleFileChange">
@@ -41,12 +41,14 @@ export default{
         posted(){
             this.load =true;
             const formData = new FormData();
-            if(this.file){
-                formData.append('image',this.file);
-            }
+            formData.append('image',this.file);
             formData.append('opinion',this.opinion);
             formData.append('board_id',this.board_id);
-
+            // const data = {       
+            //     opinion:this.opinion,
+            //     board_id:this.board_id,
+            //     image:this.file,
+            // }
             axios.post(this.url,formData)
             .then(res =>{
                 console.log(res);
@@ -67,11 +69,6 @@ export default{
 
 </script>
 
-<style scoped>
-.postform{
-    width: 100%;
-    height:5rem;
-    margin: 1rem 0 0 ;
-}
+<style>
 
 </style>

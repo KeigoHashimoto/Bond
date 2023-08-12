@@ -15,8 +15,13 @@ class OpinionsController extends Controller
     public function store(Request $request){
         $request->validate([
             'opinion'=>'max:500',
-            'image'=>'file|mimes:jpeg,png,jpg,bmp|max:5000',
         ]);
+
+        if($request->image){
+            $request->validate([
+                'image'=>'file|mimes:jpeg,png,jpg,bmp|max:5000',
+            ]);
+        }
 
         $user=\Auth::user();
         $board = BulletinBoard::findOrFail($request->board_id);
