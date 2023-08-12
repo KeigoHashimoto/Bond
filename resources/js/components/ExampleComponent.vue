@@ -200,6 +200,7 @@ import NowLoading from './NowLoading.vue';
 .container{
     height: 700px;
     overflow: auto;
+    padding: 2rem;
 }
 .more{
     width: 100%;

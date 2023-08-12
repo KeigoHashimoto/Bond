@@ -17,16 +17,15 @@
     
         <p class="small center">議題に沿った話し合いをしてください。<br>
         個人名を出したり、誹謗中傷はしないでください。</p>
-        
-        <div class="opinion-form">
-            <post-form :board_id='{{$board->id}}' class="opinion-form-component"></post-form>
+
+        <div class="pc-formation">
+            <div class="opinion-form">
+                <post-form :board_id='{{$board->id}}' class="opinion-form-component"></post-form>
+            </div>
+            {{-- opinion リアルタイムチャット　vuejs --}}
+            <example-component :board='@json($board)'></example-component>
         </div>
-    
-        {{-- opinion リアルタイムチャット　vuejs --}}
-        <example-component :board='@json($board)'></example-component>
 
-
-    
         {!! link_to_route('home','topに戻る',[],['class'=>'center small']) !!}
         @if($board->office_id)
             {!! link_to_route('office.show','グループへ戻る',[$board->office_id],['class'=>'center small']) !!}

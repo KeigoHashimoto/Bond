@@ -12,6 +12,7 @@ createApp({
     },
     data(){
         return{
+            rsStyle:true,
             isActive: false,
             activeTab:'',
             onOff1:false,

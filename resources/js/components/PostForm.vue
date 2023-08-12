@@ -1,14 +1,20 @@
 <template>
     <form @submit.prevent='posted'>
-        <textarea class="textarea" v-model="opinion"></textarea>
-        <div class="form-group">
-            <label for="">画像</label>
-            <input type="file" ref="file" @change="handleFileChange">
+        <div class="mb-wrap">
+            <div class="mb-rayout">
+                <textarea class="postform" v-model="opinion"></textarea>
+                <div class="form-group">
+                    <label for="">画像</label>
+                    <input type="file" ref="file" @change="handleFileChange">
+                </div>
+                <input type="hidden" value="board_id">
+            </div>
+            
+            <div class="submit-btn">
+                <input type="submit" value="送信" class="white">
+            </div>
         </div>
-        <input type="hidden" value="board_id">
-        <div class="submit-btn">
-            <input type="submit" value="送信" class="white">
-        </div>
+ 
     </form>
 
     <NowLoading v-show="load"></NowLoading>
@@ -63,6 +69,11 @@ export default{
 
 </script>
 
-<style>
+<style scoped>
+.postform{
+    width: 100%;
+    height:5rem;
+    margin: 1rem 0 0 ;
+}
 
 </style>
