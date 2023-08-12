@@ -23,7 +23,9 @@ class OpinionsController extends Controller
             $office = $board->office;
         }
 
-        if($file = $request->image){
+        $file = $request->image;
+
+        if($file!=null){
             $file_name = time() . $file->getClientOriginalName();
             $file_path = public_path('/uploads/');
             $file -> move($file_path,$file_name);
