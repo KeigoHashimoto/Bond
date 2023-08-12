@@ -15,7 +15,7 @@ class OpinionsController extends Controller
     public function store(Request $request){
         $request->validate([
             'opinion'=>'max:500',
-            'image'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
+            'image'=>'file|mimes:jpeg,png,jpg,bmp|max:5000',
         ]);
 
         $user=\Auth::user();

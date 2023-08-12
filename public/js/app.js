@@ -22975,12 +22975,7 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append('image', this.file);
       formData.append('opinion', this.opinion);
-      formData.append('board_id', this.board_id); // const data = {       
-      //     opinion:this.opinion,
-      //     board_id:this.board_id,
-      //     image:this.file,
-      // }
-
+      formData.append('board_id', this.board_id);
       axios.post(this.url, formData).then(function (res) {
         console.log(res);
       })["catch"](function () {})["finally"](function () {

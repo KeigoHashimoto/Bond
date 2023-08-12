@@ -44,11 +44,7 @@ export default{
             formData.append('image',this.file);
             formData.append('opinion',this.opinion);
             formData.append('board_id',this.board_id);
-            // const data = {       
-            //     opinion:this.opinion,
-            //     board_id:this.board_id,
-            //     image:this.file,
-            // }
+
             axios.post(this.url,formData)
             .then(res =>{
                 console.log(res);
