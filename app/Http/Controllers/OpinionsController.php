@@ -51,17 +51,17 @@ class OpinionsController extends Controller
         $greet;
         $words;
         if($time >= 6 && $time <= 11){
-            $greet = 'おっはー！';
-            $words = '今日も元気してるー？？今日も一日頑張りまっしょい！';
+            $greet = 'おはようございます';
+            $words = '今日も１日頑張りましょう！';
         }else if($time > 11 && $time <= 18 ){
-            $greet = 'Hallo';
-            $words = '今日も張り切ってる？？みんな頑張ってるの知ってるよ！無理しないでね！';
+            $greet = 'こんにちは';
+            $words = '毎日ご苦労様です！';
         }else{
-            $greet = 'こんばんは！';
-            $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
+            $greet = 'こんばんは。';
+            $words = '今日もお疲れ様でした！';
         }
 
-        Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
+        Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿がありました。',));
 
         return response()->json('test');
     }
