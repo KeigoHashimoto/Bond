@@ -89,15 +89,15 @@ import NowLoading from './NowLoading.vue';
         methods:{
             async getPage(url){
                 this.load = true;
-                    await axios.get(url)
-                    .then(response => {
-                        this.opinions = this.opinions.concat(response.data.data);
-                        this.nextPageUrl = response.data.next_page_url;
-                    })
-                    .catch(err => {
-                    }).finally(()=>{
-                        this.load=false;
-                    })
+                await axios.get(url)
+                .then(response => {
+                    this.opinions = this.opinions.concat(response.data.data);
+                    this.nextPageUrl = response.data.next_page_url;
+                })
+                .catch(err => {
+                }).finally(()=>{
+                    this.load=false;
+                })
             },
             async getMessages(){
                 if(window.location.hostname =='localhost'){
@@ -148,16 +148,17 @@ import NowLoading from './NowLoading.vue';
             getPageOnScroll(){
                 let container = this.$refs.container;
                 let more = this.$refs.more;
-                container.addEventListener('scroll',() =>{
-                    let containerRect = container.getBoundingClientRect();
-                    let moreRect = more.getBoundingClientRect();
-                    if(this.nextPageUrl == null) return;
+                if(this.nextPageUrl != null){
+                    container.addEventListener('scroll',() =>{
+                        let containerRect = container.getBoundingClientRect();
+                        let moreRect = more.getBoundingClientRect();
 
-                    if(containerRect.bottom > moreRect.top){
-                        if(this.load) return;
-                        this.getPage(this.nextPageUrl);
-                    }
-                })
+                        if(containerRect.bottom > moreRect.top){
+                            if(this.load) return;
+                            this.getPage(this.nextPageUrl);
+                        }
+                    })
+                }
             },
 
             async autoPageLoader(){

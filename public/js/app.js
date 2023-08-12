@@ -22856,17 +22856,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       var container = this.$refs.container;
       var more = this.$refs.more;
-      container.addEventListener('scroll', function () {
-        var containerRect = container.getBoundingClientRect();
-        var moreRect = more.getBoundingClientRect();
-        if (_this5.nextPageUrl == null) return;
 
-        if (containerRect.bottom > moreRect.top) {
-          if (_this5.load) return;
+      if (this.nextPageUrl != null) {
+        container.addEventListener('scroll', function () {
+          var containerRect = container.getBoundingClientRect();
+          var moreRect = more.getBoundingClientRect();
 
-          _this5.getPage(_this5.nextPageUrl);
-        }
-      });
+          if (containerRect.bottom > moreRect.top) {
+            if (_this5.load) return;
+
+            _this5.getPage(_this5.nextPageUrl);
+          }
+        });
+      }
     },
     autoPageLoader: function autoPageLoader() {
       var _this6 = this;
