@@ -26,7 +26,7 @@ class OpinionsController extends Controller
 
         if($file = $request->img_path){
             $file_name = time() . $file->getClientOriginalName();
-            // $file_path = public_path('/uploads/');
+            $file_path = public_path('/uploads/');
             $file -> move($file_path,$file_name);
         }else{
             $file_name="";
@@ -47,21 +47,21 @@ class OpinionsController extends Controller
 
         event(new MessageCreated($opinions));
 
-        // $time = date('H');
-        // $greet;
-        // $words;
-        // if($time >= 6 && $time <= 11){
-        //     $greet = 'おっはー！';
-        //     $words = '今日も元気してるー？？今日も一日頑張りまっしょい！';
-        // }else if($time > 11 && $time <= 18 ){
-        //     $greet = 'Hallo';
-        //     $words = '今日も張り切ってる？？みんな頑張ってるの知ってるよ！無理しないでね！';
-        // }else{
-        //     $greet = 'こんばんは！';
-        //     $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
-        // }
+        $time = date('H');
+        $greet;
+        $words;
+        if($time >= 6 && $time <= 11){
+            $greet = 'おっはー！';
+            $words = '今日も元気してるー？？今日も一日頑張りまっしょい！';
+        }else if($time > 11 && $time <= 18 ){
+            $greet = 'Hallo';
+            $words = '今日も張り切ってる？？みんな頑張ってるの知ってるよ！無理しないでね！';
+        }else{
+            $greet = 'こんばんは！';
+            $words = '今日も疲れたね。ビールでも飲んでリラックスたーいむ！';
+        }
 
-        // Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
+        Mail::to($users)->send(new NewOpinion($greet,$words,'['.$board->title.']に新着投稿があったよ！要チェック！',));
 
         return response()->json('test');
     }
