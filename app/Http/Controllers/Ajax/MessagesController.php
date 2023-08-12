@@ -10,9 +10,10 @@ use Auth;
 
 class MessagesController extends Controller
 {
-    public function index()
+    public function index(Request $req,$boardId)
     {
-        return Opinion::orderBy('created_at','desc')->paginate(7);
+        $opinions = Opinion::where('board_id','=',$boardId)->orderBy('created_at','desc')->paginate(4);
+        return $opinions;
     }
     public function users()
     {

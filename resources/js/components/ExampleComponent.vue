@@ -88,8 +88,9 @@ import NowLoading from './NowLoading.vue';
             board:String,
         },
         methods:{
-            async getPage(url){
+            async getPage(url)  {
                 this.load = true;
+
                 await axios.get(url)
                 .then(response => {
                     this.opinions = this.opinions.concat(response.data.data);
@@ -103,10 +104,12 @@ import NowLoading from './NowLoading.vue';
             async getMessages(){
                 if(window.location.hostname =='localhost'){
                     this.load = true;
-                    await axios.get('/messages')
+                    
+                    await axios.get('/'+ this.board.id + '/messages')
                     .then(response => {
                         this.opinions = response.data.data;
                         this.nextPageUrl = response.data.next_page_url;
+                        console.log(this.nextPageUrl);
                     })
                     .catch(err => {
                     })
@@ -114,7 +117,6 @@ import NowLoading from './NowLoading.vue';
                         this.load=false;
                         this.autoPageLoader();
                     })
-
                 }else{
                     this.load = true;
                     axios.get('/community-app/messages')
@@ -149,19 +151,16 @@ import NowLoading from './NowLoading.vue';
             getPageOnScroll(){
                 let container = this.$refs.container;
                 let more = this.$refs.more;
-                if(this.nextPageUrl != null){
-                    container.addEventListener('scroll',() =>{
-                        let containerRect = container.getBoundingClientRect();
-                        let moreRect = more.getBoundingClientRect();
 
-                        if(containerRect.bottom > moreRect.top){
-                            if(this.load) return;
-                            this.getPage(this.nextPageUrl);
-                        }
-                    })
-                }else{
-                    this.moreactive = false;
-                }
+                container.addEventListener('scroll',() =>{
+                    let containerRect = container.getBoundingClientRect();
+                    let moreRect = more.getBoundingClientRect();
+
+                    if(containerRect.bottom > moreRect.top){
+                        if(this.load) return;
+                        this.getPage(this.nextPageUrl);
+                    }
+                })
             },
 
             async autoPageLoader(){
@@ -169,7 +168,6 @@ import NowLoading from './NowLoading.vue';
                     if(this.nextPageUrl != null){
                         let containerRect = this.$refs.container.getBoundingClientRect();
                         let moreRect = this.$refs.more.getBoundingClientRect();
-                        console.log(containerRect.bottom + ' : ' + moreRect.top);
 
                         if(containerRect.bottom > moreRect.bottom){
                             await this.getPage(this.nextPageUrl);

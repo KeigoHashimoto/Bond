@@ -89,7 +89,7 @@ use App\Http\Controllers\CellsController;
             ->name('opinion.post');
 
         //ajax
-        Route::get('/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
+        Route::get('{id}/messages',[App\Http\Controllers\Ajax\MessagesController::class,'index']);
         Route::get('/users',[App\Http\Controllers\Ajax\MessagesController::class,'users']);
         Route::get('/authUser',[App\Http\Controllers\Ajax\MessagesController::class,'authUser']);
 

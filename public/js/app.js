@@ -22794,9 +22794,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this2.load = true;
                 _context2.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/messages').then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/' + _this2.board.id + '/messages').then(function (response) {
                   _this2.opinions = response.data.data;
                   _this2.nextPageUrl = response.data.next_page_url;
+                  console.log(_this2.nextPageUrl);
                 })["catch"](function (err) {})["finally"](function () {
                   _this2.load = false;
 
@@ -22857,21 +22858,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       var container = this.$refs.container;
       var more = this.$refs.more;
+      container.addEventListener('scroll', function () {
+        var containerRect = container.getBoundingClientRect();
+        var moreRect = more.getBoundingClientRect();
 
-      if (this.nextPageUrl != null) {
-        container.addEventListener('scroll', function () {
-          var containerRect = container.getBoundingClientRect();
-          var moreRect = more.getBoundingClientRect();
+        if (containerRect.bottom > moreRect.top) {
+          if (_this5.load) return;
 
-          if (containerRect.bottom > moreRect.top) {
-            if (_this5.load) return;
-
-            _this5.getPage(_this5.nextPageUrl);
-          }
-        });
-      } else {
-        this.moreactive = false;
-      }
+          _this5.getPage(_this5.nextPageUrl);
+        }
+      });
     },
     autoPageLoader: function autoPageLoader() {
       var _this6 = this;
@@ -22885,41 +22881,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (false) {}
 
                 if (!(_this6.nextPageUrl != null)) {
-                  _context3.next = 13;
+                  _context3.next = 12;
                   break;
                 }
 
                 containerRect = _this6.$refs.container.getBoundingClientRect();
                 moreRect = _this6.$refs.more.getBoundingClientRect();
-                console.log(containerRect.bottom + ' : ' + moreRect.top);
 
                 if (!(containerRect.bottom > moreRect.bottom)) {
-                  _context3.next = 10;
+                  _context3.next = 9;
                   break;
                 }
 
-                _context3.next = 8;
+                _context3.next = 7;
                 return _this6.getPage(_this6.nextPageUrl);
 
-              case 8:
-                _context3.next = 11;
+              case 7:
+                _context3.next = 10;
                 break;
+
+              case 9:
+                return _context3.abrupt("break", 15);
 
               case 10:
-                return _context3.abrupt("break", 16);
-
-              case 11:
-                _context3.next = 14;
+                _context3.next = 13;
                 break;
 
-              case 13:
-                return _context3.abrupt("break", 16);
+              case 12:
+                return _context3.abrupt("break", 15);
 
-              case 14:
+              case 13:
                 _context3.next = 0;
                 break;
 
-              case 16:
+              case 15:
               case "end":
                 return _context3.stop();
             }
