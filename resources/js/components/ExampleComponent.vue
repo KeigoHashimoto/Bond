@@ -117,11 +117,15 @@ import NowLoading from './NowLoading.vue';
                 }else{
                     this.load = true;
                     axios.get('/community-app/messages')
-                    .then(response => this.opinions = response.data)
+                    .then(response => {
+                        this.opinions = response.data.data;
+                        this.nextPageUrl = response.data.next_page_url;
+                    })
                     .catch(err => {
-
-                    }).finally(()=>{
+                    })
+                    .finally(()=>{
                         this.load=false;
+                        this.autoPageLoader();
                     })
                 }
             },

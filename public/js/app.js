@@ -22809,9 +22809,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 6:
                 _this2.load = true;
                 axios__WEBPACK_IMPORTED_MODULE_0___default().get('/community-app/messages').then(function (response) {
-                  return _this2.opinions = response.data;
+                  _this2.opinions = response.data.data;
+                  _this2.nextPageUrl = response.data.next_page_url;
                 })["catch"](function (err) {})["finally"](function () {
                   _this2.load = false;
+
+                  _this2.autoPageLoader();
                 });
 
               case 8:
