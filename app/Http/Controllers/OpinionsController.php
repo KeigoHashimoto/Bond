@@ -14,8 +14,8 @@ class OpinionsController extends Controller
 {
     public function store(Request $request){
         $request->validate([
-            'opinion'=>'required|max:500',
-            'img_path'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
+            'opinion'=>'max:500',
+            'image'=>'file|mimes:jpeg,png,jpg,bmb|max:5000',
         ]);
 
         $user=\Auth::user();
@@ -24,7 +24,7 @@ class OpinionsController extends Controller
             $office = $board->office;
         }
 
-        if($file = $request->img_path){
+        if($file = $request->image){
             $file_name = time() . $file->getClientOriginalName();
             $file_path = public_path('/uploads/');
             $file -> move($file_path,$file_name);

@@ -11,6 +11,9 @@
                             <div class="self-opinion" >
                                 <div class="self-opinion-content">{{ opinion.opinion }}<br>
                                     <div  v-show="opinion.img_path != ''">
+                                        <!-- <a :href="'/uploads/' + opinion.img_path">
+                                            <img :src="'/uploads/' + opinion.img_path" alt="" class="opinion-img">
+                                        </a> -->
                                         <a :href="'/community-app/uploads/' + opinion.img_path">
                                             <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img">
                                         </a>
@@ -18,6 +21,9 @@
                                 </div>
     
                                 <div class="self-opinion-profile">
+                                    <!-- <a :href="'/show/' + authUser.id">
+                                        <img class="self-opinion-profile-img" :src="'/uploads/' + authUser.profile_img" alt="">
+                                    </a> -->
                                     <a :href="'/community-app/show/' + authUser.id">
                                         <img class="self-opinion-profile-img" :src="'/community-app/uploads/' + authUser.profile_img" alt="">
                                     </a>
@@ -31,6 +37,9 @@
                         <div v-for="user in users" :key="user.id">
                             <div class="opinion">
                                 <div v-if="user.id === opinion.user_id" class="opinion-profile">
+                                    <!-- <a :href="'/show/' + user.id">
+                                        <img class="opinion-profile-img" :src="'/uploads/' + user.profile_img" alt="">
+                                    </a> -->
                                     <a :href="'/community-app/show/' + user.id">
                                         <img class="opinion-profile-img" :src="'/community-app/uploads/' + user.profile_img" alt="">
                                     </a>
@@ -39,6 +48,9 @@
             
                                 <div class="opinion-content" v-if="opinion.user_id === user.id">{{ opinion.opinion }}<br>
                                     <div  v-show="opinion.img_path != ''">
+                                        <!-- <a :href="'/uploads/' + opinion.img_path">
+                                            <img :src="'/uploads/' + opinion.img_path" alt="" class="opinion-img">
+                                        </a> -->
                                         <a :href="'/community-app/uploads/' + opinion.img_path">
                                             <img :src="'/community-app/uploads/' + opinion.img_path" alt="" class="opinion-img">
                                         </a>
