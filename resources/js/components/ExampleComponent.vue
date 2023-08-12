@@ -151,6 +151,7 @@ import NowLoading from './NowLoading.vue';
                 container.addEventListener('scroll',() =>{
                     let containerRect = container.getBoundingClientRect();
                     let moreRect = more.getBoundingClientRect();
+                    if(this.nextPageUrl == null) return;
 
                     if(containerRect.bottom > moreRect.top){
                         if(this.load) return;

@@ -22859,6 +22859,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       container.addEventListener('scroll', function () {
         var containerRect = container.getBoundingClientRect();
         var moreRect = more.getBoundingClientRect();
+        if (_this5.nextPageUrl == null) return;
 
         if (containerRect.bottom > moreRect.top) {
           if (_this5.load) return;
