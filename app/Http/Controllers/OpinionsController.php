@@ -17,12 +17,6 @@ class OpinionsController extends Controller
             'opinion'=>'max:500',
         ]);
 
-        if($request->image){
-            $request->validate([
-                'image'=>'file|mimes:jpeg,png,jpg,bmp|max:5000',
-            ]);
-        }
-
         $user=\Auth::user();
         $board = BulletinBoard::findOrFail($request->board_id);
         if(!empty($board->office_id)){
