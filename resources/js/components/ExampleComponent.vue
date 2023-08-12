@@ -109,7 +109,6 @@ import NowLoading from './NowLoading.vue';
                     .then(response => {
                         this.opinions = response.data.data;
                         this.nextPageUrl = response.data.next_page_url;
-                        console.log(this.nextPageUrl);
                     })
                     .catch(err => {
                     })
@@ -119,7 +118,7 @@ import NowLoading from './NowLoading.vue';
                     })
                 }else{
                     this.load = true;
-                    axios.get('/community-app/messages')
+                    axios.get('/community-app/'+ this.board.id + '/messages')
                     .then(response => {
                         this.opinions = response.data.data;
                         this.nextPageUrl = response.data.next_page_url;
